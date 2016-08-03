@@ -30,7 +30,7 @@
     <ManifestCertificateThumbprint>502D68F34386F28801A8BF04EA024544899F9713</ManifestCertificateThumbprint>
     <ManifestKeyFile>
     </ManifestKeyFile>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
     <SignManifests>true</SignManifests>
     <TargetZone>Custom</TargetZone>
     <ExcludedPermissions>
@@ -107,6 +107,9 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CAS.CodeProtect, Version=5.0.2.39087, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
       <HintPath>..\..\packages\CAS.CodeProtect.5.0.2\lib\net35\CAS.CodeProtect.dll</HintPath>
@@ -176,6 +179,10 @@
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
+    <ProjectReference Include="..\..\PR39-CommonResources\LicensesContainer\LicensesContainer.csproj">
+      <Project>{234a138e-4e17-4f12-84a3-a920ddae0d86}</Project>
+      <Name>LicensesContainer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Viewer.FormControls\Viewer.FormControls.csproj">
       <Project>{C9DF875B-B3DC-4B92-BB14-DF90B062EC17}</Project>
       <Name>Viewer.FormControls</Name>
@@ -268,6 +275,7 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\CommServer.DA.Viewer.nuspec">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
