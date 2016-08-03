@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="System.Windows.Forms.TreeNode" Collapsed="true">
+    <Position X="16" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CAS.Lib.ControlLibrary.GenericTreeNode&lt;ObjectType, ParentType&gt;" Collapsed="true">
+    <Position X="15.25" Y="2.25" Width="3" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CAS.DataPorter.Configurator.SaveableTreeNode&lt;ObjectType, ParentType&gt;" Collapsed="true">
+    <Position X="21" Y="3.5" Width="3.5" />
+    <TypeIdentifier />
+    <Lollipop Orientation="Left" Position="0.1" />
+  </Class>
+  <Class Name="CAS.Lib.OPCClientControlsLib.TreeNodes.Session.SessionTreeNode&lt;ObjectType, ParentType&gt;" Collapsed="true">
+    <Position X="21" Y="5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAQAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>TreeNodes\Session\SessionTreeNode.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="0.1" />
+  </Class>
+  <Class Name="CAS.Lib.OPCClientControlsLib.TreeNodes.Session.TagTreeNode" Collapsed="true">
+    <Position X="29" Y="7.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAICAADAAAQAAAAAAAAAAAgAIAAAiAAAAAAAQAAA=</HashCode>
+      <FileName>TreeNodes\Session\TagTreeNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAS.Lib.OPCClientControlsLib.TreeNodes.Session.OPCEnvironment" Collapsed="true">
+    <Position X="13.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAACAAAIAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>TreeNodes\Session\OPCEnvironment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAS.Lib.OPCClientControlsLib.TreeNodes.Session.OPCSessionServer" Collapsed="true">
+    <Position X="16.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAgoCQAiAAAQBAAAAAAKBQABBICCAAAABAxAABAIY=</HashCode>
+      <FileName>TreeNodes\Session\OPCServerTreeNodes.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="0.1" />
+  </Class>
+  <Class Name="CAS.Lib.OPCClientControlsLib.TreeNodes.Session.SubscriptionTreeNodeSession" Collapsed="true">
+    <Position X="17.25" Y="7.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIGEAGAoAIAAAAAAACBAABBqABAkUAAABACBAEA=</HashCode>
+      <FileName>TreeNodes\Session\SubscriptionTreeNode.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="0.1" />
+  </Class>
+  <Class Name="CAS.Lib.OPCClientControlsLib.TreeNodes.Browse.BrowseElementNode" Collapsed="true">
+    <Position X="9.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCIQAAAAAAAAAAAAAAAAAAggIAAgAAAACAAAAAAQ=</HashCode>
+      <FileName>TreeNodes\Browse\BrowseElementNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAS.Lib.OPCClientControlsLib.TreeNodes.Browse.BrowseTreeNode&lt;ObjectType, ParentType&gt;" Collapsed="true">
+    <Position X="9.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABCgIAAAABAAAAAAAAAAAAQAAgAAAAMAAAAAQgAABA=</HashCode>
+      <FileName>TreeNodes\Browse\BrowseTreeNode.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CAS.Lib.OPCClientControlsLib.TreeNodes.Browse.ConnectDataNode&lt;ObjectType, ParentType&gt;" Collapsed="true">
+    <Position X="7" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAACAAAAAAIAAAAAAAAEQAAAAAA=</HashCode>
+      <FileName>TreeNodes\Browse\CommonTreeNodes.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="0.1" />
+  </Class>
+  <Class Name="CAS.Lib.OPCClientControlsLib.TreeNodes.Browse.PropertyTreeNode&lt;ParentType&gt;" Collapsed="true">
+    <Position X="11.25" Y="6.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAIAAAAAAAAAAAAAAAAAAAAgIAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>TreeNodes\Session\PropertyTreeNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAS.Lib.OPC.AddressSpace.SaveableTreeNode&lt;ObjectType, ParentType&gt;" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Orientation="Left" Position="0.1" />
+  </Class>
+  <Class Name="CAS.Lib.OPCClientControlsLib.TreeNodes.Browse.DiscoveryNode&lt;ObjectType, ParentType&gt;" Collapsed="true">
+    <Position X="6" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TreeNodes\Browse\CommonTreeNodes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAS.Lib.OPCClientControlsLib.TreeNodes.Browse.OPCBrowseServer" Collapsed="true">
+    <Position X="8" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACYCAIQQAiAAAAAAAAAAAIAQAAhIACAAAABwhAAAAAQ=</HashCode>
+      <FileName>TreeNodes\Browse\OPCBrowseServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAS.Lib.OPCClientControlsLib.TreeNodes.Browse.ComputerTreeNodes" Collapsed="true">
+    <Position X="4.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>TreeNodes\Browse\ComputerTreeNodes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAS.Lib.OPCClientControlsLib.TreeNodes.Browse.NetworkTreeNode" Collapsed="true">
+    <Position X="7" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>TreeNodes\Browse\NetworkTreeNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAS.Lib.OPCClientControlsLib.TreeNodes.Session.SubscriptionTreeNodeBase&lt;ObjectType, ParentType&gt;" Collapsed="true">
+    <Position X="19.25" Y="6.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAIAAAAAAAAAAAAAAAAAgAAAAAAAAAAQ=</HashCode>
+      <FileName>TreeNodes\Session\SubscriptionTreeNodeBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAS.Lib.OPCClientControlsLib.TreeNodes.Session.TagTreeNodeBase&lt;ObjectType, ParentType&gt;" Collapsed="true">
+    <Position X="27.25" Y="6.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAgAAAAAAAAAAQ=</HashCode>
+      <FileName>TreeNodes\Session\TagTreeNodeBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAS.Lib.OPCClientControlsLib.TreeNodes.Session.SubscriptionTreeNode4RW" Collapsed="true">
+    <Position X="21.25" Y="7.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAIAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>TreeNodes\Session\SubscriptionTreeNode4RW.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAS.Lib.OPCClientControlsLib.TreeNodes.Session.TagTreeNode4RW" Collapsed="true">
+    <Position X="25.25" Y="7.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAIAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>TreeNodes\Session\TagTreeNode4RW.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="CAS.Lib.ControlLibrary.ITreeNodeInterface">
+    <Position X="4.25" Y="2" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.IDisposable" Collapsed="true">
+    <Position X="4.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

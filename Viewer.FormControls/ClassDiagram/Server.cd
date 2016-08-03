@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CAS.Lib.OPCClientControlsLib.Opc.Da.Server">
+    <Position X="9.75" Y="0.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAgAAAAAAAAAIAgAAAAIAAAIAAAAAAABAI=</HashCode>
+      <FileName>Opc\Da\Server.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Opc.Da.Server">
+    <Position X="6.25" Y="0.75" Width="2.25" />
+    <TypeIdentifier />
+    <ShowAsCollectionAssociation>
+      <Property Name="Subscriptions" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Opc.Server">
+    <Position X="3.75" Y="0.75" Width="1.75" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Field Name="m_server" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Opc.Da.Subscription">
+    <Position X="6.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier />
+    <ShowAsCollectionAssociation>
+      <Property Name="Items" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Opc.Da.Item">
+    <Position X="8.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Opc.ItemIdentifier">
+    <Position X="11" Y="5.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CAS.Lib.OPCClientControlsLib.Opc.Da.Subscription">
+    <Position X="3.75" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAgAAAAAAAAAAgAAkAAAAA=</HashCode>
+      <FileName>Opc\Da\Subscription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Opc.IServer">
+    <Position X="1" Y="0.75" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

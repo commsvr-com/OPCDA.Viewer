@@ -1,0 +1,1449 @@
+<?xml version="1.0" standalone="yes"?>
+<ConfigurationDataBase xmlns="http://commsvr.com/opc/OPCCliConfiguration.xsd">
+  <xs:schema id="ConfigurationDataBase" targetNamespace="http://commsvr.com/opc/OPCCliConfiguration.xsd" xmlns:mstns="http://commsvr.com/opc/OPCCliConfiguration.xsd" xmlns="http://commsvr.com/opc/OPCCliConfiguration.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+    <xs:element name="ConfigurationDataBase" msdata:IsDataSet="true" msdata:CaseSensitive="true" msdata:Locale="">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Servers">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" msdata:AutoIncrement="true" type="xs:long" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="URL" type="xs:string" />
+                <xs:element name="PreferedSpecyficationID" type="xs:string" />
+                <xs:element name="PreferedSpecyficationDsc" type="xs:string" />
+                <xs:element name="IsConnected" type="xs:boolean" default="true" />
+                <xs:element name="Locale" type="xs:string" minOccurs="0" />
+                <xs:element name="Filter" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Subscriptions">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" msdata:AutoIncrement="true" type="xs:long" />
+                <xs:element name="ID_server" type="xs:long" />
+                <xs:element name="Name" type="xs:string" />
+                <xs:element name="UpdateRate" type="xs:int" />
+                <xs:element name="Locale" type="xs:string" minOccurs="0" />
+                <xs:element name="KeepAliveRate" type="xs:int" minOccurs="0" />
+                <xs:element name="Deadband" type="xs:float" minOccurs="0" />
+                <xs:element name="Enabled" type="xs:boolean" />
+                <xs:element name="Active" type="xs:boolean" />
+                <xs:element name="Asynchronous" msdata:Caption="Async" type="xs:boolean" default="false" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Items">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" msdata:AutoIncrement="true" type="xs:long" />
+                <xs:element name="ID_Subscription" type="xs:long" />
+                <xs:element name="Name" type="xs:string" />
+                <xs:element name="MaxAge" type="xs:int" minOccurs="0" />
+                <xs:element name="Active" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Deadband" type="xs:float" minOccurs="0" />
+                <xs:element name="EnableBuffering" type="xs:boolean" minOccurs="0" />
+                <xs:element name="ItemPath" type="xs:string" minOccurs="0" />
+                <xs:element name="SamplingRate" type="xs:int" minOccurs="0" />
+                <xs:element name="RequestedTypeFullName" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Transactions">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" msdata:AutoIncrement="true" type="xs:long" />
+                <xs:element name="Name" type="xs:string" />
+                <xs:element name="ID_itemIN" type="xs:long" minOccurs="0" />
+                <xs:element name="Deadband" type="xs:int" minOccurs="0" />
+                <xs:element name="MinUpdateRate" type="xs:int" minOccurs="0" />
+                <xs:element name="TransactionRate" type="xs:int" />
+                <xs:element name="Comment" type="xs:string" minOccurs="0" />
+                <xs:element name="BadQualityValue" type="xs:string" minOccurs="0" />
+                <xs:element name="StopIfBadQuality" type="xs:boolean" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Operations">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" msdata:AutoIncrement="true" type="xs:long" />
+                <xs:element name="Name" type="xs:string" />
+                <xs:element name="ID_Transaction" type="xs:long" />
+                <xs:element name="Param" type="xs:string" minOccurs="0" />
+                <xs:element name="OperationType" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+                <xs:element name="ID_Item" type="xs:long" minOccurs="0" />
+                <xs:element name="Comment" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="OperationLinks">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID_Operation" type="xs:long" />
+                <xs:element name="Input_number" type="xs:int" />
+                <xs:element name="IDChild_Operation" type="xs:long" />
+                <xs:element name="ChildOutput_number" type="xs:int" default="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="ConnectData">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID_Server" type="xs:long" />
+                <xs:element name="Password" type="xs:string" minOccurs="0" />
+                <xs:element name="Domain" type="xs:string" minOccurs="0" />
+                <xs:element name="UserName" type="xs:string" minOccurs="0" />
+                <xs:element name="LicenseKey" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Conversions">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID_Item" type="xs:long" />
+                <xs:element name="MeasuredValue1" type="xs:float" default="0" />
+                <xs:element name="MeasuredValue2" type="xs:float" default="1" />
+                <xs:element name="EngineeringValue1" type="xs:float" default="0" />
+                <xs:element name="EngineeringValue2" type="xs:float" default="1" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="OPCCliConfigurationKey1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//mstns:Servers" />
+        <xs:field xpath="mstns:ID" />
+      </xs:unique>
+      <xs:unique name="OPCCliConfigurationKey2">
+        <xs:selector xpath=".//mstns:Subscriptions" />
+        <xs:field xpath="mstns:ID" />
+      </xs:unique>
+      <xs:unique name="OPCCliConfigurationKey3">
+        <xs:selector xpath=".//mstns:Items" />
+        <xs:field xpath="mstns:ID" />
+      </xs:unique>
+      <xs:unique name="TransactionMasterKey">
+        <xs:selector xpath=".//mstns:Transactions" />
+        <xs:field xpath="mstns:ID" />
+      </xs:unique>
+      <xs:unique name="Constraint1">
+        <xs:selector xpath=".//mstns:Transactions" />
+        <xs:field xpath="mstns:Name" />
+      </xs:unique>
+      <xs:unique name="Operations_Constraint1" msdata:ConstraintName="Constraint1">
+        <xs:selector xpath=".//mstns:Operations" />
+        <xs:field xpath="mstns:ID" />
+      </xs:unique>
+      <xs:unique name="Constraint2" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//mstns:Operations" />
+        <xs:field xpath="mstns:ID_Transaction" />
+        <xs:field xpath="mstns:ID" />
+      </xs:unique>
+      <xs:unique name="OperationsKey_names">
+        <xs:selector xpath=".//mstns:Operations" />
+        <xs:field xpath="mstns:ID" />
+        <xs:field xpath="mstns:Name" />
+      </xs:unique>
+      <xs:unique name="OperationLinksKeyMain" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//mstns:OperationLinks" />
+        <xs:field xpath="mstns:ID_Operation" />
+        <xs:field xpath="mstns:Input_number" />
+      </xs:unique>
+      <xs:unique name="Constraint11">
+        <xs:selector xpath=".//mstns:ConnectData" />
+        <xs:field xpath="mstns:ID_Server" />
+      </xs:unique>
+      <xs:unique name="Conversions_Constraint11" msdata:ConstraintName="Constraint11">
+        <xs:selector xpath=".//mstns:Conversions" />
+        <xs:field xpath="mstns:ID_Item" />
+      </xs:unique>
+      <xs:keyref name="FK_Items_Conversions" refer="OPCCliConfigurationKey3">
+        <xs:selector xpath=".//mstns:Conversions" />
+        <xs:field xpath="mstns:ID_Item" />
+      </xs:keyref>
+      <xs:keyref name="FK_Servers_ConnectData" refer="OPCCliConfigurationKey1">
+        <xs:selector xpath=".//mstns:ConnectData" />
+        <xs:field xpath="mstns:ID_Server" />
+      </xs:keyref>
+      <xs:keyref name="FK_OPERATION_OperationLinks" refer="Operations_Constraint1">
+        <xs:selector xpath=".//mstns:OperationLinks" />
+        <xs:field xpath="mstns:ID_Operation" />
+      </xs:keyref>
+      <xs:keyref name="FK_OPERATION_OperationLinksChild" refer="Operations_Constraint1">
+        <xs:selector xpath=".//mstns:OperationLinks" />
+        <xs:field xpath="mstns:IDChild_Operation" />
+      </xs:keyref>
+      <xs:keyref name="FK_ITEM_OPERATION" refer="OPCCliConfigurationKey3">
+        <xs:selector xpath=".//mstns:Operations" />
+        <xs:field xpath="mstns:ID_Item" />
+      </xs:keyref>
+      <xs:keyref name="FK_TRANSITION_OPERATION" refer="TransactionMasterKey">
+        <xs:selector xpath=".//mstns:Operations" />
+        <xs:field xpath="mstns:ID_Transaction" />
+      </xs:keyref>
+      <xs:keyref name="FK_SUBSCRIPTION_ITEM" refer="OPCCliConfigurationKey2">
+        <xs:selector xpath=".//mstns:Items" />
+        <xs:field xpath="mstns:ID_Subscription" />
+      </xs:keyref>
+      <xs:keyref name="FK_SERVERS_SUBSCRIPTION" refer="OPCCliConfigurationKey1">
+        <xs:selector xpath=".//mstns:Subscriptions" />
+        <xs:field xpath="mstns:ID_server" />
+      </xs:keyref>
+    </xs:element>
+    <xs:annotation>
+      <xs:appinfo>
+        <msdata:Relationship name="ITEM_TRANSITION" msdata:parent="Items" msdata:child="Transactions" msdata:parentkey="ID" msdata:childkey="ID_itemIN" />
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:schema>
+  <Servers>
+    <ID>33</ID>
+    <Name>dalkia1.OPC.DaWrapper</Name>
+    <URL>opcda://DALKIA1/OPC.DaWrapper/{1437dc7f-d66e-4aa3-ba79-2cd0a4a6f3d8}</URL>
+    <PreferedSpecyficationID>CC603642-66D7-48f1-B69A-B625E73652D7</PreferedSpecyficationID>
+    <PreferedSpecyficationDsc>Data Access 3.00</PreferedSpecyficationDsc>
+    <IsConnected>true</IsConnected>
+    <Filter>9</Filter>
+  </Servers>
+  <Servers>
+    <ID>34</ID>
+    <Name>dalkia1.OPCSample.OpcDaServer</Name>
+    <URL>opcda://DALKIA1/OPCSample.OpcDaServer/{625c49a1-be1c-45d7-9a8a-14bedcf5ce6c}</URL>
+    <PreferedSpecyficationID>CC603642-66D7-48f1-B69A-B625E73652D7</PreferedSpecyficationID>
+    <PreferedSpecyficationDsc>Data Access 3.00</PreferedSpecyficationDsc>
+    <IsConnected>true</IsConnected>
+    <Filter>9</Filter>
+  </Servers>
+  <Servers>
+    <ID>35</ID>
+    <Name>dalkia1.OPCSample.OpcDa30Server</Name>
+    <URL>opcda://DALKIA1/OPCSample.OpcDa30Server/{ed0e3ade-0cf5-47cd-a1ab-522e5e75d5cd}</URL>
+    <PreferedSpecyficationID>CC603642-66D7-48f1-B69A-B625E73652D7</PreferedSpecyficationID>
+    <PreferedSpecyficationDsc>Data Access 3.00</PreferedSpecyficationDsc>
+    <IsConnected>true</IsConnected>
+    <Filter>9</Filter>
+  </Servers>
+  <Subscriptions>
+    <ID>248</ID>
+    <ID_server>33</ID_server>
+    <Name>Static Analog</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>249</ID>
+    <ID_server>33</ID_server>
+    <Name>Static Limited Acces</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>250</ID>
+    <ID_server>33</ID_server>
+    <Name>Static Simple</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>251</ID>
+    <ID_server>33</ID_server>
+    <Name>Static Array</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>252</ID>
+    <ID_server>33</ID_server>
+    <Name>Static Enum</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>253</ID>
+    <ID_server>33</ID_server>
+    <Name>Dynamic Analog</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>254</ID>
+    <ID_server>33</ID_server>
+    <Name>Dynamic Enum</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>255</ID>
+    <ID_server>34</ID_server>
+    <Name>CPX OPCBinary</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>256</ID>
+    <ID_server>34</ID_server>
+    <Name>CPX XMLSchema</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>257</ID>
+    <ID_server>34</ID_server>
+    <Name>Static Analog</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>258</ID>
+    <ID_server>34</ID_server>
+    <Name>Static Limited access</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>259</ID>
+    <ID_server>34</ID_server>
+    <Name>Static Simple</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>260</ID>
+    <ID_server>34</ID_server>
+    <Name>Static Array</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>261</ID>
+    <ID_server>34</ID_server>
+    <Name>Static Enum</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>262</ID>
+    <ID_server>34</ID_server>
+    <Name>Dynamic Analog</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>263</ID>
+    <ID_server>34</ID_server>
+    <Name>Dynamic Enum</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>264</ID>
+    <ID_server>34</ID_server>
+    <Name>Complex Static</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>265</ID>
+    <ID_server>34</ID_server>
+    <Name>Complex dynamic</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>266</ID>
+    <ID_server>35</ID_server>
+    <Name>CPX OPCBinary</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>267</ID>
+    <ID_server>35</ID_server>
+    <Name>CPX XMLSchema</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>268</ID>
+    <ID_server>35</ID_server>
+    <Name>Static Analog</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>269</ID>
+    <ID_server>35</ID_server>
+    <Name>Static Limited Access</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>270</ID>
+    <ID_server>35</ID_server>
+    <Name>Static Simple</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>271</ID>
+    <ID_server>35</ID_server>
+    <Name>Static Array</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>272</ID>
+    <ID_server>35</ID_server>
+    <Name>Static Enum</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>273</ID>
+    <ID_server>35</ID_server>
+    <Name>Complex Ststic</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>274</ID>
+    <ID_server>35</ID_server>
+    <Name>Complex Dynamic</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Items>
+    <ID>1427</ID>
+    <ID_Subscription>248</ID_Subscription>
+    <Name>Static/Analog Types/Double</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1428</ID>
+    <ID_Subscription>248</ID_Subscription>
+    <Name>Static/Analog Types/Double[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1429</ID>
+    <ID_Subscription>248</ID_Subscription>
+    <Name>Static/Analog Types/Int</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1430</ID>
+    <ID_Subscription>248</ID_Subscription>
+    <Name>Static/Analog Types/Int[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1431</ID>
+    <ID_Subscription>249</ID_Subscription>
+    <Name>Static/Limited Access/Read Only 1</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1432</ID>
+    <ID_Subscription>249</ID_Subscription>
+    <Name>Static/Limited Access/Read Only 2</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1433</ID>
+    <ID_Subscription>249</ID_Subscription>
+    <Name>Static/Limited Access/Write Only 1</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1434</ID>
+    <ID_Subscription>249</ID_Subscription>
+    <Name>Static/Limited Access/Write Only 2</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1435</ID>
+    <ID_Subscription>250</ID_Subscription>
+    <Name>Static/Simple Types/Boolean</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1436</ID>
+    <ID_Subscription>250</ID_Subscription>
+    <Name>Static/Simple Types/Byte</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1437</ID>
+    <ID_Subscription>250</ID_Subscription>
+    <Name>Static/Simple Types/DateTime</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1438</ID>
+    <ID_Subscription>250</ID_Subscription>
+    <Name>Static/Simple Types/Decimal</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1439</ID>
+    <ID_Subscription>250</ID_Subscription>
+    <Name>Static/Simple Types/Double</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1440</ID>
+    <ID_Subscription>250</ID_Subscription>
+    <Name>Static/Simple Types/Float</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1441</ID>
+    <ID_Subscription>250</ID_Subscription>
+    <Name>Static/Simple Types/Int</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1442</ID>
+    <ID_Subscription>250</ID_Subscription>
+    <Name>Static/Simple Types/Long</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1443</ID>
+    <ID_Subscription>250</ID_Subscription>
+    <Name>Static/Simple Types/SByte</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1444</ID>
+    <ID_Subscription>250</ID_Subscription>
+    <Name>Static/Simple Types/Short</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1445</ID>
+    <ID_Subscription>250</ID_Subscription>
+    <Name>Static/Simple Types/String</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1446</ID>
+    <ID_Subscription>250</ID_Subscription>
+    <Name>Static/Simple Types/UInt</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1447</ID>
+    <ID_Subscription>250</ID_Subscription>
+    <Name>Static/Simple Types/ULong</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1448</ID>
+    <ID_Subscription>250</ID_Subscription>
+    <Name>Static/Simple Types/UShort</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1449</ID>
+    <ID_Subscription>251</ID_Subscription>
+    <Name>Static/ArrayTypes/Boolean[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1450</ID>
+    <ID_Subscription>251</ID_Subscription>
+    <Name>Static/ArrayTypes/Byte[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1451</ID>
+    <ID_Subscription>251</ID_Subscription>
+    <Name>Static/ArrayTypes/DateTime[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1452</ID>
+    <ID_Subscription>251</ID_Subscription>
+    <Name>Static/ArrayTypes/Decimal[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1453</ID>
+    <ID_Subscription>251</ID_Subscription>
+    <Name>Static/ArrayTypes/Double[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1454</ID>
+    <ID_Subscription>251</ID_Subscription>
+    <Name>Static/ArrayTypes/Float[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1455</ID>
+    <ID_Subscription>251</ID_Subscription>
+    <Name>Static/ArrayTypes/Int[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1456</ID>
+    <ID_Subscription>251</ID_Subscription>
+    <Name>Static/ArrayTypes/Long[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1457</ID>
+    <ID_Subscription>251</ID_Subscription>
+    <Name>Static/ArrayTypes/Object[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1458</ID>
+    <ID_Subscription>251</ID_Subscription>
+    <Name>Static/ArrayTypes/SByte[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1459</ID>
+    <ID_Subscription>251</ID_Subscription>
+    <Name>Static/ArrayTypes/Short[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1460</ID>
+    <ID_Subscription>251</ID_Subscription>
+    <Name>Static/ArrayTypes/String[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1461</ID>
+    <ID_Subscription>251</ID_Subscription>
+    <Name>Static/ArrayTypes/UInt[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1462</ID>
+    <ID_Subscription>251</ID_Subscription>
+    <Name>Static/ArrayTypes/ULong[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1463</ID>
+    <ID_Subscription>251</ID_Subscription>
+    <Name>Static/ArrayTypes/UShort[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1464</ID>
+    <ID_Subscription>252</ID_Subscription>
+    <Name>Static/Enumerated Types/Fellowship</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1465</ID>
+    <ID_Subscription>252</ID_Subscription>
+    <Name>Static/Enumerated Types/Gems</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1466</ID>
+    <ID_Subscription>253</ID_Subscription>
+    <Name>Dynamic/Analog Types/Double</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1467</ID>
+    <ID_Subscription>253</ID_Subscription>
+    <Name>Dynamic/Analog Types/Double[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1468</ID>
+    <ID_Subscription>253</ID_Subscription>
+    <Name>Dynamic/Analog Types/Fools</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1469</ID>
+    <ID_Subscription>253</ID_Subscription>
+    <Name>Dynamic/Analog Types/Int</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1470</ID>
+    <ID_Subscription>253</ID_Subscription>
+    <Name>Dynamic/Analog Types/Int[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1471</ID>
+    <ID_Subscription>254</ID_Subscription>
+    <Name>Dynamic/Enumerated Types/Fellowship</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1472</ID>
+    <ID_Subscription>254</ID_Subscription>
+    <Name>Dynamic/Enumerated Types/Gems</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1473</ID>
+    <ID_Subscription>255</ID_Subscription>
+    <Name>CPX/OPCBinary/OpcDaServer.binary</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1474</ID>
+    <ID_Subscription>256</ID_Subscription>
+    <Name>CPX/XMLSchema/OpcDaServer.binary</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1475</ID>
+    <ID_Subscription>257</ID_Subscription>
+    <Name>Static/Analog Types/Double</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1476</ID>
+    <ID_Subscription>257</ID_Subscription>
+    <Name>Static/Analog Types/Double[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1477</ID>
+    <ID_Subscription>257</ID_Subscription>
+    <Name>Static/Analog Types/Int</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1478</ID>
+    <ID_Subscription>257</ID_Subscription>
+    <Name>Static/Analog Types/Int[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1479</ID>
+    <ID_Subscription>258</ID_Subscription>
+    <Name>Static/Limited Access/Read Only 1</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1480</ID>
+    <ID_Subscription>258</ID_Subscription>
+    <Name>Static/Limited Access/Read Only 2</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1481</ID>
+    <ID_Subscription>258</ID_Subscription>
+    <Name>Static/Limited Access/Write Only 1</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1482</ID>
+    <ID_Subscription>258</ID_Subscription>
+    <Name>Static/Limited Access/Write Only 2</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1483</ID>
+    <ID_Subscription>259</ID_Subscription>
+    <Name>Static/Simple Types/Boolean</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1484</ID>
+    <ID_Subscription>259</ID_Subscription>
+    <Name>Static/Simple Types/Byte</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1485</ID>
+    <ID_Subscription>259</ID_Subscription>
+    <Name>Static/Simple Types/DateTime</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1486</ID>
+    <ID_Subscription>259</ID_Subscription>
+    <Name>Static/Simple Types/Decimal</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1487</ID>
+    <ID_Subscription>259</ID_Subscription>
+    <Name>Static/Simple Types/Double</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1488</ID>
+    <ID_Subscription>259</ID_Subscription>
+    <Name>Static/Simple Types/Float</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1489</ID>
+    <ID_Subscription>259</ID_Subscription>
+    <Name>Static/Simple Types/Int</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1490</ID>
+    <ID_Subscription>259</ID_Subscription>
+    <Name>Static/Simple Types/Long</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1491</ID>
+    <ID_Subscription>259</ID_Subscription>
+    <Name>Static/Simple Types/SByte</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1492</ID>
+    <ID_Subscription>259</ID_Subscription>
+    <Name>Static/Simple Types/Short</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1493</ID>
+    <ID_Subscription>259</ID_Subscription>
+    <Name>Static/Simple Types/String</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1494</ID>
+    <ID_Subscription>259</ID_Subscription>
+    <Name>Static/Simple Types/UInt</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1495</ID>
+    <ID_Subscription>259</ID_Subscription>
+    <Name>Static/Simple Types/ULong</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1496</ID>
+    <ID_Subscription>259</ID_Subscription>
+    <Name>Static/Simple Types/UShort</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1497</ID>
+    <ID_Subscription>260</ID_Subscription>
+    <Name>Static/ArrayTypes/Boolean[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1498</ID>
+    <ID_Subscription>260</ID_Subscription>
+    <Name>Static/ArrayTypes/Byte[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1499</ID>
+    <ID_Subscription>260</ID_Subscription>
+    <Name>Static/ArrayTypes/DateTime[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1500</ID>
+    <ID_Subscription>260</ID_Subscription>
+    <Name>Static/ArrayTypes/Decimal[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1501</ID>
+    <ID_Subscription>260</ID_Subscription>
+    <Name>Static/ArrayTypes/Double[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1502</ID>
+    <ID_Subscription>260</ID_Subscription>
+    <Name>Static/ArrayTypes/Float[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1503</ID>
+    <ID_Subscription>260</ID_Subscription>
+    <Name>Static/ArrayTypes/Int[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1504</ID>
+    <ID_Subscription>260</ID_Subscription>
+    <Name>Static/ArrayTypes/Long[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1505</ID>
+    <ID_Subscription>260</ID_Subscription>
+    <Name>Static/ArrayTypes/Object[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1506</ID>
+    <ID_Subscription>260</ID_Subscription>
+    <Name>Static/ArrayTypes/SByte[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1507</ID>
+    <ID_Subscription>260</ID_Subscription>
+    <Name>Static/ArrayTypes/Short[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1508</ID>
+    <ID_Subscription>260</ID_Subscription>
+    <Name>Static/ArrayTypes/String[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1509</ID>
+    <ID_Subscription>260</ID_Subscription>
+    <Name>Static/ArrayTypes/UInt[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1510</ID>
+    <ID_Subscription>260</ID_Subscription>
+    <Name>Static/ArrayTypes/ULong[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1511</ID>
+    <ID_Subscription>260</ID_Subscription>
+    <Name>Static/ArrayTypes/UShort[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1512</ID>
+    <ID_Subscription>261</ID_Subscription>
+    <Name>Static/Enumerated Types/Fellowship</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1513</ID>
+    <ID_Subscription>261</ID_Subscription>
+    <Name>Static/Enumerated Types/Gems</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1514</ID>
+    <ID_Subscription>262</ID_Subscription>
+    <Name>Dynamic/Analog Types/Double</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1515</ID>
+    <ID_Subscription>262</ID_Subscription>
+    <Name>Dynamic/Analog Types/Double[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1516</ID>
+    <ID_Subscription>262</ID_Subscription>
+    <Name>Dynamic/Analog Types/Fools</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1517</ID>
+    <ID_Subscription>262</ID_Subscription>
+    <Name>Dynamic/Analog Types/Int</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1518</ID>
+    <ID_Subscription>262</ID_Subscription>
+    <Name>Dynamic/Analog Types/Int[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1519</ID>
+    <ID_Subscription>262</ID_Subscription>
+    <Name>Dynamic/Analog Types/Trigger</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1520</ID>
+    <ID_Subscription>263</ID_Subscription>
+    <Name>Dynamic/Enumerated Types/Fellowship</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1521</ID>
+    <ID_Subscription>263</ID_Subscription>
+    <Name>Dynamic/Enumerated Types/Gems</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1522</ID>
+    <ID_Subscription>264</ID_Subscription>
+    <Name>Complex Data/Static/Bits</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1523</ID>
+    <ID_Subscription>264</ID_Subscription>
+    <Name>Complex Data/Static/FixedArrays</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1524</ID>
+    <ID_Subscription>264</ID_Subscription>
+    <Name>Complex Data/Static/Floats</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1525</ID>
+    <ID_Subscription>264</ID_Subscription>
+    <Name>Complex Data/Static/Integers</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1526</ID>
+    <ID_Subscription>264</ID_Subscription>
+    <Name>Complex Data/Static/Strings</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1527</ID>
+    <ID_Subscription>264</ID_Subscription>
+    <Name>Complex Data/Static/Structs</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1528</ID>
+    <ID_Subscription>264</ID_Subscription>
+    <Name>Complex Data/Static/TerminatedArrays</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1529</ID>
+    <ID_Subscription>264</ID_Subscription>
+    <Name>Complex Data/Static/VariableArrays</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1530</ID>
+    <ID_Subscription>265</ID_Subscription>
+    <Name>Complex Data/Dynamic/FixedArrays</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1531</ID>
+    <ID_Subscription>266</ID_Subscription>
+    <Name>CPX/OPCBinary/OpcDa30Server.binary</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1532</ID>
+    <ID_Subscription>267</ID_Subscription>
+    <Name>CPX/XMLSchema/OpcDa30Server.binary</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1533</ID>
+    <ID_Subscription>268</ID_Subscription>
+    <Name>Static/Analog Types/Double</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1534</ID>
+    <ID_Subscription>268</ID_Subscription>
+    <Name>Static/Analog Types/Double[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1535</ID>
+    <ID_Subscription>268</ID_Subscription>
+    <Name>Static/Analog Types/Int</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1536</ID>
+    <ID_Subscription>268</ID_Subscription>
+    <Name>Static/Analog Types/Int[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1537</ID>
+    <ID_Subscription>269</ID_Subscription>
+    <Name>Static/Limited Access/Read Only 1</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1538</ID>
+    <ID_Subscription>269</ID_Subscription>
+    <Name>Static/Limited Access/Read Only 2</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1539</ID>
+    <ID_Subscription>269</ID_Subscription>
+    <Name>Static/Limited Access/Write Only 1</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1540</ID>
+    <ID_Subscription>269</ID_Subscription>
+    <Name>Static/Limited Access/Write Only 2</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1541</ID>
+    <ID_Subscription>270</ID_Subscription>
+    <Name>Static/Simple Types/Boolean</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1542</ID>
+    <ID_Subscription>270</ID_Subscription>
+    <Name>Static/Simple Types/Byte</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1543</ID>
+    <ID_Subscription>270</ID_Subscription>
+    <Name>Static/Simple Types/DateTime</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1544</ID>
+    <ID_Subscription>270</ID_Subscription>
+    <Name>Static/Simple Types/Decimal</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1545</ID>
+    <ID_Subscription>270</ID_Subscription>
+    <Name>Static/Simple Types/Double</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1546</ID>
+    <ID_Subscription>270</ID_Subscription>
+    <Name>Static/Simple Types/Float</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1547</ID>
+    <ID_Subscription>270</ID_Subscription>
+    <Name>Static/Simple Types/Int</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1548</ID>
+    <ID_Subscription>270</ID_Subscription>
+    <Name>Static/Simple Types/Long</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1549</ID>
+    <ID_Subscription>270</ID_Subscription>
+    <Name>Static/Simple Types/SByte</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1550</ID>
+    <ID_Subscription>270</ID_Subscription>
+    <Name>Static/Simple Types/Short</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1551</ID>
+    <ID_Subscription>270</ID_Subscription>
+    <Name>Static/Simple Types/String</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1552</ID>
+    <ID_Subscription>270</ID_Subscription>
+    <Name>Static/Simple Types/UInt</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1553</ID>
+    <ID_Subscription>270</ID_Subscription>
+    <Name>Static/Simple Types/ULong</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1554</ID>
+    <ID_Subscription>270</ID_Subscription>
+    <Name>Static/Simple Types/UShort</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1555</ID>
+    <ID_Subscription>271</ID_Subscription>
+    <Name>Static/ArrayTypes/Boolean[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1556</ID>
+    <ID_Subscription>271</ID_Subscription>
+    <Name>Static/ArrayTypes/Byte[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1557</ID>
+    <ID_Subscription>271</ID_Subscription>
+    <Name>Static/ArrayTypes/DateTime[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1558</ID>
+    <ID_Subscription>271</ID_Subscription>
+    <Name>Static/ArrayTypes/Decimal[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1559</ID>
+    <ID_Subscription>271</ID_Subscription>
+    <Name>Static/ArrayTypes/Double[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1560</ID>
+    <ID_Subscription>271</ID_Subscription>
+    <Name>Static/ArrayTypes/Float[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1561</ID>
+    <ID_Subscription>271</ID_Subscription>
+    <Name>Static/ArrayTypes/Int[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1562</ID>
+    <ID_Subscription>271</ID_Subscription>
+    <Name>Static/ArrayTypes/Long[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1563</ID>
+    <ID_Subscription>271</ID_Subscription>
+    <Name>Static/ArrayTypes/Object[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1564</ID>
+    <ID_Subscription>271</ID_Subscription>
+    <Name>Static/ArrayTypes/SByte[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1565</ID>
+    <ID_Subscription>271</ID_Subscription>
+    <Name>Static/ArrayTypes/Short[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1566</ID>
+    <ID_Subscription>271</ID_Subscription>
+    <Name>Static/ArrayTypes/String[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1567</ID>
+    <ID_Subscription>271</ID_Subscription>
+    <Name>Static/ArrayTypes/UInt[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1568</ID>
+    <ID_Subscription>271</ID_Subscription>
+    <Name>Static/ArrayTypes/ULong[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1569</ID>
+    <ID_Subscription>271</ID_Subscription>
+    <Name>Static/ArrayTypes/UShort[]</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1570</ID>
+    <ID_Subscription>272</ID_Subscription>
+    <Name>Static/Enumerated Types/Fellowship</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1571</ID>
+    <ID_Subscription>272</ID_Subscription>
+    <Name>Static/Enumerated Types/Gems</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1572</ID>
+    <ID_Subscription>273</ID_Subscription>
+    <Name>Complex Data/Static/Bits</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1573</ID>
+    <ID_Subscription>273</ID_Subscription>
+    <Name>Complex Data/Static/FixedArrays</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1574</ID>
+    <ID_Subscription>273</ID_Subscription>
+    <Name>Complex Data/Static/Floats</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1575</ID>
+    <ID_Subscription>273</ID_Subscription>
+    <Name>Complex Data/Static/Integers</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1576</ID>
+    <ID_Subscription>273</ID_Subscription>
+    <Name>Complex Data/Static/Strings</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1577</ID>
+    <ID_Subscription>273</ID_Subscription>
+    <Name>Complex Data/Static/Structs</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1578</ID>
+    <ID_Subscription>273</ID_Subscription>
+    <Name>Complex Data/Static/TerminatedArrays</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1579</ID>
+    <ID_Subscription>273</ID_Subscription>
+    <Name>Complex Data/Static/VariableArrays</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>1580</ID>
+    <ID_Subscription>274</ID_Subscription>
+    <Name>Complex Data/Dynamic/FixedArrays</Name>
+    <Active>true</Active>
+  </Items>
+</ConfigurationDataBase>

@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AddressSpaceDataBase" targetNamespace="http://www.commsvr.com/opc/AddressSpaceDataBase.xsd" xmlns:mstns="http://www.commsvr.com/opc/AddressSpaceDataBase.xsd" xmlns="http://www.commsvr.com/opc/AddressSpaceDataBase.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AddressSpaceDataBase" msdata:IsDataSet="true" msdata:CaseSensitive="true" msdata:Locale="" msprop:Generator_UserDSName="AddressSpaceDataBase" msprop:Generator_DataSetName="AddressSpaceDataBase" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ServersTable" msdata:CaseSensitive="False" msprop:Generator_UserTableName="ServersTable" msprop:Generator_RowDeletedName="ServersTableRowDeleted" msprop:Generator_RowChangedName="ServersTableRowChanged" msprop:Generator_RowClassName="ServersTableRow" msprop:Generator_RowChangingName="ServersTableRowChanging" msprop:Generator_RowEvArgName="ServersTableRowChangeEvent" msprop:Generator_RowEvHandlerName="ServersTableRowChangeEventHandler" msprop:Generator_TableClassName="ServersTableDataTable" msprop:Generator_TableVarName="tableServersTable" msprop:Generator_RowDeletingName="ServersTableRowDeleting" msprop:Generator_TablePropName="ServersTable">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:int" />
+              <xs:element name="VendorInfo" msprop:Generator_UserColumnName="VendorInfo" msprop:Generator_ColumnPropNameInRow="VendorInfo" msprop:Generator_ColumnVarNameInTable="columnVendorInfo" msprop:Generator_ColumnPropNameInTable="VendorInfoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductVersion" msprop:Generator_UserColumnName="ProductVersion" msprop:Generator_ColumnPropNameInRow="ProductVersion" msprop:Generator_ColumnVarNameInTable="columnProductVersion" msprop:Generator_ColumnPropNameInTable="ProductVersionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CurrentTime" msprop:Generator_UserColumnName="CurrentTime" msprop:Generator_ColumnPropNameInRow="CurrentTime" msprop:Generator_ColumnVarNameInTable="columnCurrentTime" msprop:Generator_ColumnPropNameInTable="CurrentTimeColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="URLString" msprop:Generator_UserColumnName="URLString" msprop:Generator_ColumnPropNameInRow="URLString" msprop:Generator_ColumnVarNameInTable="columnURLString" msprop:Generator_ColumnPropNameInTable="URLStringColumn" type="xs:string" />
+              <xs:element name="Domain" msprop:Generator_UserColumnName="Domain" msprop:Generator_ColumnPropNameInRow="Domain" msprop:Generator_ColumnVarNameInTable="columnDomain" msprop:Generator_ColumnPropNameInTable="DomainColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Password" msprop:Generator_UserColumnName="Password" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnVarNameInTable="columnPassword" msprop:Generator_ColumnPropNameInTable="PasswordColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="UserName" msprop:Generator_UserColumnName="UserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="LicenseKey" msprop:Generator_UserColumnName="LicenseKey" msprop:Generator_ColumnPropNameInRow="LicenseKey" msprop:Generator_ColumnVarNameInTable="columnLicenseKey" msprop:Generator_ColumnPropNameInTable="LicenseKeyColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SpecificationID" msprop:Generator_UserColumnName="SpecificationID" msprop:Generator_ColumnPropNameInRow="SpecificationID" msprop:Generator_ColumnVarNameInTable="columnSpecificationID" msprop:Generator_ColumnPropNameInTable="SpecificationIDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SpecificationDescription" msprop:Generator_UserColumnName="SpecificationDescription" msprop:Generator_ColumnPropNameInRow="SpecificationDescription" msprop:Generator_ColumnVarNameInTable="columnSpecificationDescription" msprop:Generator_ColumnPropNameInTable="SpecificationDescriptionColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TagsTable" msprop:Generator_UserTableName="TagsTable" msprop:Generator_RowDeletedName="TagsTableRowDeleted" msprop:Generator_RowChangedName="TagsTableRowChanged" msprop:Generator_RowClassName="TagsTableRow" msprop:Generator_RowChangingName="TagsTableRowChanging" msprop:Generator_RowEvArgName="TagsTableRowChangeEvent" msprop:Generator_RowEvHandlerName="TagsTableRowChangeEventHandler" msprop:Generator_TableClassName="TagsTableDataTable" msprop:Generator_TableVarName="tableTagsTable" msprop:Generator_RowDeletingName="TagsTableRowDeleting" msprop:Generator_TablePropName="TagsTable">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:int" />
+              <xs:element name="TagID" msprop:Generator_UserColumnName="TagID" msprop:Generator_ColumnPropNameInRow="TagID" msprop:Generator_ColumnVarNameInTable="columnTagID" msprop:Generator_ColumnPropNameInTable="TagIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ServerID" msprop:Generator_UserColumnName="ServerID" msprop:Generator_ColumnPropNameInRow="ServerID" msprop:Generator_ColumnVarNameInTable="columnServerID" msprop:Generator_ColumnPropNameInTable="ServerIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Name" msdata:Caption="A descriptive name for element that is unique within a branch." msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" type="xs:string" />
+              <xs:element name="ItemName" msdata:Caption="The primary identifier for the element within the server namespace." msprop:Generator_UserColumnName="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" type="xs:string" />
+              <xs:element name="ItemPath" msdata:Caption="An secondary identifier for the element within the server namespace." msprop:Generator_UserColumnName="ItemPath" msprop:Generator_ColumnVarNameInTable="columnItemPath" msprop:Generator_ColumnPropNameInRow="ItemPath" msprop:Generator_ColumnPropNameInTable="ItemPathColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="IsItem" msdata:Caption="Whether the element refers to an item with data that can be accessed." msprop:Generator_UserColumnName="IsItem" msprop:Generator_ColumnVarNameInTable="columnIsItem" msprop:Generator_ColumnPropNameInRow="IsItem" msprop:Generator_ColumnPropNameInTable="IsItemColumn" type="xs:boolean" />
+              <xs:element name="HasChildren" msdata:Caption="Whether the element has children." msprop:Generator_UserColumnName="HasChildren" msprop:Generator_ColumnVarNameInTable="columnHasChildren" msprop:Generator_ColumnPropNameInRow="HasChildren" msprop:Generator_ColumnPropNameInTable="HasChildrenColumn" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ItemPropertiesTable" msprop:Generator_UserTableName="ItemPropertiesTable" msprop:Generator_RowDeletedName="ItemPropertiesTableRowDeleted" msprop:Generator_RowChangedName="ItemPropertiesTableRowChanged" msprop:Generator_RowClassName="ItemPropertiesTableRow" msprop:Generator_RowChangingName="ItemPropertiesTableRowChanging" msprop:Generator_RowEvArgName="ItemPropertiesTableRowChangeEvent" msprop:Generator_RowEvHandlerName="ItemPropertiesTableRowChangeEventHandler" msprop:Generator_TableClassName="ItemPropertiesTableDataTable" msprop:Generator_TableVarName="tableItemPropertiesTable" msprop:Generator_RowDeletingName="ItemPropertiesTableRowDeleting" msprop:Generator_TablePropName="ItemPropertiesTable">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:int" />
+              <xs:element name="TagID" msprop:Generator_UserColumnName="TagID" msprop:Generator_ColumnVarNameInTable="columnTagID" msprop:Generator_ColumnPropNameInRow="TagID" msprop:Generator_ColumnPropNameInTable="TagIDColumn" type="xs:int" />
+              <xs:element name="Description" msdata:Caption="A short description of the property." msprop:Generator_UserColumnName="Description" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemName" msdata:Caption="The primary identifier for the property if it is directly accessible as an item." msprop:Generator_UserColumnName="ItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemPath" msprop:Generator_UserColumnName="ItemPath" msprop:Generator_ColumnPropNameInRow="ItemPath" msprop:Generator_ColumnVarNameInTable="columnItemPath" msprop:Generator_ColumnPropNameInTable="ItemPathColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ID_Name_Name" msdata:Caption="Used for properties identified by a qualified name" msprop:Generator_UserColumnName="ID_Name_Name" msprop:Generator_ColumnPropNameInRow="ID_Name_Name" msprop:Generator_ColumnVarNameInTable="columnID_Name_Name" msprop:Generator_ColumnPropNameInTable="ID_Name_NameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ID_Name_Namespace" msdata:Caption="A string representation of the namespace or String.Empty" msprop:Generator_UserColumnName="ID_Name_Namespace" msprop:Generator_ColumnPropNameInRow="ID_Name_Namespace" msprop:Generator_ColumnVarNameInTable="columnID_Name_Namespace" msprop:Generator_ColumnPropNameInTable="ID_Name_NamespaceColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ID_Code" msprop:Generator_UserColumnName="ID_Code" msprop:Generator_ColumnVarNameInTable="columnID_Code" msprop:Generator_ColumnPropNameInRow="ID_Code" msprop:Generator_ColumnPropNameInTable="ID_CodeColumn" type="xs:int" />
+              <xs:element name="Value" msprop:Generator_UserColumnName="Value" msprop:Generator_ColumnPropNameInRow="Value" msprop:Generator_ColumnVarNameInTable="columnValue" msprop:Generator_ColumnPropNameInTable="ValueColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LocalesTable" msprop:Generator_UserTableName="LocalesTable" msprop:Generator_RowDeletedName="LocalesTableRowDeleted" msprop:Generator_TableClassName="LocalesTableDataTable" msprop:Generator_RowChangedName="LocalesTableRowChanged" msprop:Generator_RowClassName="LocalesTableRow" msprop:Generator_RowChangingName="LocalesTableRowChanging" msprop:Generator_RowEvArgName="LocalesTableRowChangeEvent" msprop:Generator_RowEvHandlerName="LocalesTableRowChangeEventHandler" msprop:Generator_TablePropName="LocalesTable" msprop:Generator_TableVarName="tableLocalesTable" msprop:Generator_RowDeletingName="LocalesTableRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ServerID" msprop:Generator_UserColumnName="ServerID" msprop:Generator_ColumnPropNameInRow="ServerID" msprop:Generator_ColumnVarNameInTable="columnServerID" msprop:Generator_ColumnPropNameInTable="ServerIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Locale" msprop:Generator_UserColumnName="Locale" msprop:Generator_ColumnPropNameInRow="Locale" msprop:Generator_ColumnVarNameInTable="columnLocale" msprop:Generator_ColumnPropNameInTable="LocaleColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="PK_ServerID" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ServersTable" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="PK_SubscriptionID" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TagsTable" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="ItemPropertiesTableKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ItemPropertiesTable" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:keyref name="FK_TagsTable_ItemPropertiesTable" refer="PK_SubscriptionID" msprop:rel_Generator_UserRelationName="FK_TagsTable_ItemPropertiesTable" msprop:rel_Generator_RelationVarName="relationFK_TagsTable_ItemPropertiesTable" msprop:rel_Generator_UserChildTable="ItemPropertiesTable" msprop:rel_Generator_UserParentTable="TagsTable" msprop:rel_Generator_ParentPropName="TagsTableRow" msprop:rel_Generator_ChildPropName="GetItemPropertiesTableRows">
+      <xs:selector xpath=".//mstns:ItemPropertiesTable" />
+      <xs:field xpath="mstns:TagID" />
+    </xs:keyref>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="ServersTable_TagsTable" msdata:parent="ServersTable" msdata:child="TagsTable" msdata:parentkey="ID" msdata:childkey="ServerID" msprop:Generator_UserRelationName="ServersTable_TagsTable" msprop:Generator_RelationVarName="relationServersTable_TagsTable" msprop:Generator_UserChildTable="TagsTable" msprop:Generator_UserParentTable="ServersTable" msprop:Generator_ParentPropName="ServersTableRow" msprop:Generator_ChildPropName="GetTagsTableRows" />
+      <msdata:Relationship name="TagsTable_TagsTable" msdata:parent="TagsTable" msdata:child="TagsTable" msdata:parentkey="ID" msdata:childkey="TagID" msprop:Generator_UserRelationName="TagsTable_TagsTable" msprop:Generator_RelationVarName="relationTagsTable_TagsTable" msprop:Generator_UserChildTable="TagsTable" msprop:Generator_UserParentTable="TagsTable" msprop:Generator_ParentPropName="TagsTableRowParent" msprop:Generator_ChildPropName="GetTagsTableRows" />
+      <msdata:Relationship name="ServersTable_LocalesTable" msdata:parent="ServersTable" msdata:child="LocalesTable" msdata:parentkey="ID" msdata:childkey="ServerID" msprop:Generator_UserRelationName="ServersTable_LocalesTable" msprop:Generator_RelationVarName="relationServersTable_LocalesTable" msprop:Generator_UserChildTable="LocalesTable" msprop:Generator_UserParentTable="ServersTable" msprop:Generator_ParentPropName="ServersTableRow" msprop:Generator_ChildPropName="GetLocalesTableRows" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

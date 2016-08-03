@@ -1,0 +1,545 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C9DF875B-B3DC-4B92-BB14-DF90B062EC17}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CAS.Lib.OPCClientControlsLib</RootNamespace>
+    <AssemblyName>CAS.CommServer.DA.Viewer.FormControls</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>Przegl_Full.ico</ApplicationIcon>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>cas.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\CAS.CommServer.DA.Viewer.FormControls.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\CAS.CommServer.DA.Viewer.FormControls.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CAS.CodeProtect, Version=5.0.2.39087, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.CodeProtect.5.0.2\lib\net35\CAS.CodeProtect.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommServer.DA.Client.Operations, Version=2.0.13.37740, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.CommServer.DA.Client.Operations.2.00.13\lib\net451\CAS.CommServer.DA.Client.Operations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommServer.DA.Client.Services, Version=2.0.13.37739, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.CommServer.DA.Client.Operations.2.00.13\lib\net451\CAS.CommServer.DA.Client.Services.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommServer.DAClientConfiguration, Version=3.12.1.17970, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.CommServer.DAClientConfiguration.3.12.1\lib\net451\CAS.CommServer.DAClientConfiguration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommServer.DeviceSymulator, Version=5.1.0.37240, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.CommServer.DeviceSimulator.5.01.00\lib\net451\CAS.CommServer.DeviceSymulator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommServer.OPCClassic.SDK.COMWrapper, Version=2.1.106.23280, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.CommServer.OPCClassic.SDK.COMWrapper.2.01.106\lib\net451\CAS.CommServer.OPCClassic.SDK.COMWrapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommServer.OPCClassic.SDK.Core, Version=2.1.106.25891, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.CommServer.OPCClassic.SDK.Core.2.01.106\lib\net451\CAS.CommServer.OPCClassic.SDK.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.ControlLibrary, Version=5.0.2.39089, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.Windows.Forms.5.0.2\lib\net35\CAS.ControlLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.RTLib, Version=5.0.2.39089, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.RealTime.5.0.2\lib\net35\CAS.RTLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.RTLibComm, Version=5.0.2.39088, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.RealTime.5.0.2\lib\net35\CAS.RTLibComm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpcComRcw, Version=2.0.106.0, Culture=neutral, PublicKeyToken=78aea80f6827b5ab, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.CommServer.OPCClassic.SDK.COMWrapper.2.01.106\lib\net451\OpcComRcw.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\MainGUI\AssemblyVersionInfo.cs">
+      <Link>Properties\AssemblyVersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="AsyncRequestDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Brose\BrowseFiltersDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Brose\BrowseTreeCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Brose\DictionaryDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Brose\DictionaryDialog.Designer.cs">
+      <DependentUpon>DictionaryDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Brose\PropertyFiltersCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Brose\PropertyListViewCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\EditBinaryDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\EditValueDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Factory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\LocaleSelectDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\NetworkCredentialsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\OptionsEditDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\OptionsEditDlg.Designer.cs">
+      <DependentUpon>OptionsEditDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\ProxyServerDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataTypeCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\EditArrayDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\EditComplexValueDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\EditObjectListDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\EnumCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImagesResources.Designer.cs">
+      <DependentUpon>ImagesResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ItemValue\ItemValueEditCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemValue\ItemValueListEditCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemValue\ItemValueListEditDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item\ItemEditCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\ItemListEditCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item\ItemListEditDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item\ReadItemsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item\WriteItemsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\LocaleCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OPVListViewSorter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ResultListViewCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Server\SelectServerDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Server\SelectServerStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Server\ServerStatusDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Server\ServerStatusStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SortHandler.cs" />
+    <Compile Include="Subscription\SessionTreeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Subscription\SessionTreeControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Subscription\SessionTreeControlBase.Designer.cs">
+      <DependentUpon>SessionTreeControlBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Subscription\SubscriptionAddItemsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subscription\SubscriptionCreateDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subscription\SubscriptionEditCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Subscription\SubscriptionListEditDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subscription\SubscriptionManagementDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subscription\SubscriptionManagementDlg.Designer.cs">
+      <DependentUpon>SubscriptionManagementDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Subscription\Subscriptions4RWControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Subscription\SubscriptionTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Subscription\SubscriptionTreeView.Designer.cs">
+      <DependentUpon>SubscriptionTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\ValueCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tracer.cs" />
+    <Compile Include="TreeNodes\Browse\BrowseElementNode.cs" />
+    <Compile Include="TreeNodes\Browse\BrowseServer.cs" />
+    <Compile Include="TreeNodes\Browse\BrowseTreeNode.cs" />
+    <Compile Include="TreeNodes\Browse\CommonTreeNodes.cs" />
+    <Compile Include="TreeNodes\Browse\ComputerTreeNodes.cs" />
+    <Compile Include="TreeNodes\Browse\DummyNode.cs" />
+    <Compile Include="TreeNodes\Browse\IBrowse.cs" />
+    <Compile Include="TreeNodes\ITreeNodeCommon.cs" />
+    <Compile Include="TreeNodes\Browse\NetworkTreeNode.cs" />
+    <Compile Include="TreeNodes\Browse\OPCBrowseServer.cs" />
+    <Compile Include="TreeNodes\ServerShutdownEventArgs.cs" />
+    <Compile Include="TreeNodes\Session\ContextMenuServer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeNodes\Session\ContextMenuServer.Designer.cs">
+      <DependentUpon>ContextMenuServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TreeNodes\Session\ContextMenuSubscription.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TreeNodes\Session\ContextMenuSubscription.Designer.cs">
+      <DependentUpon>ContextMenuSubscription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TreeNodes\Session\ContextMenuTag.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TreeNodes\Session\ContextMenuTag.Designer.cs">
+      <DependentUpon>ContextMenuTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TreeNodes\Session\ISession.cs" />
+    <Compile Include="TreeNodes\Session\OPCServerTreeNodes.cs" />
+    <Compile Include="TreeNodes\Session\PropertyTreeNode.cs" />
+    <Compile Include="TreeNodes\Session\OPCEnvironment.cs" />
+    <Compile Include="TreeNodes\Session\SessionTreeNode.cs" />
+    <Compile Include="TreeNodes\Session\SubscriptionTreeNode.cs" />
+    <Compile Include="TreeNodes\Session\SubscriptionTreeNode4RW.cs" />
+    <Compile Include="TreeNodes\Session\SubscriptionTreeNodeBase.cs" />
+    <Compile Include="TreeNodes\Session\TagTreeNode.cs" />
+    <Compile Include="TreeNodes\Session\TagTreeNode4RW.cs" />
+    <Compile Include="TreeNodes\Session\TagTreeNodeBase.cs" />
+    <Compile Include="UpdatesViewCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UpdatesViewCtrl.Designer.cs">
+      <DependentUpon>UpdatesViewCtrl.cs</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AsyncRequestDlg.resx">
+      <DependentUpon>AsyncRequestDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Brose\BrowseFiltersDlg.resx">
+      <DependentUpon>BrowseFiltersDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Brose\BrowseTreeCtrl.resx">
+      <DependentUpon>BrowseTreeCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Brose\DictionaryDialog.resx">
+      <DependentUpon>DictionaryDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Brose\PropertyFiltersCtrl.resx">
+      <DependentUpon>PropertyFiltersCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Brose\PropertyListViewCtrl.resx">
+      <DependentUpon>PropertyListViewCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\EditBinaryDlg.resx">
+      <DependentUpon>EditBinaryDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\EditValueDlg.resx">
+      <DependentUpon>EditValueDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\LocaleSelectDlg.resx">
+      <DependentUpon>LocaleSelectDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\NetworkCredentialsDlg.resx">
+      <DependentUpon>NetworkCredentialsDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\OptionsEditDlg.resx">
+      <DependentUpon>OptionsEditDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\ProxyServerDlg.resx">
+      <DependentUpon>ProxyServerDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataTypeCtrl.resx">
+      <DependentUpon>DataTypeCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\EditArrayDlg.resx">
+      <DependentUpon>EditArrayDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\EditComplexValueDlg.resx">
+      <DependentUpon>EditComplexValueDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\EditObjectListDlg.resx">
+      <DependentUpon>EditObjectListDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\EnumCtrl.resx">
+      <DependentUpon>EnumCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImagesResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ImagesResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemValue\ItemValueEditCtrl.resx">
+      <DependentUpon>ItemValueEditCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemValue\ItemValueListEditCtrl.resx">
+      <DependentUpon>ItemValueListEditCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemValue\ItemValueListEditDlg.resx">
+      <DependentUpon>ItemValueListEditDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\ItemEditCtrl.resx">
+      <DependentUpon>ItemEditCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\ItemListEditCtrl.resx">
+      <DependentUpon>ItemListEditCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\ItemListEditDlg.resx">
+      <DependentUpon>ItemListEditDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\ReadItemsDlg.resx">
+      <DependentUpon>ReadItemsDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\WriteItemsDlg.resx">
+      <DependentUpon>WriteItemsDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\LocaleCtrl.resx">
+      <DependentUpon>LocaleCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultListViewCtrl.resx">
+      <DependentUpon>ResultListViewCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Server\SelectServerDlg.resx">
+      <DependentUpon>SelectServerDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Server\SelectServerStrip.resx">
+      <DependentUpon>SelectServerStrip.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Server\ServerStatusDlg.resx">
+      <DependentUpon>ServerStatusDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Server\ServerStatusStrip.resx">
+      <DependentUpon>ServerStatusStrip.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subscription\SessionTreeControl.resx">
+      <DependentUpon>SessionTreeControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subscription\SessionTreeControlBase.resx">
+      <DependentUpon>SessionTreeControlBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subscription\SubscriptionEditCtrl.resx">
+      <DependentUpon>SubscriptionEditCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subscription\SubscriptionListEditDlg.resx">
+      <DependentUpon>SubscriptionListEditDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subscription\SubscriptionManagementDlg.resx">
+      <DependentUpon>SubscriptionManagementDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subscription\SubscriptionTreeView.resx">
+      <DependentUpon>SubscriptionTreeView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\ValueCtrl.resx">
+      <DependentUpon>ValueCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TreeNodes\Session\ContextMenuServer.resx">
+      <DependentUpon>ContextMenuServer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TreeNodes\Session\ContextMenuSubscription.resx">
+      <DependentUpon>ContextMenuSubscription.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TreeNodes\Session\ContextMenuTag.resx">
+      <DependentUpon>ContextMenuTag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdatesViewCtrl.resx">
+      <DependentUpon>UpdatesViewCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cas.snk" />
+    <None Include="DemoConfiguration.oses" />
+    <None Include="packages.config" />
+    <None Include="Resources\Przegl_Full.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Przegl_Full.ico" />
+    <None Include="ClassDiagram\BrowseTreeNode.cd" />
+    <None Include="ClassDiagram\Server.cd" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\blok_danych_48.png" />
+    <None Include="Resources\dictionary.png" />
+    <Content Include="Resources\DisconnectedDrive.png" />
+    <None Include="Resources\FloppyDisk.png" />
+    <None Include="Resources\Folder_Open.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\Filter.png" />
+    <None Include="Resources\FloppyDisk1.png" />
+    <None Include="Resources\export.png" />
+    <None Include="Resources\Filter1.png" />
+    <None Include="Resources\filter_remove.png" />
+    <Content Include="Resources\info.png" />
+    <None Include="Resources\operacja_48.png" />
+    <None Include="Resources\Przegl_48.png" />
+    <None Include="Resources\Network_ConnectTo.png" />
+    <None Include="Resources\OpenXml.png" />
+    <Content Include="Resources\Read.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\serwer_opc_connect_48.png" />
+    <None Include="Resources\serwer_opc_disconnect_48.png" />
+    <None Include="Resources\serwer_opc_info_48.png" />
+    <None Include="Resources\serwer_opc_read_48.png" />
+    <None Include="Resources\serwer_opc_start_48.png" />
+    <None Include="Resources\SecurityLock.png" />
+    <None Include="Resources\reload_all_tabs.png" />
+    <None Include="Resources\SecurityUnlock.png" />
+    <None Include="Resources\serwer_opc_48.png" />
+    <Content Include="Resources\serwer_opc_start_481.png" />
+    <None Include="Resources\serwer_opc_stop_48.png" />
+    <Content Include="Resources\serwer_opc_stop_481.png" />
+    <None Include="Resources\serwer_opc_write_48.png" />
+    <None Include="Resources\tag_element_48.png" />
+    <Content Include="Resources\Write.png" />
+    <None Include="Resources\xml.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AddressSpace\CommServer.DAViewerAddressSpace.csproj">
+      <Project>{86337FCD-D411-4E63-B80F-E121318D5572}</Project>
+      <Name>CommServer.DAViewerAddressSpace</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

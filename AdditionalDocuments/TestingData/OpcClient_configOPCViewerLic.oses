@@ -1,0 +1,399 @@
+<?xml version="1.0" standalone="yes"?>
+<ConfigurationDataBase xmlns="http://commsvr.com/opc/OPCCliConfiguration.xsd">
+  <xs:schema id="ConfigurationDataBase" targetNamespace="http://commsvr.com/opc/OPCCliConfiguration.xsd" xmlns:mstns="http://commsvr.com/opc/OPCCliConfiguration.xsd" xmlns="http://commsvr.com/opc/OPCCliConfiguration.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+    <xs:element name="ConfigurationDataBase" msdata:IsDataSet="true" msdata:CaseSensitive="true" msdata:Locale="">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Servers">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" msdata:AutoIncrement="true" type="xs:long" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="URL" type="xs:string" />
+                <xs:element name="PreferedSpecyficationID" type="xs:string" />
+                <xs:element name="PreferedSpecyficationDsc" type="xs:string" />
+                <xs:element name="IsConnected" type="xs:boolean" default="true" />
+                <xs:element name="Locale" type="xs:string" minOccurs="0" />
+                <xs:element name="Filter" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Subscriptions">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" msdata:AutoIncrement="true" type="xs:long" />
+                <xs:element name="ID_server" type="xs:long" />
+                <xs:element name="Name" type="xs:string" />
+                <xs:element name="UpdateRate" type="xs:int" />
+                <xs:element name="Locale" type="xs:string" minOccurs="0" />
+                <xs:element name="KeepAliveRate" type="xs:int" minOccurs="0" />
+                <xs:element name="Deadband" type="xs:float" minOccurs="0" />
+                <xs:element name="Enabled" type="xs:boolean" />
+                <xs:element name="Active" type="xs:boolean" />
+                <xs:element name="Asynchronous" msdata:Caption="Async" type="xs:boolean" default="false" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Items">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" msdata:AutoIncrement="true" type="xs:long" />
+                <xs:element name="ID_Subscription" type="xs:long" />
+                <xs:element name="Name" type="xs:string" />
+                <xs:element name="MaxAge" type="xs:int" minOccurs="0" />
+                <xs:element name="Active" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Deadband" type="xs:float" minOccurs="0" />
+                <xs:element name="EnableBuffering" type="xs:boolean" minOccurs="0" />
+                <xs:element name="ItemPath" type="xs:string" minOccurs="0" />
+                <xs:element name="SamplingRate" type="xs:int" minOccurs="0" />
+                <xs:element name="RequestedTypeFullName" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Transactions">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" msdata:AutoIncrement="true" type="xs:long" />
+                <xs:element name="Name" type="xs:string" />
+                <xs:element name="ID_itemIN" type="xs:long" minOccurs="0" />
+                <xs:element name="Deadband" type="xs:int" minOccurs="0" />
+                <xs:element name="MinUpdateRate" type="xs:int" minOccurs="0" />
+                <xs:element name="TransactionRate" type="xs:int" />
+                <xs:element name="Comment" type="xs:string" minOccurs="0" />
+                <xs:element name="BadQualityValue" type="xs:string" minOccurs="0" />
+                <xs:element name="StopIfBadQuality" type="xs:boolean" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Operations">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" msdata:AutoIncrement="true" type="xs:long" />
+                <xs:element name="Name" type="xs:string" />
+                <xs:element name="ID_Transaction" type="xs:long" />
+                <xs:element name="Param" type="xs:string" minOccurs="0" />
+                <xs:element name="OperationType" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+                <xs:element name="ID_Item" type="xs:long" minOccurs="0" />
+                <xs:element name="Comment" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="OperationLinks">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID_Operation" type="xs:long" />
+                <xs:element name="Input_number" type="xs:int" />
+                <xs:element name="IDChild_Operation" type="xs:long" />
+                <xs:element name="ChildOutput_number" type="xs:int" default="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="ConnectData">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID_Server" type="xs:long" />
+                <xs:element name="Password" type="xs:string" minOccurs="0" />
+                <xs:element name="Domain" type="xs:string" minOccurs="0" />
+                <xs:element name="UserName" type="xs:string" minOccurs="0" />
+                <xs:element name="LicenseKey" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Conversions">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID_Item" type="xs:long" />
+                <xs:element name="MeasuredValue1" type="xs:float" default="0" />
+                <xs:element name="MeasuredValue2" type="xs:float" default="1" />
+                <xs:element name="EngineeringValue1" type="xs:float" default="0" />
+                <xs:element name="EngineeringValue2" type="xs:float" default="1" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="OPCCliConfigurationKey1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//mstns:Servers" />
+        <xs:field xpath="mstns:ID" />
+      </xs:unique>
+      <xs:unique name="OPCCliConfigurationKey2">
+        <xs:selector xpath=".//mstns:Subscriptions" />
+        <xs:field xpath="mstns:ID" />
+      </xs:unique>
+      <xs:unique name="OPCCliConfigurationKey3">
+        <xs:selector xpath=".//mstns:Items" />
+        <xs:field xpath="mstns:ID" />
+      </xs:unique>
+      <xs:unique name="TransactionMasterKey">
+        <xs:selector xpath=".//mstns:Transactions" />
+        <xs:field xpath="mstns:ID" />
+      </xs:unique>
+      <xs:unique name="Constraint1">
+        <xs:selector xpath=".//mstns:Transactions" />
+        <xs:field xpath="mstns:Name" />
+      </xs:unique>
+      <xs:unique name="Operations_Constraint1" msdata:ConstraintName="Constraint1">
+        <xs:selector xpath=".//mstns:Operations" />
+        <xs:field xpath="mstns:ID" />
+      </xs:unique>
+      <xs:unique name="Constraint2" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//mstns:Operations" />
+        <xs:field xpath="mstns:ID_Transaction" />
+        <xs:field xpath="mstns:ID" />
+      </xs:unique>
+      <xs:unique name="OperationsKey_names">
+        <xs:selector xpath=".//mstns:Operations" />
+        <xs:field xpath="mstns:ID" />
+        <xs:field xpath="mstns:Name" />
+      </xs:unique>
+      <xs:unique name="OperationLinksKeyMain" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//mstns:OperationLinks" />
+        <xs:field xpath="mstns:ID_Operation" />
+        <xs:field xpath="mstns:Input_number" />
+      </xs:unique>
+      <xs:unique name="Constraint11">
+        <xs:selector xpath=".//mstns:ConnectData" />
+        <xs:field xpath="mstns:ID_Server" />
+      </xs:unique>
+      <xs:unique name="Conversions_Constraint11" msdata:ConstraintName="Constraint11">
+        <xs:selector xpath=".//mstns:Conversions" />
+        <xs:field xpath="mstns:ID_Item" />
+      </xs:unique>
+      <xs:keyref name="FK_Items_Conversions" refer="OPCCliConfigurationKey3">
+        <xs:selector xpath=".//mstns:Conversions" />
+        <xs:field xpath="mstns:ID_Item" />
+      </xs:keyref>
+      <xs:keyref name="FK_Servers_ConnectData" refer="OPCCliConfigurationKey1">
+        <xs:selector xpath=".//mstns:ConnectData" />
+        <xs:field xpath="mstns:ID_Server" />
+      </xs:keyref>
+      <xs:keyref name="FK_OPERATION_OperationLinks" refer="Operations_Constraint1">
+        <xs:selector xpath=".//mstns:OperationLinks" />
+        <xs:field xpath="mstns:ID_Operation" />
+      </xs:keyref>
+      <xs:keyref name="FK_OPERATION_OperationLinksChild" refer="Operations_Constraint1">
+        <xs:selector xpath=".//mstns:OperationLinks" />
+        <xs:field xpath="mstns:IDChild_Operation" />
+      </xs:keyref>
+      <xs:keyref name="FK_ITEM_OPERATION" refer="OPCCliConfigurationKey3">
+        <xs:selector xpath=".//mstns:Operations" />
+        <xs:field xpath="mstns:ID_Item" />
+      </xs:keyref>
+      <xs:keyref name="FK_TRANSITION_OPERATION" refer="TransactionMasterKey">
+        <xs:selector xpath=".//mstns:Operations" />
+        <xs:field xpath="mstns:ID_Transaction" />
+      </xs:keyref>
+      <xs:keyref name="FK_SUBSCRIPTION_ITEM" refer="OPCCliConfigurationKey2">
+        <xs:selector xpath=".//mstns:Items" />
+        <xs:field xpath="mstns:ID_Subscription" />
+      </xs:keyref>
+      <xs:keyref name="FK_SERVERS_SUBSCRIPTION" refer="OPCCliConfigurationKey1">
+        <xs:selector xpath=".//mstns:Subscriptions" />
+        <xs:field xpath="mstns:ID_server" />
+      </xs:keyref>
+    </xs:element>
+    <xs:annotation>
+      <xs:appinfo>
+        <msdata:Relationship name="ITEM_TRANSITION" msdata:parent="Items" msdata:child="Transactions" msdata:parentkey="ID" msdata:childkey="ID_itemIN" />
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:schema>
+  <Servers>
+    <ID>5</ID>
+    <Name>CAS.CommServer.OPC.Da.Server</Name>
+    <URL>opcda://localhost/CAS.CommServer.OPC.Da.Server</URL>
+    <PreferedSpecyficationID>63D5F432-CFE4-11d1-B2C8-0060083BA1FB</PreferedSpecyficationID>
+    <PreferedSpecyficationDsc>Data Access 2.XX</PreferedSpecyficationDsc>
+    <IsConnected>true</IsConnected>
+    <Filter>9</Filter>
+  </Servers>
+  <Subscriptions>
+    <ID>11</ID>
+    <ID_server>5</ID_server>
+    <Name>Group_Registers</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>12</ID>
+    <ID_server>5</ID_server>
+    <Name>Group_Flags</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>13</ID>
+    <ID_server>5</ID_server>
+    <Name>sasasasasas</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Items>
+    <ID>104</ID>
+    <ID_Subscription>11</ID_Subscription>
+    <Name>R/1500</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>105</ID>
+    <ID_Subscription>11</ID_Subscription>
+    <Name>R/1501</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>106</ID>
+    <ID_Subscription>11</ID_Subscription>
+    <Name>R/1502</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>107</ID>
+    <ID_Subscription>11</ID_Subscription>
+    <Name>R/1503</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>108</ID>
+    <ID_Subscription>11</ID_Subscription>
+    <Name>R/1504</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>109</ID>
+    <ID_Subscription>11</ID_Subscription>
+    <Name>R/1505</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>110</ID>
+    <ID_Subscription>11</ID_Subscription>
+    <Name>R/1506</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>111</ID>
+    <ID_Subscription>11</ID_Subscription>
+    <Name>R/1507</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>112</ID>
+    <ID_Subscription>11</ID_Subscription>
+    <Name>R/1508</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>113</ID>
+    <ID_Subscription>11</ID_Subscription>
+    <Name>R/1509</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>114</ID>
+    <ID_Subscription>12</ID_Subscription>
+    <Name>F/Sub</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>115</ID>
+    <ID_Subscription>12</ID_Subscription>
+    <Name>F/Div</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>116</ID>
+    <ID_Subscription>12</ID_Subscription>
+    <Name>F/Const</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>117</ID>
+    <ID_Subscription>12</ID_Subscription>
+    <Name>F/Random</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>118</ID>
+    <ID_Subscription>12</ID_Subscription>
+    <Name>F/Add</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>119</ID>
+    <ID_Subscription>12</ID_Subscription>
+    <Name>F/Mul</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>120</ID>
+    <ID_Subscription>12</ID_Subscription>
+    <Name>F/InRange</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>121</ID>
+    <ID_Subscription>12</ID_Subscription>
+    <Name>F/1508</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>122</ID>
+    <ID_Subscription>12</ID_Subscription>
+    <Name>F/1509</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>123</ID>
+    <ID_Subscription>12</ID_Subscription>
+    <Name>F/PowerOf10</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>124</ID>
+    <ID_Subscription>13</ID_Subscription>
+    <Name>Dummy_Tag.Dummy00000000.42YNOAA</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>125</ID>
+    <ID_Subscription>13</ID_Subscription>
+    <Name>Dummy_Tag.Dummy00000000.42YNUAA</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>126</ID>
+    <ID_Subscription>13</ID_Subscription>
+    <Name>Dummy_Tag.Dummy00000000.6_AWARIA</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>127</ID>
+    <ID_Subscription>13</ID_Subscription>
+    <Name>Dummy_Tag.Dummy00000000.R_42PCO</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>128</ID>
+    <ID_Subscription>13</ID_Subscription>
+    <Name>Dummy_Tag.Dummy00000000.R_42PCO1</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>129</ID>
+    <ID_Subscription>13</ID_Subscription>
+    <Name>Dummy_Tag.Dummy00000000.R_42PCW</Name>
+    <Active>true</Active>
+  </Items>
+</ConfigurationDataBase>

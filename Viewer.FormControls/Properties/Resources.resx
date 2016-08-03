@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BrowseElementNodeFolder" xml:space="preserve">
+    <value>Address space branch node</value>
+    <comment>CAS.Lib.OPCClientControlsLib.CTN.BrowseElementNode</comment>
+  </data>
+  <data name="BrowseElementNodeTag" xml:space="preserve">
+    <value>Tag node</value>
+    <comment>CAS.Lib.OPCClientControlsLib.CTN.BrowseElementNode</comment>
+  </data>
+  <data name="ComputerTreeNodesToolTip" xml:space="preserve">
+    <value>Computer node</value>
+    <comment>CAS.Lib.OPCClientControlsLib.CTN.ComputerTreeNodes</comment>
+  </data>
+  <data name="DeafaultSpecificationLabel" xml:space="preserve">
+    <value>None</value>
+    <comment>CAS.Lib.OPCClientControlsLib.SelectServerStrip</comment>
+  </data>
+  <data name="DictionaryFileOpenError" xml:space="preserve">
+    <value>Address Space Dictionary File Error</value>
+    <comment>CAS.Lib.OPCClientControlsLib.DictionaryDialog</comment>
+  </data>
+  <data name="Help_CreateSubscription" xml:space="preserve">
+    <value>http://www.commsvr.com/DataPorter/Index.aspx#html/cd9b99cf-299d-47b0-a8a6-348d38f83e25.htm</value>
+  </data>
+  <data name="Help_Default" xml:space="preserve">
+    <value>http://www.commsvr.com/DataPorter/Index.aspx</value>
+  </data>
+  <data name="Help_SelectServerForm" xml:space="preserve">
+    <value>http://www.commsvr.com/DataPorter/Index.aspx#html/662c67b6-580d-4f55-b8f6-20a4fdce79b7.htm</value>
+  </data>
+  <data name="Help_WriteTagSynchronously" xml:space="preserve">
+    <value>http://www.commsvr.com/DataPorter/Index.aspx#html/e8cbd036-5a13-4a3c-b6f1-637561d043fc.htm</value>
+  </data>
+  <data name="ItemValueListEditCtrl_property_error" xml:space="preserve">
+    <value>There was an exception during reading the properties from items.Default values are not set.Reason: </value>
+    <comment>PR30-OPCViever\CAS.OPCClientControlsLib\ItemValue\ItemValueListEditCtrl.cs</comment>
+  </data>
+  <data name="MesageBox_URLError" xml:space="preserve">
+    <value>The selected text cannot be converted to a valid URL, because :  {0}.</value>
+    <comment>CAS.Lib.OPCClientControlsLib.SelectServerStrip</comment>
+  </data>
+  <data name="MessageBox_ConnectStrip" xml:space="preserve">
+    <value>Connect to server tools strip.</value>
+    <comment>CAS.Lib.OPCClientControlsLib.SelectServerStrip</comment>
+  </data>
+  <data name="NetworkTreeNodeToolTip" xml:space="preserve">
+    <value>Local network</value>
+    <comment>CAS.Lib.OPCClientControlsLib.CTN.NetworkTreeNode</comment>
+  </data>
+  <data name="OPCServerTreeNodesToolTipConected" xml:space="preserve">
+    <value>OPC server - connected</value>
+    <comment>CAS.Lib.OPCClientControlsLib.CTN.OPCServerTreeNodes</comment>
+  </data>
+  <data name="OPCServerTreeNodesToolTipDictionary" xml:space="preserve">
+    <value>Dictionary of the a server address space.</value>
+    <comment>CAS.Lib.OPCClientControlsLib.CTN.OPCServerTreeNodes</comment>
+  </data>
+  <data name="OPCServerTreeNodesToolTipFailed" xml:space="preserve">
+    <value>OPC server - connection failed</value>
+    <comment>CAS.Lib.OPCClientControlsLib.CTN.OPCServerTreeNodes</comment>
+  </data>
+  <data name="OPCServerTreeNodesToolTipNotConnected" xml:space="preserve">
+    <value>OPC server - not connected</value>
+    <comment>CAS.Lib.OPCClientControlsLib.CTN.OPCServerTreeNodes</comment>
+  </data>
+  <data name="PropertyNodeToolTip" xml:space="preserve">
+    <value>Property node</value>
+    <comment>CAS.Lib.OPCClientControlsLib.CTN.PropertyNode</comment>
+  </data>
+  <data name="PropertyValueNodeToolTip" xml:space="preserve">
+    <value>Property value node</value>
+    <comment>CAS.Lib.OPCClientControlsLib.CTN.PropertyNode.PropertyValueNode</comment>
+  </data>
+  <data name="SubscriptionTreeNodeToolTipActive" xml:space="preserve">
+    <value>Subscription (active)</value>
+    <comment>CAS.Lib.OPCClientControlsLib.CTN.SubscriptionTreeNode</comment>
+  </data>
+  <data name="SubscriptionTreeNodeToolTipDisabled" xml:space="preserve">
+    <value>Subscription node (disabled)</value>
+    <comment>CAS.Lib.OPCClientControlsLib.CTN.SubscriptionTreeNode</comment>
+  </data>
+  <data name="SubscriptionTreeNodeToolTipNotActive" xml:space="preserve">
+    <value>Subscription (not active)</value>
+    <comment>CAS.Lib.OPCClientControlsLib.CTN.SubscriptionTreeNode</comment>
+  </data>
+  <data name="SubscriptionTreeNodeToolTipNotConnected" xml:space="preserve">
+    <value>Subscription node (off line)</value>
+    <comment>CAS.Lib.OPCClientControlsLib.CTN.SubscriptionTreeNode</comment>
+  </data>
+  <data name="TagTreeNodeToolTipActive" xml:space="preserve">
+    <value>Node representing OPC tag - item value active</value>
+    <comment>CAS.Lib.OPCClientControlsLib.TreeNodes.Session.TagTreeNodeBase&lt;ObjectType,ParentType&gt;</comment>
+  </data>
+  <data name="TagTreeNodeToolTipError" xml:space="preserve">
+    <value>Node representing OPC tag - item in error state</value>
+    <comment>CAS.Lib.OPCClientControlsLib.TreeNodes.Session.TagTreeNodeBase&lt;ObjectType,ParentType&gt;</comment>
+  </data>
+  <data name="TagTreeNodeToolTipNotActive" xml:space="preserve">
+    <value>Node representing OPC tag - -item value not active</value>
+    <comment>CAS.Lib.OPCClientControlsLib.TreeNodes.Session.TagTreeNodeBase&lt;ObjectType,ParentType&gt;</comment>
+  </data>
+  <data name="TreeNodeDummyLable" xml:space="preserve">
+    <value>Dummy node</value>
+    <comment>CAS.Lib.OPCClientControlsLib.CTN.DummyNode</comment>
+  </data>
+  <data name="TreeNodeOPCEnvironmentText" xml:space="preserve">
+    <value>OPC Environment</value>
+    <comment>CAS.Lib.OPCClientControlsLib.TreeNodes.Session.OPCEnvironment</comment>
+  </data>
+  <data name="TreeNodeOPCEnvironmentToolTip" xml:space="preserve">
+    <value>Session OPC Root: root of all of the server connections and subscriptions created in this session.</value>
+    <comment>CAS.Lib.OPCClientControlsLib.TreeNodes.Session.OPCEnvironment</comment>
+  </data>
+  <data name="TreeNodeToolTipDummy" xml:space="preserve">
+    <value>Dummy node do represent any server object</value>
+    <comment>CAS.Lib.OPCClientControlsLib.CTN.DummyNode</comment>
+  </data>
+</root>
