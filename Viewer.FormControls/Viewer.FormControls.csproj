@@ -96,9 +96,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\MainGUI\AssemblyVersionInfo.cs">
-      <Link>Properties\AssemblyVersionInfo.cs</Link>
-    </Compile>
     <Compile Include="AsyncRequestDlg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,7 +189,11 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="OPVListViewSorter.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyInfo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -300,6 +301,7 @@
     <Compile Include="UpdatesViewCtrl.Designer.cs">
       <DependentUpon>UpdatesViewCtrl.cs</DependentUpon>
     </Compile>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
@@ -489,6 +491,10 @@
     <None Include="Resources\Przegl_Full.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Properties\AssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
+    </Content>
     <Content Include="Przegl_Full.ico" />
     <None Include="ClassDiagram\BrowseTreeNode.cd" />
     <None Include="ClassDiagram\Server.cd" />
@@ -529,7 +535,7 @@
     <None Include="Resources\xml.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AddressSpace\CommServer.DAViewerAddressSpace.csproj">
+    <ProjectReference Include="..\CommServer.DAViewerAddressSpace\CommServer.DAViewerAddressSpace.csproj">
       <Project>{86337FCD-D411-4E63-B80F-E121318D5572}</Project>
       <Name>CommServer.DAViewerAddressSpace</Name>
     </ProjectReference>

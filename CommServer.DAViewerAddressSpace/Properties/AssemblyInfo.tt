@@ -1,33 +1,35 @@
-﻿//_______________________________________________________________
-//  Title   :  Assembly info for: CAS.CommServer.DAViewerAddressSpace
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+//_______________________________________________________________
+//  Title   :  Assembly info for: <#=m_AssemblyTitle#>
 //  System  : Microsoft VisualStudio 2013 / C#
-//  $LastChangedDate$
-//  $Rev$
-//  $LastChangedBy$
-//  $URL$
-//  $Id$
+//  $LastChangedDate: 2015-02-04 22:03:37 +0100 (Śr, 04 lut 2015) $
+//  $Rev: 11296 $
+//  $LastChangedBy: mpostol $
+//  $URL: svn://svnserver.hq.cas.com.pl/VS/trunk/PR39-CommonResources/T4Definitions/AssemblyInfo.tt $
+//  $Id: AssemblyInfo.tt 11296 2015-02-04 21:03:37Z mpostol $
 //
-//  Copyright (c) 2000-2016 CAS LODZ POLAND
-//  +48 (42) 686 25 47
-//  techsupp@cas.eu
-//  www.cas.eu
+//  <#=AssemblyCopyright#>
+//  <#=Phone#>
+//  <#=Email#>
+//  <#=Url#>
 //_______________________________________________________________
 
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("CAS.CommServer.DAViewerAddressSpace")]
+[assembly: AssemblyTitle("<#=m_AssemblyTitle#>")]
 [assembly: AssemblyDescription("Dictionary Address Space Description - Provides portable schema to port address space and provide dictionary services")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CAS")]
-[assembly: AssemblyProduct("CAS CommServer Family")]
-[assembly: AssemblyCopyright("Copyright (c) 2000-2016 CAS LODZ POLAND")]
-[assembly: AssemblyTrademark("CommServer")]
+[assembly: AssemblyCompany("<#=AssemblyCompany#>")]
+[assembly: AssemblyProduct("<#=DefaultProductName#>")]
+[assembly: AssemblyCopyright("<#=AssemblyCopyright#>")]
+[assembly: AssemblyTrademark("<#=DefaultProductTrademark#>")]
 [assembly: AssemblyCulture("")]
 [assembly: Guid("e3bdcac3-296e-48f8-8999-616c7cc6afa4")]
-[assembly: AssemblyVersion("3.10.03.*")]
-[assembly: AssemblyFileVersion("3.10.03")]
+[assembly: AssemblyVersion("<#= CASCommServerDAViewerVersion #>.*")]
+[assembly: AssemblyFileVersion("<#= CASCommServerDAViewerVersion #>")]
 
 [assembly: InternalsVisibleToAttribute("<dll name without extension>, PublicKey=0024000004800000940000000602000000240000525341310004000001000100b3cff1bec656a6" +
                                                                        "e3784c75cacce8ee3bc695d0ce135d820c86465eb49b2353f0438d28ad9a458e5350c0c141393d" +
@@ -35,3 +37,7 @@ using System.Runtime.InteropServices;
                                                                        "8149d016bbc6a364beda14fc1119698d8c8d9923805b40122bf594f08cc29f41cb0a31e5e141e3" +
                                                                        "f2421b9d", AllInternalsVisible = true)]
 
+<#@ include file = "..\..\..\PR39-CommonResources\T4Definitions\CAS.OPC.t4" #>
+<#+
+string m_AssemblyTitle = "CAS.CommServer.DAViewerAddressSpace";
+#>
