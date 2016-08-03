@@ -1,0 +1,50 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".nuspec" #>
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id><#=m_AssemblyTitle#></id>
+    <version><#= CASCommServerDAViewerVersion #><#= CASCommServerDAViewerPrerelease #></version>
+    <title>OPC Viewer - CAS OPC Data Access Client</title>
+    <authors><#=AssemblyCompany#></authors>
+    <owners><#=Owner#></owners>
+    <projectUrl>svn://svnserver.hq.cas.com.pl/VS/trunk/CommServer.DA.Viewer</projectUrl>
+    <licenseUrl>http://www.commsvr.com/DownloadCenter/ProductSoftware/LicenseAgreement.aspx</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <developmentDependency>false</developmentDependency>
+    <description>
+      CommServer OPC Viewer is a full featured OPC client designed to help during installation, testing, and configuration of OPC Data Access compliant servers. 
+      This tool is available as standalone or included in the other software packages.
+    </description>
+    <summary>
+      OPC Viewer - CAS OPC Data Access Client
+    </summary>
+    <releaseNotes>
+      Released for Meintenace 2016
+    </releaseNotes>
+    <copyright><#=AssemblyCopyright#></copyright>
+    <tags>OPC, OPC DA, CommServer, ASMD, Address Space Model Designer.</tags>
+      <dependencies>
+        <dependency id="CAS.CodeProtect" version="5.0.2" />
+        <dependency id="CAS.CommServer.DA.Client.Operations" version="2.00.13" />
+        <dependency id="CAS.CommServer.DAClientConfiguration" version="3.12.1" />
+        <dependency id="CAS.CommServer.DeviceSimulator" version="5.01.00" />
+        <dependency id="CAS.CommServer.OPCClassic.SDK.COMWrapper" version="2.01.106" />
+        <dependency id="CAS.CommServer.OPCClassic.SDK.Core" version="2.01.106" />
+        <dependency id="CAS.RealTime" version="5.0.2" />
+        <dependency id="CAS.Windows.Forms" version="5.0.2" />
+      </dependencies>
+  </metadata>
+  <files>
+    <file src="..\bin\Release\CAS.CommServer.DA.Viewer.FormControls.dll" target="lib\net451\CAS.CommServer.DA.Viewer.FormControls.dll" />
+    <file src="..\bin\Release\CAS.CommServer.DA.Viewer.FormControls.xml" target="lib\net451\CAS.CommServer.DA.Viewer.FormControls.xml" />
+    <file src="..\bin\Release\CAS.CommServer.DA.Viewer.UserInterface.exe" target="lib\net451\CAS.CommServer.DA.Viewer.UserInterface.exe" />
+    <file src="..\bin\Release\CAS.CommServer.DA.Viewer.UserInterface.exe.config" target="lib\net451\CAS.CommServer.DA.Viewer.UserInterface.exe.config" />
+    <file src="..\bin\Release\CAS.CommServer.DA.Viewer.UserInterface.xml" target="lib\net451\CAS.CommServer.DA.Viewer.UserInterface.xml" />
+    <file src="..\bin\Release\CAS.CommServer.DAViewerAddressSpace.dll" target="lib\net451\CAS.CommServer.DAViewerAddressSpace.dll" />
+    <file src="..\bin\Release\CAS.CommServer.DAViewerAddressSpace.xml" target="lib\net451\CAS.CommServer.DAViewerAddressSpace.xml" />
+  </files>
+</package>
+
+<#@ include file = "..\..\..\PR39-CommonResources\T4Definitions\CAS.OPC.t4" #>
+<#+ string m_AssemblyTitle = "CAS.CommServer.DA.Viewer"; #>
