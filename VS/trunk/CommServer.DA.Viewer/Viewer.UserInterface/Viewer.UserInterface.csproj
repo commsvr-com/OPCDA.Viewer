@@ -33,7 +33,6 @@
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>true</SignManifests>
     <TargetZone>Custom</TargetZone>
-    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
     <ExcludedPermissions>
     </ExcludedPermissions>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
@@ -55,7 +54,7 @@
     <AutorunEnabled>true</AutorunEnabled>
     <TrustUrlParameters>true</TrustUrlParameters>
     <ApplicationRevision>16</ApplicationRevision>
-    <ApplicationVersion>3.10.02.%2a</ApplicationVersion>
+    <ApplicationVersion>3.10.03.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -269,9 +268,13 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\CommServer.DA.Viewer.nuspec">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommServer.DA.Viewer.tt</DependentUpon>
+    </None>
     <None Include="Przegl_Full.ico" />
     <None Include="Resources\Przegl_48.png" />
-    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -338,6 +341,10 @@
     <Content Include="Properties\AssemblyInfo.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
+    </Content>
+    <Content Include="Properties\CommServer.DA.Viewer.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CommServer.DA.Viewer.nuspec</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
