@@ -1,0 +1,1403 @@
+<?xml version="1.0" standalone="yes"?>
+<ConfigurationDataBase xmlns="http://commsvr.com/opc/OPCCliConfiguration.xsd">
+  <xs:schema id="ConfigurationDataBase" targetNamespace="http://commsvr.com/opc/OPCCliConfiguration.xsd" xmlns:mstns="http://commsvr.com/opc/OPCCliConfiguration.xsd" xmlns="http://commsvr.com/opc/OPCCliConfiguration.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+    <xs:element name="ConfigurationDataBase" msdata:IsDataSet="true" msdata:CaseSensitive="true" msdata:Locale="">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Servers">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" msdata:AutoIncrement="true" type="xs:long" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="URL" type="xs:string" />
+                <xs:element name="PreferedSpecyficationID" type="xs:string" />
+                <xs:element name="PreferedSpecyficationDsc" type="xs:string" />
+                <xs:element name="IsConnected" type="xs:boolean" default="true" />
+                <xs:element name="Locale" type="xs:string" minOccurs="0" />
+                <xs:element name="Filter" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Subscriptions">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" msdata:AutoIncrement="true" type="xs:long" />
+                <xs:element name="ID_server" type="xs:long" />
+                <xs:element name="Name" type="xs:string" />
+                <xs:element name="UpdateRate" type="xs:int" />
+                <xs:element name="Locale" type="xs:string" minOccurs="0" />
+                <xs:element name="KeepAliveRate" type="xs:int" minOccurs="0" />
+                <xs:element name="Deadband" type="xs:float" minOccurs="0" />
+                <xs:element name="Enabled" type="xs:boolean" />
+                <xs:element name="Active" type="xs:boolean" />
+                <xs:element name="Asynchronous" msdata:Caption="Async" type="xs:boolean" default="false" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Items">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" msdata:AutoIncrement="true" type="xs:long" />
+                <xs:element name="ID_Subscription" type="xs:long" />
+                <xs:element name="Name" type="xs:string" />
+                <xs:element name="MaxAge" type="xs:int" minOccurs="0" />
+                <xs:element name="Active" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Deadband" type="xs:float" minOccurs="0" />
+                <xs:element name="EnableBuffering" type="xs:boolean" minOccurs="0" />
+                <xs:element name="ItemPath" type="xs:string" minOccurs="0" />
+                <xs:element name="SamplingRate" type="xs:int" minOccurs="0" />
+                <xs:element name="RequestedTypeFullName" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Transactions">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" msdata:AutoIncrement="true" type="xs:long" />
+                <xs:element name="Name" type="xs:string" />
+                <xs:element name="ID_itemIN" type="xs:long" minOccurs="0" />
+                <xs:element name="Deadband" type="xs:int" minOccurs="0" />
+                <xs:element name="MinUpdateRate" type="xs:int" minOccurs="0" />
+                <xs:element name="TransactionRate" type="xs:int" />
+                <xs:element name="Comment" type="xs:string" minOccurs="0" />
+                <xs:element name="BadQualityValue" type="xs:string" minOccurs="0" />
+                <xs:element name="StopIfBadQuality" type="xs:boolean" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Operations">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" msdata:AutoIncrement="true" type="xs:long" />
+                <xs:element name="Name" type="xs:string" />
+                <xs:element name="ID_Transaction" type="xs:long" />
+                <xs:element name="Param" type="xs:string" minOccurs="0" />
+                <xs:element name="OperationType" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" />
+                <xs:element name="ID_Item" type="xs:long" minOccurs="0" />
+                <xs:element name="Comment" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="OperationLinks">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID_Operation" type="xs:long" />
+                <xs:element name="Input_number" type="xs:int" />
+                <xs:element name="IDChild_Operation" type="xs:long" />
+                <xs:element name="ChildOutput_number" type="xs:int" default="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="ConnectData">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID_Server" type="xs:long" />
+                <xs:element name="Password" type="xs:string" minOccurs="0" />
+                <xs:element name="Domain" type="xs:string" minOccurs="0" />
+                <xs:element name="UserName" type="xs:string" minOccurs="0" />
+                <xs:element name="LicenseKey" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Conversions">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID_Item" type="xs:long" />
+                <xs:element name="MeasuredValue1" type="xs:float" default="0" />
+                <xs:element name="MeasuredValue2" type="xs:float" default="1" />
+                <xs:element name="EngineeringValue1" type="xs:float" default="0" />
+                <xs:element name="EngineeringValue2" type="xs:float" default="1" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="OPCCliConfigurationKey1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//mstns:Servers" />
+        <xs:field xpath="mstns:ID" />
+      </xs:unique>
+      <xs:unique name="OPCCliConfigurationKey2">
+        <xs:selector xpath=".//mstns:Subscriptions" />
+        <xs:field xpath="mstns:ID" />
+      </xs:unique>
+      <xs:unique name="OPCCliConfigurationKey3">
+        <xs:selector xpath=".//mstns:Items" />
+        <xs:field xpath="mstns:ID" />
+      </xs:unique>
+      <xs:unique name="TransactionMasterKey">
+        <xs:selector xpath=".//mstns:Transactions" />
+        <xs:field xpath="mstns:ID" />
+      </xs:unique>
+      <xs:unique name="Constraint1">
+        <xs:selector xpath=".//mstns:Transactions" />
+        <xs:field xpath="mstns:Name" />
+      </xs:unique>
+      <xs:unique name="Operations_Constraint1" msdata:ConstraintName="Constraint1">
+        <xs:selector xpath=".//mstns:Operations" />
+        <xs:field xpath="mstns:ID" />
+      </xs:unique>
+      <xs:unique name="Constraint2" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//mstns:Operations" />
+        <xs:field xpath="mstns:ID_Transaction" />
+        <xs:field xpath="mstns:ID" />
+      </xs:unique>
+      <xs:unique name="OperationsKey_names">
+        <xs:selector xpath=".//mstns:Operations" />
+        <xs:field xpath="mstns:ID" />
+        <xs:field xpath="mstns:Name" />
+      </xs:unique>
+      <xs:unique name="OperationLinksKeyMain" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//mstns:OperationLinks" />
+        <xs:field xpath="mstns:ID_Operation" />
+        <xs:field xpath="mstns:Input_number" />
+      </xs:unique>
+      <xs:unique name="Constraint11">
+        <xs:selector xpath=".//mstns:ConnectData" />
+        <xs:field xpath="mstns:ID_Server" />
+      </xs:unique>
+      <xs:unique name="Conversions_Constraint11" msdata:ConstraintName="Constraint11">
+        <xs:selector xpath=".//mstns:Conversions" />
+        <xs:field xpath="mstns:ID_Item" />
+      </xs:unique>
+      <xs:keyref name="FK_Items_Conversions" refer="OPCCliConfigurationKey3">
+        <xs:selector xpath=".//mstns:Conversions" />
+        <xs:field xpath="mstns:ID_Item" />
+      </xs:keyref>
+      <xs:keyref name="FK_Servers_ConnectData" refer="OPCCliConfigurationKey1">
+        <xs:selector xpath=".//mstns:ConnectData" />
+        <xs:field xpath="mstns:ID_Server" />
+      </xs:keyref>
+      <xs:keyref name="FK_OPERATION_OperationLinks" refer="Operations_Constraint1">
+        <xs:selector xpath=".//mstns:OperationLinks" />
+        <xs:field xpath="mstns:ID_Operation" />
+      </xs:keyref>
+      <xs:keyref name="FK_OPERATION_OperationLinksChild" refer="Operations_Constraint1">
+        <xs:selector xpath=".//mstns:OperationLinks" />
+        <xs:field xpath="mstns:IDChild_Operation" />
+      </xs:keyref>
+      <xs:keyref name="FK_ITEM_OPERATION" refer="OPCCliConfigurationKey3">
+        <xs:selector xpath=".//mstns:Operations" />
+        <xs:field xpath="mstns:ID_Item" />
+      </xs:keyref>
+      <xs:keyref name="FK_TRANSITION_OPERATION" refer="TransactionMasterKey">
+        <xs:selector xpath=".//mstns:Operations" />
+        <xs:field xpath="mstns:ID_Transaction" />
+      </xs:keyref>
+      <xs:keyref name="FK_SUBSCRIPTION_ITEM" refer="OPCCliConfigurationKey2">
+        <xs:selector xpath=".//mstns:Items" />
+        <xs:field xpath="mstns:ID_Subscription" />
+      </xs:keyref>
+      <xs:keyref name="FK_SERVERS_SUBSCRIPTION" refer="OPCCliConfigurationKey1">
+        <xs:selector xpath=".//mstns:Subscriptions" />
+        <xs:field xpath="mstns:ID_server" />
+      </xs:keyref>
+    </xs:element>
+    <xs:annotation>
+      <xs:appinfo>
+        <msdata:Relationship name="ITEM_TRANSITION" msdata:parent="Items" msdata:child="Transactions" msdata:parentkey="ID" msdata:childkey="ID_itemIN" />
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:schema>
+  <Servers>
+    <ID>7</ID>
+    <Name>CAS.CommServer.OPC.Da.Server</Name>
+    <URL>opcda://localhost/CAS.CommServer.OPC.Da.Server</URL>
+    <PreferedSpecyficationID>63D5F432-CFE4-11d1-B2C8-0060083BA1FB</PreferedSpecyficationID>
+    <PreferedSpecyficationDsc>Data Access 2.XX</PreferedSpecyficationDsc>
+    <IsConnected>false</IsConnected>
+    <Filter>9</Filter>
+  </Servers>
+  <Subscriptions>
+    <ID>17</ID>
+    <ID_server>7</ID_server>
+    <Name>Group_Registers</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>18</ID>
+    <ID_server>7</ID_server>
+    <Name>Group_Flags</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>19</ID>
+    <ID_server>7</ID_server>
+    <Name>sasasasasas</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Subscriptions>
+    <ID>20</ID>
+    <ID_server>7</ID_server>
+    <Name>Subscription</Name>
+    <UpdateRate>1000</UpdateRate>
+    <KeepAliveRate>0</KeepAliveRate>
+    <Deadband>0</Deadband>
+    <Enabled>true</Enabled>
+    <Active>true</Active>
+    <Asynchronous>true</Asynchronous>
+  </Subscriptions>
+  <Items>
+    <ID>156</ID>
+    <ID_Subscription>17</ID_Subscription>
+    <Name>R/1500</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>157</ID>
+    <ID_Subscription>17</ID_Subscription>
+    <Name>R/1501</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>158</ID>
+    <ID_Subscription>17</ID_Subscription>
+    <Name>R/1502</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>159</ID>
+    <ID_Subscription>17</ID_Subscription>
+    <Name>R/1503</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>160</ID>
+    <ID_Subscription>17</ID_Subscription>
+    <Name>R/1504</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>161</ID>
+    <ID_Subscription>17</ID_Subscription>
+    <Name>R/1505</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>162</ID>
+    <ID_Subscription>17</ID_Subscription>
+    <Name>R/1506</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>163</ID>
+    <ID_Subscription>17</ID_Subscription>
+    <Name>R/1507</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>164</ID>
+    <ID_Subscription>17</ID_Subscription>
+    <Name>R/1508</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>165</ID>
+    <ID_Subscription>17</ID_Subscription>
+    <Name>R/1509</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>166</ID>
+    <ID_Subscription>18</ID_Subscription>
+    <Name>F/Sub</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>167</ID>
+    <ID_Subscription>18</ID_Subscription>
+    <Name>F/Div</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>168</ID>
+    <ID_Subscription>18</ID_Subscription>
+    <Name>F/Const</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>169</ID>
+    <ID_Subscription>18</ID_Subscription>
+    <Name>F/Random</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>170</ID>
+    <ID_Subscription>18</ID_Subscription>
+    <Name>F/Add</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>171</ID>
+    <ID_Subscription>18</ID_Subscription>
+    <Name>F/Mul</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>172</ID>
+    <ID_Subscription>18</ID_Subscription>
+    <Name>F/InRange</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>173</ID>
+    <ID_Subscription>18</ID_Subscription>
+    <Name>F/1508</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>174</ID>
+    <ID_Subscription>18</ID_Subscription>
+    <Name>F/1509</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>175</ID>
+    <ID_Subscription>18</ID_Subscription>
+    <Name>F/PowerOf10</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>176</ID>
+    <ID_Subscription>19</ID_Subscription>
+    <Name>Dummy_Tag.Dummy00000000.42YNOAA</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>177</ID>
+    <ID_Subscription>19</ID_Subscription>
+    <Name>Dummy_Tag.Dummy00000000.42YNUAA</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>178</ID>
+    <ID_Subscription>19</ID_Subscription>
+    <Name>Dummy_Tag.Dummy00000000.6_AWARIA</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>179</ID>
+    <ID_Subscription>19</ID_Subscription>
+    <Name>Dummy_Tag.Dummy00000000.R_42PCO</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>180</ID>
+    <ID_Subscription>19</ID_Subscription>
+    <Name>Dummy_Tag.Dummy00000000.R_42PCO1</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>181</ID>
+    <ID_Subscription>19</ID_Subscription>
+    <Name>Dummy_Tag.Dummy00000000.R_42PCW</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>182</ID>
+    <ID_Subscription>20</ID_Subscription>
+    <Name>R/1500</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>183</ID>
+    <ID_Subscription>20</ID_Subscription>
+    <Name>R/1501</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>184</ID>
+    <ID_Subscription>20</ID_Subscription>
+    <Name>R/1502</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>185</ID>
+    <ID_Subscription>20</ID_Subscription>
+    <Name>R/1503</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>186</ID>
+    <ID_Subscription>20</ID_Subscription>
+    <Name>R/1504</Name>
+    <Active>true</Active>
+  </Items>
+  <Items>
+    <ID>187</ID>
+    <ID_Subscription>20</ID_Subscription>
+    <Name>R/1505</Name>
+    <Active>true</Active>
+  </Items>
+  <Transactions>
+    <ID>33</ID>
+    <Name>T-add_sub</Name>
+    <MinUpdateRate>3000</MinUpdateRate>
+    <TransactionRate>1000</TransactionRate>
+    <Comment />
+    <BadQualityValue />
+    <StopIfBadQuality>true</StopIfBadQuality>
+  </Transactions>
+  <Transactions>
+    <ID>34</ID>
+    <Name>T-const</Name>
+    <MinUpdateRate>1000</MinUpdateRate>
+    <TransactionRate>1000</TransactionRate>
+    <Comment />
+    <BadQualityValue />
+    <StopIfBadQuality>true</StopIfBadQuality>
+  </Transactions>
+  <Transactions>
+    <ID>35</ID>
+    <Name>T-sprawdzanie</Name>
+    <MinUpdateRate>1000</MinUpdateRate>
+    <TransactionRate>1000</TransactionRate>
+    <Comment />
+    <BadQualityValue />
+    <StopIfBadQuality>true</StopIfBadQuality>
+  </Transactions>
+  <Transactions>
+    <ID>36</ID>
+    <Name>T-div_sub</Name>
+    <MinUpdateRate>1000</MinUpdateRate>
+    <TransactionRate>1000</TransactionRate>
+    <Comment />
+    <BadQualityValue />
+    <StopIfBadQuality>true</StopIfBadQuality>
+  </Transactions>
+  <Transactions>
+    <ID>37</ID>
+    <Name>T-random</Name>
+    <MinUpdateRate>1000</MinUpdateRate>
+    <TransactionRate>1000</TransactionRate>
+    <Comment />
+    <BadQualityValue />
+    <StopIfBadQuality>true</StopIfBadQuality>
+  </Transactions>
+  <Transactions>
+    <ID>38</ID>
+    <Name>T-power10</Name>
+    <MinUpdateRate>1000</MinUpdateRate>
+    <TransactionRate>1000</TransactionRate>
+    <Comment />
+    <BadQualityValue />
+    <StopIfBadQuality>true</StopIfBadQuality>
+  </Transactions>
+  <Transactions>
+    <ID>39</ID>
+    <Name>T-DBSave</Name>
+    <MinUpdateRate>5000</MinUpdateRate>
+    <TransactionRate>5000</TransactionRate>
+    <Comment />
+    <BadQualityValue />
+    <StopIfBadQuality>true</StopIfBadQuality>
+  </Transactions>
+  <Transactions>
+    <ID>40</ID>
+    <Name>t-Average</Name>
+    <MinUpdateRate>1000</MinUpdateRate>
+    <TransactionRate>1000</TransactionRate>
+    <Comment />
+    <BadQualityValue />
+    <StopIfBadQuality>true</StopIfBadQuality>
+  </Transactions>
+  <Operations>
+    <ID>280</ID>
+    <Name>001</Name>
+    <ID_Transaction>33</ID_Transaction>
+    <Param />
+    <OperationType>a87ba598-fd9f-4183-b30d-e12fc5a42faa</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>281</ID>
+    <Name>002</Name>
+    <ID_Transaction>33</ID_Transaction>
+    <Param>-1</Param>
+    <OperationType>a87ba598-fd9f-4183-b30d-e12fc5a42faa</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>282</ID>
+    <Name>003</Name>
+    <ID_Transaction>33</ID_Transaction>
+    <Param>3</Param>
+    <OperationType>5292af0f-843e-4da4-aeed-dd923ac923f0</OperationType>
+    <ID_Item>158</ID_Item>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>283</ID>
+    <Name>003_tralala</Name>
+    <ID_Transaction>33</ID_Transaction>
+    <Param />
+    <OperationType>ffe785ac-1a89-4546-89e4-d3543d2e8fd3</OperationType>
+    <ID_Item>156</ID_Item>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>284</ID>
+    <Name>004</Name>
+    <ID_Transaction>33</ID_Transaction>
+    <Param />
+    <OperationType>ffe785ac-1a89-4546-89e4-d3543d2e8fd3</OperationType>
+    <ID_Item>156</ID_Item>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>285</ID>
+    <Name>005</Name>
+    <ID_Transaction>33</ID_Transaction>
+    <Param />
+    <OperationType>ffe785ac-1a89-4546-89e4-d3543d2e8fd3</OperationType>
+    <ID_Item>157</ID_Item>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>286</ID>
+    <Name>0010</Name>
+    <ID_Transaction>33</ID_Transaction>
+    <Param />
+    <OperationType>23f1ab6a-8616-4239-8f18-7a07f8badb4a</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>287</ID>
+    <Name>18_18</Name>
+    <ID_Transaction>33</ID_Transaction>
+    <Param />
+    <OperationType>ffe785ac-1a89-4546-89e4-d3543d2e8fd3</OperationType>
+    <ID_Item>157</ID_Item>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>288</ID>
+    <Name>0011</Name>
+    <ID_Transaction>33</ID_Transaction>
+    <Param />
+    <OperationType>ffe785ac-1a89-4546-89e4-d3543d2e8fd3</OperationType>
+    <ID_Item>156</ID_Item>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>289</ID>
+    <Name>0013</Name>
+    <ID_Transaction>33</ID_Transaction>
+    <Param>2</Param>
+    <OperationType>492a4fe5-4dc0-44cd-b3b9-d72c18d4b84e</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>290</ID>
+    <Name>14</Name>
+    <ID_Transaction>33</ID_Transaction>
+    <Param />
+    <OperationType>abf91b3c-2c09-4a16-8927-d39dad80cd51</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>291</ID>
+    <Name>15</Name>
+    <ID_Transaction>33</ID_Transaction>
+    <Param />
+    <OperationType>5292af0f-843e-4da4-aeed-dd923ac923f0</OperationType>
+    <ID_Item>166</ID_Item>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>292</ID>
+    <Name>006</Name>
+    <ID_Transaction>34</ID_Transaction>
+    <Param>1</Param>
+    <OperationType>492a4fe5-4dc0-44cd-b3b9-d72c18d4b84e</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>293</ID>
+    <Name>007</Name>
+    <ID_Transaction>34</ID_Transaction>
+    <Param />
+    <OperationType>5292af0f-843e-4da4-aeed-dd923ac923f0</OperationType>
+    <ID_Item>156</ID_Item>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>294</ID>
+    <Name>008</Name>
+    <ID_Transaction>34</ID_Transaction>
+    <Param>3</Param>
+    <OperationType>492a4fe5-4dc0-44cd-b3b9-d72c18d4b84e</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>295</ID>
+    <Name>009</Name>
+    <ID_Transaction>34</ID_Transaction>
+    <Param />
+    <OperationType>5292af0f-843e-4da4-aeed-dd923ac923f0</OperationType>
+    <ID_Item>157</ID_Item>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>296</ID>
+    <Name>63</Name>
+    <ID_Transaction>34</ID_Transaction>
+    <Param>6</Param>
+    <OperationType>492a4fe5-4dc0-44cd-b3b9-d72c18d4b84e</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>297</ID>
+    <Name>64</Name>
+    <ID_Transaction>34</ID_Transaction>
+    <Param>6</Param>
+    <OperationType>492a4fe5-4dc0-44cd-b3b9-d72c18d4b84e</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>298</ID>
+    <Name>65</Name>
+    <ID_Transaction>34</ID_Transaction>
+    <Param />
+    <OperationType>abf91b3c-2c09-4a16-8927-d39dad80cd51</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>299</ID>
+    <Name>66</Name>
+    <ID_Transaction>34</ID_Transaction>
+    <Param />
+    <OperationType>5292af0f-843e-4da4-aeed-dd923ac923f0</OperationType>
+    <ID_Item>168</ID_Item>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>300</ID>
+    <Name>23</Name>
+    <ID_Transaction>35</ID_Transaction>
+    <Param />
+    <OperationType>ffe785ac-1a89-4546-89e4-d3543d2e8fd3</OperationType>
+    <ID_Item>158</ID_Item>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>301</ID>
+    <Name>25</Name>
+    <ID_Transaction>35</ID_Transaction>
+    <Param>5</Param>
+    <OperationType>492a4fe5-4dc0-44cd-b3b9-d72c18d4b84e</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>302</ID>
+    <Name>26</Name>
+    <ID_Transaction>35</ID_Transaction>
+    <Param />
+    <OperationType>abf91b3c-2c09-4a16-8927-d39dad80cd51</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>303</ID>
+    <Name>27</Name>
+    <ID_Transaction>35</ID_Transaction>
+    <Param />
+    <OperationType>5292af0f-843e-4da4-aeed-dd923ac923f0</OperationType>
+    <ID_Item>170</ID_Item>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>304</ID>
+    <Name>0012</Name>
+    <ID_Transaction>36</ID_Transaction>
+    <Param />
+    <OperationType>5446258c-3f07-40a2-b659-0670c4e6eb59</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>305</ID>
+    <Name>16</Name>
+    <ID_Transaction>36</ID_Transaction>
+    <Param />
+    <OperationType>effe8adf-b4ce-4b64-9113-218d1cdfcbc2</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>306</ID>
+    <Name>28</Name>
+    <ID_Transaction>36</ID_Transaction>
+    <Param>10</Param>
+    <OperationType>492a4fe5-4dc0-44cd-b3b9-d72c18d4b84e</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>307</ID>
+    <Name>29</Name>
+    <ID_Transaction>36</ID_Transaction>
+    <Param>2</Param>
+    <OperationType>492a4fe5-4dc0-44cd-b3b9-d72c18d4b84e</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>308</ID>
+    <Name>30</Name>
+    <ID_Transaction>36</ID_Transaction>
+    <Param />
+    <OperationType>ffe785ac-1a89-4546-89e4-d3543d2e8fd3</OperationType>
+    <ID_Item>158</ID_Item>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>309</ID>
+    <Name>31</Name>
+    <ID_Transaction>36</ID_Transaction>
+    <Param />
+    <OperationType>abf91b3c-2c09-4a16-8927-d39dad80cd51</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>310</ID>
+    <Name>32</Name>
+    <ID_Transaction>36</ID_Transaction>
+    <Param />
+    <OperationType>5292af0f-843e-4da4-aeed-dd923ac923f0</OperationType>
+    <ID_Item>167</ID_Item>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>311</ID>
+    <Name>33</Name>
+    <ID_Transaction>36</ID_Transaction>
+    <Param />
+    <OperationType>ffe785ac-1a89-4546-89e4-d3543d2e8fd3</OperationType>
+    <ID_Item>157</ID_Item>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>312</ID>
+    <Name>35</Name>
+    <ID_Transaction>36</ID_Transaction>
+    <Param />
+    <OperationType>ffe785ac-1a89-4546-89e4-d3543d2e8fd3</OperationType>
+    <ID_Item>158</ID_Item>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>313</ID>
+    <Name>36</Name>
+    <ID_Transaction>36</ID_Transaction>
+    <Param>15</Param>
+    <OperationType>492a4fe5-4dc0-44cd-b3b9-d72c18d4b84e</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>314</ID>
+    <Name>38</Name>
+    <ID_Transaction>36</ID_Transaction>
+    <Param />
+    <OperationType>abf91b3c-2c09-4a16-8927-d39dad80cd51</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>315</ID>
+    <Name>40</Name>
+    <ID_Transaction>36</ID_Transaction>
+    <Param />
+    <OperationType>5292af0f-843e-4da4-aeed-dd923ac923f0</OperationType>
+    <ID_Item>171</ID_Item>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>316</ID>
+    <Name>17</Name>
+    <ID_Transaction>37</ID_Transaction>
+    <Param>10</Param>
+    <OperationType>60898b48-0904-4873-a6cb-63f6277789b5</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>317</ID>
+    <Name>18</Name>
+    <ID_Transaction>37</ID_Transaction>
+    <Param>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ValueInRangeParameter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;LowLimit&gt;0&lt;/LowLimit&gt;
+  &lt;HiLimit&gt;10&lt;/HiLimit&gt;
+  &lt;LowLimitCanBeEqual&gt;true&lt;/LowLimitCanBeEqual&gt;
+  &lt;HiLimitCanBeEqual&gt;true&lt;/HiLimitCanBeEqual&gt;
+&lt;/ValueInRangeParameter&gt;</Param>
+    <OperationType>7c3f78b8-994d-4371-866c-63da71a6c238</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>318</ID>
+    <Name>19</Name>
+    <ID_Transaction>37</ID_Transaction>
+    <Param />
+    <OperationType>5292af0f-843e-4da4-aeed-dd923ac923f0</OperationType>
+    <ID_Item>172</ID_Item>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>319</ID>
+    <Name>41</Name>
+    <ID_Transaction>37</ID_Transaction>
+    <Param />
+    <OperationType>d308dbe6-0ff9-4906-b81c-fe65bf342f85</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>320</ID>
+    <Name>42</Name>
+    <ID_Transaction>37</ID_Transaction>
+    <Param />
+    <OperationType>5292af0f-843e-4da4-aeed-dd923ac923f0</OperationType>
+    <ID_Item>165</ID_Item>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>321</ID>
+    <Name>20</Name>
+    <ID_Transaction>38</ID_Transaction>
+    <Param />
+    <OperationType>ffe785ac-1a89-4546-89e4-d3543d2e8fd3</OperationType>
+    <ID_Item>156</ID_Item>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>322</ID>
+    <Name>21</Name>
+    <ID_Transaction>38</ID_Transaction>
+    <Param>1</Param>
+    <OperationType>848e14ce-28b4-47d3-b9ba-19507d0451d3</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>323</ID>
+    <Name>22</Name>
+    <ID_Transaction>38</ID_Transaction>
+    <Param />
+    <OperationType>5292af0f-843e-4da4-aeed-dd923ac923f0</OperationType>
+    <ID_Item>175</ID_Item>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>324</ID>
+    <Name>70</Name>
+    <ID_Transaction>38</ID_Transaction>
+    <Param />
+    <OperationType>d308dbe6-0ff9-4906-b81c-fe65bf342f85</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>325</ID>
+    <Name>71</Name>
+    <ID_Transaction>38</ID_Transaction>
+    <Param>10</Param>
+    <OperationType>492a4fe5-4dc0-44cd-b3b9-d72c18d4b84e</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>326</ID>
+    <Name>72</Name>
+    <ID_Transaction>38</ID_Transaction>
+    <Param />
+    <OperationType>effe8adf-b4ce-4b64-9113-218d1cdfcbc2</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>327</ID>
+    <Name>73</Name>
+    <ID_Transaction>38</ID_Transaction>
+    <Param />
+    <OperationType>abf91b3c-2c09-4a16-8927-d39dad80cd51</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>328</ID>
+    <Name>67</Name>
+    <ID_Transaction>39</ID_Transaction>
+    <Param>&lt;?xml version="1.0" encoding="utf-8" ?&gt;&lt;Param&gt;
+&lt;!-- Data base operation --&gt;
+&lt;operationdb name="mssql" connectionstring="Data Source=Mariusz\sqlexpress;Initial Catalog=DataPorter;Integrated Security=False;User ID=sa;Password=praktyka" stop="false"&gt;
+&lt;command separator=", "&gt;INSERT INTO Dane VALUES (getdate(),&lt;/command&gt;
+&lt;tag name="1"&gt;&lt;/tag&gt;
+&lt;tag name="2"&gt;&lt;/tag&gt;
+&lt;const name="name"&gt;'data name'&lt;/const&gt;
+&lt;command separator=", "&gt;) &lt;/command&gt;
+&lt;/operationdb&gt;
+&lt;/Param&gt;</Param>
+    <OperationType>b92a2049-28a6-4094-9825-c0d85439e8d1</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>329</ID>
+    <Name>68</Name>
+    <ID_Transaction>39</ID_Transaction>
+    <Param>0</Param>
+    <OperationType>492a4fe5-4dc0-44cd-b3b9-d72c18d4b84e</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>330</ID>
+    <Name>69</Name>
+    <ID_Transaction>39</ID_Transaction>
+    <Param>1</Param>
+    <OperationType>492a4fe5-4dc0-44cd-b3b9-d72c18d4b84e</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>331</ID>
+    <Name>74</Name>
+    <ID_Transaction>40</ID_Transaction>
+    <Param>1</Param>
+    <OperationType>492a4fe5-4dc0-44cd-b3b9-d72c18d4b84e</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>332</ID>
+    <Name>75</Name>
+    <ID_Transaction>40</ID_Transaction>
+    <Param>2</Param>
+    <OperationType>492a4fe5-4dc0-44cd-b3b9-d72c18d4b84e</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>333</ID>
+    <Name>76</Name>
+    <ID_Transaction>40</ID_Transaction>
+    <Param>3</Param>
+    <OperationType>492a4fe5-4dc0-44cd-b3b9-d72c18d4b84e</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>334</ID>
+    <Name>77</Name>
+    <ID_Transaction>40</ID_Transaction>
+    <Param />
+    <OperationType>d308dbe6-0ff9-4906-b81c-fe65bf342f85</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>335</ID>
+    <Name>78</Name>
+    <ID_Transaction>40</ID_Transaction>
+    <Param />
+    <OperationType>d308dbe6-0ff9-4906-b81c-fe65bf342f85</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>336</ID>
+    <Name>79</Name>
+    <ID_Transaction>40</ID_Transaction>
+    <Param />
+    <OperationType>d308dbe6-0ff9-4906-b81c-fe65bf342f85</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>337</ID>
+    <Name>80</Name>
+    <ID_Transaction>40</ID_Transaction>
+    <Param>3</Param>
+    <OperationType>b51f3961-ee4a-4886-a50c-9857f77f0f5f</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>338</ID>
+    <Name>81</Name>
+    <ID_Transaction>40</ID_Transaction>
+    <Param />
+    <OperationType>a87ba598-fd9f-4183-b30d-e12fc5a42faa</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>339</ID>
+    <Name>83</Name>
+    <ID_Transaction>40</ID_Transaction>
+    <Param />
+    <OperationType>a87ba598-fd9f-4183-b30d-e12fc5a42faa</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>340</ID>
+    <Name>84</Name>
+    <ID_Transaction>40</ID_Transaction>
+    <Param />
+    <OperationType>5446258c-3f07-40a2-b659-0670c4e6eb59</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>341</ID>
+    <Name>85</Name>
+    <ID_Transaction>40</ID_Transaction>
+    <Param>3</Param>
+    <OperationType>492a4fe5-4dc0-44cd-b3b9-d72c18d4b84e</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>342</ID>
+    <Name>86</Name>
+    <ID_Transaction>40</ID_Transaction>
+    <Param />
+    <OperationType>abf91b3c-2c09-4a16-8927-d39dad80cd51</OperationType>
+    <Comment />
+  </Operations>
+  <Operations>
+    <ID>343</ID>
+    <Name>87</Name>
+    <ID_Transaction>40</ID_Transaction>
+    <Param />
+    <OperationType>5292af0f-843e-4da4-aeed-dd923ac923f0</OperationType>
+    <ID_Item>173</ID_Item>
+    <Comment />
+  </Operations>
+  <OperationLinks>
+    <ID_Operation>282</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>281</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>281</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>280</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>280</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>283</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>280</ID_Operation>
+    <Input_number>1</Input_number>
+    <IDChild_Operation>284</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>281</ID_Operation>
+    <Input_number>1</Input_number>
+    <IDChild_Operation>285</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>291</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>290</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>290</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>286</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>286</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>287</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>286</ID_Operation>
+    <Input_number>1</Input_number>
+    <IDChild_Operation>288</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>290</ID_Operation>
+    <Input_number>1</Input_number>
+    <IDChild_Operation>289</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>293</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>292</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>295</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>294</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>299</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>298</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>298</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>297</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>298</ID_Operation>
+    <Input_number>1</Input_number>
+    <IDChild_Operation>296</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>303</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>302</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>302</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>300</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>302</ID_Operation>
+    <Input_number>1</Input_number>
+    <IDChild_Operation>301</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>310</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>309</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>309</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>304</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>304</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>306</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>304</ID_Operation>
+    <Input_number>1</Input_number>
+    <IDChild_Operation>307</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>309</ID_Operation>
+    <Input_number>1</Input_number>
+    <IDChild_Operation>308</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>315</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>314</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>314</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>305</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>305</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>312</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>305</ID_Operation>
+    <Input_number>1</Input_number>
+    <IDChild_Operation>311</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>314</ID_Operation>
+    <Input_number>1</Input_number>
+    <IDChild_Operation>313</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>318</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>317</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>317</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>319</IDChild_Operation>
+    <ChildOutput_number>1</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>319</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>316</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>320</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>319</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>323</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>327</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>327</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>322</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>322</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>324</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>324</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>321</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>327</ID_Operation>
+    <Input_number>1</Input_number>
+    <IDChild_Operation>326</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>326</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>324</IDChild_Operation>
+    <ChildOutput_number>1</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>326</ID_Operation>
+    <Input_number>1</Input_number>
+    <IDChild_Operation>325</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>328</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>330</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>328</ID_Operation>
+    <Input_number>1</Input_number>
+    <IDChild_Operation>329</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>343</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>342</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>342</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>340</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>340</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>339</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>339</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>338</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>338</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>335</IDChild_Operation>
+    <ChildOutput_number>1</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>335</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>331</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>338</ID_Operation>
+    <Input_number>1</Input_number>
+    <IDChild_Operation>336</IDChild_Operation>
+    <ChildOutput_number>1</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>336</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>332</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>339</ID_Operation>
+    <Input_number>1</Input_number>
+    <IDChild_Operation>334</IDChild_Operation>
+    <ChildOutput_number>1</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>334</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>333</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>340</ID_Operation>
+    <Input_number>1</Input_number>
+    <IDChild_Operation>341</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>342</ID_Operation>
+    <Input_number>1</Input_number>
+    <IDChild_Operation>337</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>337</ID_Operation>
+    <Input_number>0</Input_number>
+    <IDChild_Operation>334</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>337</ID_Operation>
+    <Input_number>1</Input_number>
+    <IDChild_Operation>335</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+  <OperationLinks>
+    <ID_Operation>337</ID_Operation>
+    <Input_number>2</Input_number>
+    <IDChild_Operation>336</IDChild_Operation>
+    <ChildOutput_number>0</ChildOutput_number>
+  </OperationLinks>
+</ConfigurationDataBase>
