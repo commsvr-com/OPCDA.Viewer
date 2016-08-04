@@ -26,7 +26,7 @@
     <tags>OPC, OPC DA, CommServer, ASMD, Address Space Model Designer.</tags>
       <dependencies>
         <dependency id="CAS.CodeProtect" version="5.0.2" />
-        <dependency id="CAS.CommServer.DA.Client.Operations" version="2.00.13" />
+        <dependency id="CAS.CommServer.DA.Client" version="2.00.14-Alpha" />
         <dependency id="CAS.CommServer.DAClientConfiguration" version="3.12.1" />
         <dependency id="CAS.CommServer.DeviceSimulator" version="5.01.00" />
         <dependency id="CAS.CommServer.OPCClassic.SDK.COMWrapper" version="2.01.106" />
