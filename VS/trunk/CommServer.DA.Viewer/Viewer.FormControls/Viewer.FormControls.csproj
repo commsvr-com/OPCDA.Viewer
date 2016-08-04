@@ -48,12 +48,12 @@
       <HintPath>..\..\packages\CAS.CodeProtect.5.0.2\lib\net35\CAS.CodeProtect.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.DA.Client.Operations, Version=2.0.13.37740, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CAS.CommServer.DA.Client.Operations.2.00.13\lib\net451\CAS.CommServer.DA.Client.Operations.dll</HintPath>
+    <Reference Include="CAS.CommServer.DA.Client.Operations, Version=2.0.14.16676, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.CommServer.DA.Client.2.00.14-Alpha\lib\net451\CAS.CommServer.DA.Client.Operations.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.DA.Client.Services, Version=2.0.13.37739, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CAS.CommServer.DA.Client.Operations.2.00.13\lib\net451\CAS.CommServer.DA.Client.Services.dll</HintPath>
+    <Reference Include="CAS.CommServer.DA.Client.Services, Version=2.0.14.16675, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.CommServer.DA.Client.2.00.14-Alpha\lib\net451\CAS.CommServer.DA.Client.Services.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.CommServer.DAClientConfiguration, Version=3.12.1.17970, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
