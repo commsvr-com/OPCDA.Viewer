@@ -115,12 +115,12 @@
       <HintPath>..\..\packages\CAS.CodeProtect.5.0.2\lib\net35\CAS.CodeProtect.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.DA.Client.Operations, Version=2.0.14.38629, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CAS.CommServer.DA.Client.2.00.14-Delta\lib\net451\CAS.CommServer.DA.Client.Operations.dll</HintPath>
+    <Reference Include="CAS.CommServer.DA.Client.Operations, Version=2.0.14.18767, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.CommServer.DA.Client.2.00.14-Echo\lib\net451\CAS.CommServer.DA.Client.Operations.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.DA.Client.Services, Version=2.0.14.38629, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CAS.CommServer.DA.Client.2.00.14-Delta\lib\net451\CAS.CommServer.DA.Client.Services.dll</HintPath>
+    <Reference Include="CAS.CommServer.DA.Client.Services, Version=2.0.14.18765, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.CommServer.DA.Client.2.00.14-Echo\lib\net451\CAS.CommServer.DA.Client.Services.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.CommServer.DAClientConfiguration, Version=5.1.2.37849, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
@@ -182,6 +182,10 @@
     <ProjectReference Include="..\..\PR39-CommonResources\LicensesContainer\LicensesContainer.csproj">
       <Project>{234a138e-4e17-4f12-84a3-a920ddae0d86}</Project>
       <Name>LicensesContainer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommServer.DAViewerAddressSpace\Viewer.AddressSpace.csproj">
+      <Project>{86337fcd-d411-4e63-b80f-e121318d5572}</Project>
+      <Name>Viewer.AddressSpace</Name>
     </ProjectReference>
     <ProjectReference Include="..\Viewer.FormControls\Viewer.FormControls.csproj">
       <Project>{C9DF875B-B3DC-4B92-BB14-DF90B062EC17}</Project>
