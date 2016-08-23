@@ -34,13 +34,13 @@
       </dependencies>
   </metadata>
   <files>
+    <file src="..\bin\Release\CAS.CommServer.DA.Viewer.AddressSpace.dll" target="lib\net451\CAS.CommServer.DA.Viewer.AddressSpace.dll" />
+    <file src="..\bin\Release\CAS.CommServer.DA.Viewer.AddressSpace.xml" target="lib\net451\CAS.CommServer.DA.Viewer.AddressSpace.xml" />
     <file src="..\bin\Release\CAS.CommServer.DA.Viewer.FormControls.dll" target="lib\net451\CAS.CommServer.DA.Viewer.FormControls.dll" />
     <file src="..\bin\Release\CAS.CommServer.DA.Viewer.FormControls.xml" target="lib\net451\CAS.CommServer.DA.Viewer.FormControls.xml" />
     <file src="..\bin\Release\CAS.CommServer.DA.Viewer.UserInterface.exe" target="lib\net451\CAS.CommServer.DA.Viewer.UserInterface.exe" />
     <file src="..\bin\Release\CAS.CommServer.DA.Viewer.UserInterface.exe.config" target="lib\net451\CAS.CommServer.DA.Viewer.UserInterface.exe.config" />
     <file src="..\bin\Release\CAS.CommServer.DA.Viewer.UserInterface.xml" target="lib\net451\CAS.CommServer.DA.Viewer.UserInterface.xml" />
-    <file src="..\bin\Release\CAS.CommServer.DAViewerAddressSpace.dll" target="lib\net451\CAS.CommServer.DAViewerAddressSpace.dll" />
-    <file src="..\bin\Release\CAS.CommServer.DAViewerAddressSpace.xml" target="lib\net451\CAS.CommServer.DAViewerAddressSpace.xml" />
   </files>
 </package>
 
