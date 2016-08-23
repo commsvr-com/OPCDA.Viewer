@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CAS.Lib.OPC.AddressSpace</RootNamespace>
-    <AssemblyName>CAS.CommServer.DAViewerAddressSpace</AssemblyName>
+    <AssemblyName>CAS.CommServer.DA.Viewer.AddressSpace</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
@@ -29,7 +29,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\CAS.CommServer.DAViewerAddressSpace.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\CAS.CommServer.DA.Viewer.AddressSpace.xml</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -40,7 +40,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
-    <DocumentationFile>bin\Release\CAS.CommServer.DAViewerAddressSpace.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\CAS.CommServer.DA.Viewer.AddressSpace.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CAS.CodeProtect, Version=5.0.2.39087, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">

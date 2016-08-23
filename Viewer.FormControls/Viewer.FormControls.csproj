@@ -48,12 +48,12 @@
       <HintPath>..\..\packages\CAS.CodeProtect.5.0.2\lib\net35\CAS.CodeProtect.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.DA.Client.Operations, Version=2.0.14.38629, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CAS.CommServer.DA.Client.2.00.14-Delta\lib\net451\CAS.CommServer.DA.Client.Operations.dll</HintPath>
+    <Reference Include="CAS.CommServer.DA.Client.Operations, Version=2.0.14.18767, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.CommServer.DA.Client.2.00.14-Echo\lib\net451\CAS.CommServer.DA.Client.Operations.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.DA.Client.Services, Version=2.0.14.38629, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CAS.CommServer.DA.Client.2.00.14-Delta\lib\net451\CAS.CommServer.DA.Client.Services.dll</HintPath>
+    <Reference Include="CAS.CommServer.DA.Client.Services, Version=2.0.14.18765, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.CommServer.DA.Client.2.00.14-Echo\lib\net451\CAS.CommServer.DA.Client.Services.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.CommServer.DAClientConfiguration, Version=5.1.2.37849, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
@@ -535,9 +535,9 @@
     <None Include="Resources\xml.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CommServer.DAViewerAddressSpace\CommServer.DAViewerAddressSpace.csproj">
+    <ProjectReference Include="..\CommServer.DAViewerAddressSpace\Viewer.AddressSpace.csproj">
       <Project>{86337FCD-D411-4E63-B80F-E121318D5572}</Project>
-      <Name>CommServer.DAViewerAddressSpace</Name>
+      <Name>Viewer.AddressSpace</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
