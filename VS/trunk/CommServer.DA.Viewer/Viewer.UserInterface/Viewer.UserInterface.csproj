@@ -179,10 +179,6 @@
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
-    <ProjectReference Include="..\..\PR39-CommonResources\LicensesContainer\LicensesContainer.csproj">
-      <Project>{234a138e-4e17-4f12-84a3-a920ddae0d86}</Project>
-      <Name>LicensesContainer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CommServer.DAViewerAddressSpace\Viewer.AddressSpace.csproj">
       <Project>{86337fcd-d411-4e63-b80f-e121318d5572}</Project>
       <Name>Viewer.AddressSpace</Name>
