@@ -67,7 +67,7 @@ namespace CAS.Lib.OPCClientControlsLib
   /// <summary>
   /// A tree control use to navigate the address space of an OPC DA server.
   /// </summary>
-  public class BrowseTreeCtrl: System.Windows.Forms.UserControl
+  public class BrowseTreeCtrl: UserControl
   {
     #region private designers filds
     private System.Windows.Forms.ToolStripMenuItem m_TSM_ConnectMI;
@@ -495,7 +495,7 @@ namespace CAS.Lib.OPCClientControlsLib
     /// <summary>
     ///Raise <see cref="ItemPicked"/> event.
     /// </summary>
-    /// <param name="itemID">The picked <see cref="ItemIdentifier"/> object.</param>
+    /// <param name="itemID">The picked <see cref="Opc.ItemIdentifier"/> object.</param>
     private void OnItemPicked( Opc.ItemIdentifier itemID )
     {
       if ( ItemPicked == null )
@@ -503,7 +503,7 @@ namespace CAS.Lib.OPCClientControlsLib
       ItemPicked( itemID );
     }
     /// <summary>
-    /// Raise a server or item event depending on the slected node.
+    /// Raise a server or item event depending on the selected node.
     /// </summary>
     private void PickNode( IBrowse node )
     {

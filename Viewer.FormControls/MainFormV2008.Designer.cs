@@ -1,5 +1,4 @@
-﻿using CAS.Lib.OPCClientControlsLib;
-namespace CAS.OPCViewer
+﻿namespace CAS.Lib.OPCClientControlsLib
 {
   partial class MainFormV2008
   {

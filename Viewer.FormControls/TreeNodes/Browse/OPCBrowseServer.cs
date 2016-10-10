@@ -13,11 +13,11 @@
 //  http://www.cas.eu
 //</summary>
 
-using System;
-using System.Windows.Forms;
 using CAS.Lib.ControlLibrary;
 using CAS.Lib.OPC.AddressSpace;
 using CAS.Lib.OPCClient.Da;
+using System;
+using System.Windows.Forms;
 using OpcDa = Opc.Da;
 
 namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Browse
@@ -76,10 +76,9 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Browse
       #endregion
       #region constructor
       /// <summary>
-      /// Initializes a new instance of the <see cref="mBrowseServer"/> class.
+      /// Initializes a new instance of the <see cref="mBrowseServer" /> class.
       /// </summary>
-      /// <param name="parent">The <see cref="OPCServerTreeNodes"/> parent.</param>
-      /// <param name="itemID">The item ID.</param>
+      /// <param name="parent">The <see cref="OPCBrowseServer" /> parent.</param>
       /// <param name="filters">The filters.</param>
       internal mBrowseServer( OPCBrowseServer parent, OpcDa::BrowseFilters filters )
         : base( parent.Tag )

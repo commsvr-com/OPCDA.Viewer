@@ -24,7 +24,7 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Browse
   public interface IConnectDataNode: IBrowse
   {
     /// <summary>
-    /// Gets or sets the connect data object <see cref="ConnectData"/>.
+    /// Gets or sets the connect data object <see cref="Opc.ConnectData" />.
     /// </summary>
     /// <value>The connect data object.</value>
     Opc.ConnectData ConnectDataObject { get; set; }
@@ -37,7 +37,10 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Browse
   /// <summary>
   /// Connect Data Node
   /// </summary>
-  /// <typeparam name="BrowseNodeType">The actuacl type for <see cref="GenericTreeNode"/> .</typeparam>
+  /// <typeparam name="ObjectType">The type of the object type.</typeparam>
+  /// <typeparam name="ParentType">The type of the parent type.</typeparam>
+  /// <seealso cref="BrowseTreeNode{ObjectType, ParentType}" />
+  /// <seealso cref="IConnectDataNode" />
   internal abstract class ConnectDataNode<ObjectType, ParentType>: BrowseTreeNode<ObjectType, ParentType>, IConnectDataNode
     where ObjectType: class
     where ParentType: class, IConnectDataNode
