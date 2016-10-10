@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BrowseElementNodeFolder" xml:space="preserve">
     <value>Address space branch node</value>
@@ -232,5 +232,58 @@
   <data name="TreeNodeToolTipDummy" xml:space="preserve">
     <value>Dummy node do represent any server object</value>
     <comment>CAS.Lib.OPCClientControlsLib.CTN.DummyNode</comment>
+  </data>
+  <data name="OpenDialogSessionTitle" xml:space="preserve">
+    <value>Load session from configuration file.</value>
+  </data>
+  <data name="OpenDialogServeTitle" xml:space="preserve">
+    <value>Load server from configuration file.</value>
+  </data>
+  <data name="SaveDialogServerTitle" xml:space="preserve">
+    <value>Save server configuration file.</value>
+  </data>
+  <data name="SaveDialogSessionTitle" xml:space="preserve">
+    <value>Save session file.</value>
+  </data>
+  <data name="Help_Main" xml:space="preserve">
+    <value>http://www.commsvr.com/OPC-Help/Index.aspx?topic=html/b8c5f048-bb7e-4742-b7f2-b61a77789ed9.htm</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>http://www.commsvr.com/</value>
+  </data>
+  <data name="Support_emailAddress" xml:space="preserve">
+    <value>commserver@commserver.eu</value>
+  </data>
+  <data name="Support_MessageBody" xml:space="preserve">
+    <value>Hi, 
+I am interested in the following feature or  the following elements should be changed:</value>
+  </data>
+  <data name="Support_MessageCaption" xml:space="preserve">
+    <value>OPC Viewer</value>
+  </data>
+  <data name="Support_messageSubject" xml:space="preserve">
+    <value>OPC Viewer questions</value>
+  </data>
+  <data name="Support_MessageToBeShown" xml:space="preserve">
+    <value>Click OK to send email or Cancel otherwise.</value>
+  </data>
+  <data name="MainFormUpdateEventHandlerException" xml:space="preserve">
+    <value>An error occurs during receiving an update handler. This is not a serious problem it has only influence on messages displayed on debug tab, but if this Warning repeats very often please contact the technical support. Message:</value>
+    <comment>c:\vs\VS_Trunk\PR30-OPCViever\MainGUI\MainFormV2008.cs</comment>
+  </data>
+  <data name="RSS" xml:space="preserve">
+    <value>http://www.commsvr.com/rss/commservernews_en.rss</value>
+  </data>
+  <data name="MainForm_DefaultAppMissing" xml:space="preserve">
+    <value>The default application that opens:
+{0} 
+may be mis-configured 
+(details: {1}). 
+Please navigate to: {0} manually.</value>
+    <comment>c:\vs\VS_Trunk\PR30-OPCViever\MainGUI\MainFormV2008.cs</comment>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Przegl_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Przegl_48.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

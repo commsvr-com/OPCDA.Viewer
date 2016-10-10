@@ -91,6 +91,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -188,6 +189,12 @@
     <Compile Include="Common\LocaleCtrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="MainFormV2008.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFormV2008.Designer.cs">
+      <DependentUpon>MainFormV2008.cs</DependentUpon>
+    </Compile>
     <Compile Include="OPVListViewSorter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <AutoGen>True</AutoGen>
@@ -198,6 +205,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="ResultListViewCtrl.cs">
       <SubType>UserControl</SubType>
@@ -414,6 +426,10 @@
       <DependentUpon>LocaleCtrl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainFormV2008.resx">
+      <DependentUpon>MainFormV2008.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -485,9 +501,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="cas.snk" />
     <None Include="DemoConfiguration.oses" />
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Resources\Przegl_Full.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -124,6 +124,15 @@ namespace CAS.Lib.OPCClientControlsLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to http://www.commsvr.com/OPC-Help/Index.aspx?topic=html/b8c5f048-bb7e-4742-b7f2-b61a77789ed9.htm.
+        /// </summary>
+        internal static string Help_Main {
+            get {
+                return ResourceManager.GetString("Help_Main", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to http://www.commsvr.com/DataPorter/Index.aspx#html/662c67b6-580d-4f55-b8f6-20a4fdce79b7.htm.
         /// </summary>
         internal static string Help_SelectServerForm {
@@ -142,11 +151,42 @@ namespace CAS.Lib.OPCClientControlsLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to http://www.commsvr.com/.
+        /// </summary>
+        internal static string Home {
+            get {
+                return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There was an exception during reading the properties from items.Default values are not set.Reason: .
         /// </summary>
         internal static string ItemValueListEditCtrl_property_error {
             get {
                 return ResourceManager.GetString("ItemValueListEditCtrl_property_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The default application that opens:
+        ///{0} 
+        ///may be mis-configured 
+        ///(details: {1}). 
+        ///Please navigate to: {0} manually..
+        /// </summary>
+        internal static string MainForm_DefaultAppMissing {
+            get {
+                return ResourceManager.GetString("MainForm_DefaultAppMissing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error occurs during receiving an update handler. This is not a serious problem it has only influence on messages displayed on debug tab, but if this Warning repeats very often please contact the technical support. Message:.
+        /// </summary>
+        internal static string MainFormUpdateEventHandlerException {
+            get {
+                return ResourceManager.GetString("MainFormUpdateEventHandlerException", resourceCulture);
             }
         }
         
@@ -214,6 +254,24 @@ namespace CAS.Lib.OPCClientControlsLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Load server from configuration file..
+        /// </summary>
+        internal static string OpenDialogServeTitle {
+            get {
+                return ResourceManager.GetString("OpenDialogServeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Load session from configuration file..
+        /// </summary>
+        internal static string OpenDialogSessionTitle {
+            get {
+                return ResourceManager.GetString("OpenDialogSessionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Property node.
         /// </summary>
         internal static string PropertyNodeToolTip {
@@ -228,6 +286,43 @@ namespace CAS.Lib.OPCClientControlsLib.Properties {
         internal static string PropertyValueNodeToolTip {
             get {
                 return ResourceManager.GetString("PropertyValueNodeToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Przegl_48 {
+            get {
+                object obj = ResourceManager.GetObject("Przegl_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to http://www.commsvr.com/rss/commservernews_en.rss.
+        /// </summary>
+        internal static string RSS {
+            get {
+                return ResourceManager.GetString("RSS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save server configuration file..
+        /// </summary>
+        internal static string SaveDialogServerTitle {
+            get {
+                return ResourceManager.GetString("SaveDialogServerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save session file..
+        /// </summary>
+        internal static string SaveDialogSessionTitle {
+            get {
+                return ResourceManager.GetString("SaveDialogSessionTitle", resourceCulture);
             }
         }
         
@@ -264,6 +359,52 @@ namespace CAS.Lib.OPCClientControlsLib.Properties {
         internal static string SubscriptionTreeNodeToolTipNotConnected {
             get {
                 return ResourceManager.GetString("SubscriptionTreeNodeToolTipNotConnected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to commserver@commserver.eu.
+        /// </summary>
+        internal static string Support_emailAddress {
+            get {
+                return ResourceManager.GetString("Support_emailAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hi, 
+        ///I am interested in the following feature or  the following elements should be changed:.
+        /// </summary>
+        internal static string Support_MessageBody {
+            get {
+                return ResourceManager.GetString("Support_MessageBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OPC Viewer.
+        /// </summary>
+        internal static string Support_MessageCaption {
+            get {
+                return ResourceManager.GetString("Support_MessageCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OPC Viewer questions.
+        /// </summary>
+        internal static string Support_messageSubject {
+            get {
+                return ResourceManager.GetString("Support_messageSubject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click OK to send email or Cancel otherwise..
+        /// </summary>
+        internal static string Support_MessageToBeShown {
+            get {
+                return ResourceManager.GetString("Support_MessageToBeShown", resourceCulture);
             }
         }
         

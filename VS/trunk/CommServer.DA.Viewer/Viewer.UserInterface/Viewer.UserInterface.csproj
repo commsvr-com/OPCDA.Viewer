@@ -189,12 +189,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainFormV2008.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainFormV2008.Designer.cs">
-      <DependentUpon>MainFormV2008.cs</DependentUpon>
-    </Compile>
     <Compile Include="ProductInstaller.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -218,10 +212,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Tracer.cs" />
-    <EmbeddedResource Include="MainFormV2008.resx">
-      <DependentUpon>MainFormV2008.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="ProductInstaller.resx">
       <DependentUpon>ProductInstaller.cs</DependentUpon>
       <SubType>Designer</SubType>
