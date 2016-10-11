@@ -115,6 +115,10 @@
       <HintPath>..\..\packages\CAS.CodeProtect.5.0.2\lib\net35\CAS.CodeProtect.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CAS.CommonResources, Version=2.0.2.16456, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.Licenses.Container.2.00.02\lib\net451\CAS.CommonResources.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="CAS.CommServer.DA.Client.Operations, Version=2.0.14.20417, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
       <HintPath>..\..\packages\CAS.CommServer.DA.Client.2.00.14-Foxtrot\lib\net451\CAS.CommServer.DA.Client.Operations.dll</HintPath>
       <Private>True</Private>
@@ -201,24 +205,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AssemblyInfo.tt</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
     <Compile Include="Tracer.cs" />
     <EmbeddedResource Include="ProductInstaller.resx">
       <DependentUpon>ProductInstaller.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
@@ -274,10 +263,6 @@
     </None>
     <None Include="Przegl_Full.ico" />
     <None Include="Resources\Przegl_48.png" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <PublishFile Include="OpcRcw.Ae">
