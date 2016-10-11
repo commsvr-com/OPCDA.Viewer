@@ -38,8 +38,6 @@ namespace CAS.Lib.OPCClientControlsLib
   /// <summary>
   /// OPCViewer startup class
   /// </summary>
-  [LicenseProvider(typeof(CodeProtectLP))]
-  [Guid("BFDDBFB8-332E-473b-9FDA-3621699BD28B")]
   public partial class MainFormV2008 : Form
   {
 
@@ -49,7 +47,7 @@ namespace CAS.Lib.OPCClientControlsLib
     /// </summary>
     public MainFormV2008()
     {
-      CheckLicese();
+      CheckLicense();
       InitializeComponent();
       if (maintenanceControlComponent.Warning != null)
         TraceEvent.Tracer.TraceInformation(62, this.GetType().Name + ".ctor", "The following warning(s) appeared during loading the license: " + maintenanceControlComponent.Warning);
@@ -116,6 +114,7 @@ namespace CAS.Lib.OPCClientControlsLib
     #endregion
 
     #region private
+
     #region classes
     [Serializable]
     private class UserAppData
@@ -134,27 +133,49 @@ namespace CAS.Lib.OPCClientControlsLib
       public Opc.Dx.DXConnection[] DXConnections = null;
     }
     #endregion
-    private bool CheckLicese()
+
+    [LicenseProvider(typeof(CodeProtectLP))]
+    [Guid("BFDDBFB8-332E-473b-9FDA-3621699BD28B")]
+    private sealed class LicenseProtection : IsLicensed<LicenseProtection>
     {
-      License lic = null;
-      LicenseManager.IsValid(this.GetType(), this, out lic);
-      if (lic == null)
+      #region public
+      internal static bool IsLicensed { get; private set; }
+      internal static void CheckConstrain()
       {
-        MessageBox.Show
-          (CAS.Lib.CodeProtect.Properties.Resources.Tx_LicNoFileErr, CAS.Lib.CodeProtect.Properties.Resources.Tx_LicCap, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-        return false;
+        if (m_Checked)
+          return;
+        LicenseProtection sc = new LicenseProtection();
+        IsLicensed = sc.Licensed;
+        m_Checked = true;
       }
-      using (lic)
+      internal static string TraceNoLicenseFileReason = String.Empty;
+      #endregion
+
+      #region private
+      protected override void TraceNoLicenseFile(string reason)
       {
-        LicenseFile m_license = lic as LicenseFile;
-        Debug.Assert(m_license != null);
-        if (string.IsNullOrEmpty(m_license.FailureReason))
-          return true;
-        ScrollableMessageBox.Instance.Show
-          (m_license.FailureReason, CAS.Lib.CodeProtect.Properties.Resources.Tx_LicCap, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-        return false;
+        base.TraceNoLicenseFile(reason);
+        TraceNoLicenseFileReason = reason;
       }
+      private LicenseProtection()
+      {
+        IsLicensed = this.Licensed;
+      }
+      static LicenseProtection()
+      {
+        CheckConstrain();
+      }
+      private static bool m_Checked = false;
+      #endregion
     }
+    private void CheckLicense()
+    {
+      LicenseProtection.CheckConstrain();
+      if (string.IsNullOrEmpty(LicenseProtection.TraceNoLicenseFileReason))
+        return;
+      ScrollableMessageBox.Instance.Show(LicenseProtection.TraceNoLicenseFileReason, CodeProtect.Properties.Resources.Tx_LicCap, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+    }
+
     private List<ToolStripItem> m_ServerStateItems = new System.Collections.Generic.List<ToolStripItem>();
     private const string c_ServerConfigExtension = ".scnfg";
     private const string c_ServerFilterFormat = "Config Files (*{0})|*{0}|All Files (*.*)|*.*";
@@ -318,6 +339,7 @@ namespace CAS.Lib.OPCClientControlsLib
       Cursor = Cursors.Default;
     }
     #endregion
+
     #region private methodods
 
     private bool GetSaveFileName(bool prompt, string defaultName, string extension, string title, ref string name)
@@ -623,6 +645,7 @@ namespace CAS.Lib.OPCClientControlsLib
       }
     }
     #endregion
+
     #region Form events handlers
     private void MainFormV2008_FormClosing(object sender, FormClosingEventArgs e)
     {
@@ -630,6 +653,7 @@ namespace CAS.Lib.OPCClientControlsLib
       m_SubscriptionCTRL.Clear();
     }
     #endregion
+
     #region Menu Handlers
     #region menu session
     private void TSMI_Session_Save_Click(object sender, EventArgs e)
