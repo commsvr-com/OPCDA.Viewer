@@ -16,7 +16,6 @@
 using CAS.Lib.CodeProtect;
 using CAS.Lib.OPCClientControlsLib;
 using System;
-using System.Collections.Specialized;
 using System.Deployment.Application;
 using System.Security;
 using System.Security.Permissions;
@@ -31,23 +30,24 @@ namespace CAS.OPCViewer
     [STAThread]
     static void Main()
     {
+      Application.EnableVisualStyles();
+      Application.SetCompatibleTextRenderingDefault(false);
+      string _commandLine = Environment.CommandLine;
 #if DEBUG
-      string m_cmmdLine = Environment.CommandLine;
-      if (m_cmmdLine.ToLower().Contains("debugstop"))
+      if (_commandLine.ToLower().Contains("debugstop"))
         MessageBox.Show("Attach debug point");
-      GetQueryStringParameters();
-      if (m_cmmdLine.ToLower().Contains(m_InstallLicenseDebugerArgument))
+#endif
+      if (IsFirstRun() || _commandLine.ToLower().Contains(m_InstallLicenseDebugerArgument))
       {
         try
         {
-          CAS.Lib.CodeProtect.LibInstaller.InstalLicense(true);
+          LibInstaller.InstalLicense(true);
         }
         catch (Exception ex)
         {
           MessageBox.Show("License installation has failed, reason: " + ex.Message);
         }
       }
-#endif
       try
       {
         SecurityPermission permission = new SecurityPermission(SecurityPermissionFlag.UnmanagedCode);
@@ -76,7 +76,6 @@ namespace CAS.OPCViewer
       }
     }
     private readonly static string m_InstallLicenseDebugerArgument = "installic";
-
     /// <summary>
     /// Gets the arguments from command line (if this application is started from the commands line)
     /// or from activation url (if it is network deployed, e.g. as ClickOnce)
@@ -108,19 +107,15 @@ namespace CAS.OPCViewer
       }
       return Environment.GetCommandLineArgs();
     }
-    private static void GetQueryStringParameters()
+    private static bool IsFirstRun()
     {
-      if (ApplicationDeployment.IsNetworkDeployed)
+      try
       {
-        Uri m_Uri = ApplicationDeployment.CurrentDeployment.ActivationUri;
-        if (m_Uri != null)
-        {
-          NameValueCollection m_Switches = HttpUtility.ParseQueryString(m_Uri.Query);
-          //TODO: ???
-          //see: http://itrserver.hq.cas.com.pl/Bugs/BugDetail.aspx?bid=2618
-        }
-        if (ApplicationDeployment.CurrentDeployment.IsFirstRun)
-          LibInstaller.InstalLicense(Environment.UserName, Environment.MachineName, Environment.UserDomainName, true);
+        return ApplicationDeployment.IsNetworkDeployed && ApplicationDeployment.CurrentDeployment.IsFirstRun;
+      }
+      catch (DeploymentException)
+      {
+        return false;
       }
     }
   }
