@@ -195,7 +195,7 @@
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
-    <ProjectReference Include="..\CommServer.DAViewerAddressSpace\Viewer.AddressSpace.csproj">
+    <ProjectReference Include="..\Viewer.AddressSpace\Viewer.AddressSpace.csproj">
       <Project>{86337fcd-d411-4e63-b80f-e121318d5572}</Project>
       <Name>Viewer.AddressSpace</Name>
     </ProjectReference>

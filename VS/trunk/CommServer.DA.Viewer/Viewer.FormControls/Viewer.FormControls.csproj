@@ -578,7 +578,7 @@
     <None Include="Resources\xml.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CommServer.DAViewerAddressSpace\Viewer.AddressSpace.csproj">
+    <ProjectReference Include="..\Viewer.AddressSpace\Viewer.AddressSpace.csproj">
       <Project>{86337FCD-D411-4E63-B80F-E121318D5572}</Project>
       <Name>Viewer.AddressSpace</Name>
     </ProjectReference>
