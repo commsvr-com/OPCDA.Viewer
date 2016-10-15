@@ -14,11 +14,10 @@
 
 using CAS.DataPorter.Configurator.HMI.Wrappers;
 using CAS.Lib.CodeProtect;
-using CAS.Lib.CodeProtect.Controls;
-using CAS.Lib.CodeProtect.LicenseDsc;
 using CAS.Lib.ControlLibrary;
 using CAS.Lib.OPCClient.Da;
 using CAS.Lib.OPCClientControlsLib.Properties;
+using CAS.Windows.Forms.CodeProtectControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -655,6 +654,7 @@ namespace CAS.Lib.OPCClientControlsLib
     #endregion
 
     #region Menu Handlers
+
     #region menu session
     private void TSMI_Session_Save_Click(object sender, EventArgs e)
     {
@@ -941,17 +941,13 @@ namespace CAS.Lib.OPCClientControlsLib
     }
     private void licenseInformationToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      using (LicenseForm dial = new LicenseForm
-             (null, null, Assembly.GetEntryAssembly()))
+      using (LicenseForm _dialog = new LicenseForm(null, null, Assembly.GetEntryAssembly()))
       {
-        Licences cLicDial = new Licences();
-        dial.SetAdditionalControl = cLicDial;
-        dial.LicenceRequestMessageProvider
-          = new LicenseForm.LicenceRequestMessageProviderDelegate(
-            delegate () { return cLicDial.GetLicenseMessageRequest(); });
-        dial.ShowDialog(this);
+        Licenses cLicDial = new Licenses();
+        _dialog.SetAdditionalControl = cLicDial;
+        _dialog.LicenceRequestMessageProvider = new LicenseForm.LicenceRequestMessageProviderDelegate(delegate () { return cLicDial.GetLicenseMessageRequest(); });
+        _dialog.ShowDialog(this);
       }
-
     }
     private void openLogsContainingFolderToolStripMenuItem_Click(object sender, EventArgs e)
     {
@@ -973,16 +969,16 @@ namespace CAS.Lib.OPCClientControlsLib
     }
     private void enterTheUnlockCodeToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      using (UlockKeyDialog dialog = new UlockKeyDialog())
+      using (UnlockKeyDialog dialog = new UnlockKeyDialog())
       {
         dialog.ShowDialog();
       }
     }
     #endregion
-
     private ResourceManager Getter()
     {
       return Resources.ResourceManager;
     }
+
   }
 }

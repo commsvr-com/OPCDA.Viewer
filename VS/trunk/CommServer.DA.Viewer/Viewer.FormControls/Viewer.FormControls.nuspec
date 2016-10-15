@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>CAS.CommServer.DA.Viewer</id>
-    <version>3.10.06-Foxtrot</version>
+    <version>3.10.06-Echo</version>
     <title>OPC Viewer - CAS OPC Data Access Client</title>
     <authors>CAS</authors>
     <owners>commsvr.com</owners>

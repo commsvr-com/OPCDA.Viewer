@@ -13,11 +13,11 @@
 //  http://www.cas.eu
 //</summary>
 
+using global::Opc.Cpx;
 using System.Collections;
 using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
-using global::Opc.Cpx;
 using OpcDa = global::Opc.Da;
 
 namespace CAS.Lib.OPCClientControlsLib
@@ -28,6 +28,10 @@ namespace CAS.Lib.OPCClientControlsLib
   /// Used to receive trace/debug output during data update processing.
   /// </summary>
   public delegate void UpdateEvent_EventHandler( object subscriptionHandle, object args );
+  /// <summary>
+  /// Class UpdatesViewCtrl.
+  /// </summary>
+  /// <seealso cref="System.Windows.Forms.UserControl" />
   public partial class UpdatesViewCtrl: UserControl
   {
     #region constructor

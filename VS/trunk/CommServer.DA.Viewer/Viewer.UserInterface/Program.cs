@@ -41,7 +41,7 @@ namespace CAS.OPCViewer
       {
         try
         {
-          LibInstaller.InstalLicense(true);
+          LibInstaller.InstallLicense(true);
         }
         catch (Exception ex)
         {
