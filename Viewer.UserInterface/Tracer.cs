@@ -27,8 +27,7 @@ namespace CAS.OPCViewer
   /// </summary>  
   internal class Tracer
   {
-    private static TraceEvent m_traceevent_internal =
-      new TraceEvent( typeof( Tracer ).Namespace );
+    private static TraceEvent m_TraceEvent = new TraceEvent(typeof(Tracer).Namespace);
     /// <summary>
     /// Gets the tracer.
     /// </summary>
@@ -37,7 +36,7 @@ namespace CAS.OPCViewer
     {
       get
       {
-        return m_traceevent_internal;
+        return m_TraceEvent;
       }
     }
   }
