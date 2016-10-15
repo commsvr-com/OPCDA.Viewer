@@ -119,44 +119,12 @@
       <HintPath>..\..\packages\CAS.Licenses.Container.2.00.02\lib\net451\CAS.CommonResources.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.DA.Client.Operations, Version=2.0.14.18148, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CAS.CommServer.DA.Client.2.00.14-Golf\lib\net451\CAS.CommServer.DA.Client.Operations.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="CAS.CommServer.DA.Client.Services, Version=2.0.14.18148, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CAS.CommServer.DA.Client.2.00.14-Golf\lib\net451\CAS.CommServer.DA.Client.Services.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="CAS.CommServer.DAClientConfiguration, Version=5.1.2.20296, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CAS.CommServer.DAClientConfiguration.5.01.02-Echo\lib\net451\CAS.CommServer.DAClientConfiguration.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="CAS.CommServer.DeviceSimulator, Version=5.1.2.20295, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CAS.CommServer.DeviceSimulator.5.01.02-Echo\lib\net451\CAS.CommServer.DeviceSimulator.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="CAS.CommServer.OPCClassicSDK.COMWrapper, Version=2.1.1061.39881, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CAS.CommServer.OPCClassic.SDK.COMWrapper.2.01.1061-Bravo\lib\net451\CAS.CommServer.OPCClassicSDK.COMWrapper.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="CAS.CommServer.OPCClassicSDK.Core, Version=2.1.1061.39650, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CAS.CommServer.OPCClassic.SDK.Core.2.01.1061-Bravo\lib\net451\CAS.CommServer.OPCClassicSDK.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="CAS.CommServer.OPCClassicSDK.OpcComRcw, Version=2.1.1061.39881, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CAS.CommServer.OPCClassic.SDK.COMWrapper.2.01.1061-Bravo\lib\net451\CAS.CommServer.OPCClassicSDK.OpcComRcw.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="CAS.RTLib, Version=5.0.4.28382, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
       <HintPath>..\..\packages\CAS.RealTime.5.0.4-Charlie\lib\net451\CAS.RTLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.RTLibComm, Version=5.0.4.28381, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
       <HintPath>..\..\packages\CAS.RealTime.5.0.4-Charlie\lib\net451\CAS.RTLibComm.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="CAS.Windows.Forms, Version=6.0.0.39051, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CAS.Windows.Forms.6.0.0-Delta\lib\net451\CAS.Windows.Forms.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Build.Framework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -260,7 +228,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="DemoConfiguration.oses" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -271,52 +238,52 @@
   <ItemGroup>
     <PublishFile Include="OpcRcw.Ae">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="OpcRcw.Comn">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="OpcRcw.Da">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="OpcRcw.Dx">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="OpcRcw.Hda">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
