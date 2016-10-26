@@ -49,7 +49,7 @@ namespace CAS.Lib.OPCClientControlsLib
       CheckLicense();
       InitializeComponent();
       if (maintenanceControlComponent.Warning != null)
-        TraceEvent.Tracer.TraceInformation(62, this.GetType().Name + ".ctor", "The following warning(s) appeared during loading the license: " + maintenanceControlComponent.Warning);
+        AssemblyTraceEvent.Tracer.TraceEvent(TraceEventType.Information, 62, this.GetType().Name + ".ctor", "The following warning(s) appeared during loading the license: " + maintenanceControlComponent.Warning);
       DoNotShowUnlockCodeToolStrip();
       m_SubscriptionCTRL.InitializeSession();
       serviceControlToolStrip_DataPorter.Enabled = m_SubscriptionCTRL.IsProcessingEnvironmentEnabled;
@@ -99,7 +99,7 @@ namespace CAS.Lib.OPCClientControlsLib
     public MainFormV2008(string SessionFileName)
       : this()
     {
-      TraceEvent.Tracer.TraceInformation(104, this.GetType().Name + ".ctor", "Openning: " + SessionFileName);
+      AssemblyTraceEvent.Tracer.TraceEvent(TraceEventType.Information, 104, this.GetType().Name + ".ctor", "Openning: " + SessionFileName);
       m_SubscriptionCTRL.OpenSession(SessionFileName);
     }
     /// <summary>
@@ -282,8 +282,7 @@ namespace CAS.Lib.OPCClientControlsLib
       }
       catch (Exception ex)
       {
-        Tracer.MainTracer.TraceWarning(267, this.GetType().Name + ".OnUpdateEvent",
-          Properties.Resources.MainFormUpdateEventHandlerException + ex.Message);
+        AssemblyTraceEvent.Tracer.TraceEvent( TraceEventType.Warning, 267, this.GetType().Name + ".OnUpdateEvent", Resources.MainFormUpdateEventHandlerException + ex.Message);
       }
     }
     /// <summary>

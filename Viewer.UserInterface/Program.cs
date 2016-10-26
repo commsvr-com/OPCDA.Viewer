@@ -24,7 +24,10 @@ using System.Windows.Forms;
 
 namespace CAS.OPCViewer
 {
-  class Program
+  /// <summary>
+  /// Class Program.
+  /// </summary>
+  public class Program
   {
 
     [STAThread]

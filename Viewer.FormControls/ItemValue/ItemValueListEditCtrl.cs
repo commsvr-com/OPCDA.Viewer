@@ -27,13 +27,15 @@ using System.Windows.Forms;
 using OpcDa = global::Opc.Da;
 using CAS.Lib.ControlLibrary;
 using CAS.Lib.OPCClient.Da;
+using System.Diagnostics;
+using CAS.Lib.OPCClientControlsLib.Properties;
 
 namespace CAS.Lib.OPCClientControlsLib
 {
   /// <summary>
   /// A control used to display and edit a list of ItemValue objects.
   /// </summary>
-  public class ItemValueListEditCtrl: System.Windows.Forms.UserControl
+  public class ItemValueListEditCtrl : System.Windows.Forms.UserControl
   {
     private System.Windows.Forms.ListView ItemListLV;
     private System.Windows.Forms.ContextMenu PopupMenu;
@@ -55,22 +57,22 @@ namespace CAS.Lib.OPCClientControlsLib
 
       ItemListLV.SmallImageList = ImageListLibrary.StaticProjectImageList;
 
-      SetColumns( ColumnNames );
+      SetColumns(ColumnNames);
     }
 
     /// <summary> 
     /// Clean up any resources being used.
     /// </summary>
-    protected override void Dispose( bool disposing )
+    protected override void Dispose(bool disposing)
     {
-      if ( disposing )
+      if (disposing)
       {
-        if ( components != null )
+        if (components != null)
         {
           components.Dispose();
         }
       }
-      base.Dispose( disposing );
+      base.Dispose(disposing);
     }
 
     #region Component Designer generated code
@@ -94,50 +96,50 @@ namespace CAS.Lib.OPCClientControlsLib
       // 
       this.ItemListLV.ContextMenu = this.PopupMenu;
       this.ItemListLV.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.ItemListLV.Location = new System.Drawing.Point( 0, 0 );
+      this.ItemListLV.Location = new System.Drawing.Point(0, 0);
       this.ItemListLV.MultiSelect = false;
       this.ItemListLV.Name = "ItemListLV";
-      this.ItemListLV.Size = new System.Drawing.Size( 432, 272 );
+      this.ItemListLV.Size = new System.Drawing.Size(432, 272);
       this.ItemListLV.Sorting = System.Windows.Forms.SortOrder.Ascending;
       this.ItemListLV.TabIndex = 0;
       this.ItemListLV.UseCompatibleStateImageBehavior = false;
       this.ItemListLV.View = System.Windows.Forms.View.Details;
-      this.ItemListLV.DoubleClick += new System.EventHandler( this.EditMI_Click );
-      this.ItemListLV.ColumnClick += new ColumnClickEventHandler( SortHandler.listView_ColumnClick );
+      this.ItemListLV.DoubleClick += new System.EventHandler(this.EditMI_Click);
+      this.ItemListLV.ColumnClick += new ColumnClickEventHandler(SortHandler.listView_ColumnClick);
       // 
       // PopupMenu
       // 
-      this.PopupMenu.MenuItems.AddRange( new System.Windows.Forms.MenuItem[] {
+      this.PopupMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.EditMI,
             this.NewMI,
             this.InitMI,
             this.DeleteMI,
             this.Separator01,
-            this.ValuesOnlyMI} );
+            this.ValuesOnlyMI});
       // 
       // EditMI
       // 
       this.EditMI.Index = 0;
       this.EditMI.Text = "&Edit...";
-      this.EditMI.Click += new System.EventHandler( this.EditMI_Click );
+      this.EditMI.Click += new System.EventHandler(this.EditMI_Click);
       // 
       // NewMI
       // 
       this.NewMI.Index = 1;
       this.NewMI.Text = "&New...";
-      this.NewMI.Click += new System.EventHandler( this.NewMI_Click );
+      this.NewMI.Click += new System.EventHandler(this.NewMI_Click);
       // 
       // InitMI
       // 
       this.InitMI.Index = 2;
       this.InitMI.Text = "&Initialize with Properties";
-      this.InitMI.Click += new System.EventHandler( this.InitMI_Click );
+      this.InitMI.Click += new System.EventHandler(this.InitMI_Click);
       // 
       // DeleteMI
       // 
       this.DeleteMI.Index = 3;
       this.DeleteMI.Text = "&Delete";
-      this.DeleteMI.Click += new System.EventHandler( this.RemoveMI_Click );
+      this.DeleteMI.Click += new System.EventHandler(this.RemoveMI_Click);
       // 
       // Separator01
       // 
@@ -149,14 +151,14 @@ namespace CAS.Lib.OPCClientControlsLib
       this.ValuesOnlyMI.Checked = true;
       this.ValuesOnlyMI.Index = 5;
       this.ValuesOnlyMI.Text = "&Values Only";
-      this.ValuesOnlyMI.Click += new System.EventHandler( this.ValuesOnlyMI_Click );
+      this.ValuesOnlyMI.Click += new System.EventHandler(this.ValuesOnlyMI_Click);
       // 
       // ItemValueListEditCtrl
       // 
-      this.Controls.Add( this.ItemListLV );
+      this.Controls.Add(this.ItemListLV);
       this.Name = "ItemValueListEditCtrl";
-      this.Size = new System.Drawing.Size( 432, 272 );
-      this.ResumeLayout( false );
+      this.Size = new System.Drawing.Size(432, 272);
+      this.ResumeLayout(false);
 
     }
     #endregion
@@ -178,16 +180,16 @@ namespace CAS.Lib.OPCClientControlsLib
     /// The list view column names.
     /// </summary>
     private readonly string[] ColumnNames = new string[]
-		{
-			"Item ID",
-			"Item Path",
-			"Value",
-			"Data Type",
-			"Quality Bits",
-			"Limit Bits",
-			"Vendor Bits",
-			"Timestamp"
-		};
+        {
+            "Item ID",
+            "Item Path",
+            "Value",
+            "Data Type",
+            "Quality Bits",
+            "Limit Bits",
+            "Vendor Bits",
+            "Timestamp"
+        };
 
     /// <summary>
     /// The server where the items are resident on.
@@ -202,7 +204,7 @@ namespace CAS.Lib.OPCClientControlsLib
     /// <summary>
     /// Initializes the control with the specified set of items.
     /// </summary>
-    public void Initialize( Server server, OpcDa::ItemValue template )
+    public void Initialize(Server server, OpcDa::ItemValue template)
     {
       // clear existing items.
       ItemListLV.Items.Clear();
@@ -214,17 +216,17 @@ namespace CAS.Lib.OPCClientControlsLib
       InitMI.Enabled = m_server != null;
 
       // create template item.
-      m_template = ( template != null ) ? (OpcDa::ItemValue)template.Clone() : new OpcDa::ItemValue();
+      m_template = (template != null) ? (OpcDa::ItemValue)template.Clone() : new OpcDa::ItemValue();
       m_template.ItemName = "<default>";
 
       // clear values only flag if quality or timestamp specified.
-      if ( m_template.QualitySpecified || m_template.TimestampSpecified )
+      if (m_template.QualitySpecified || m_template.TimestampSpecified)
       {
         ValuesOnlyMI.Checked = false;
       }
 
       // add template to list.
-      AddItem( m_template );
+      AddItem(m_template);
 
       // adjust columns.
       AdjustColumns();
@@ -233,15 +235,15 @@ namespace CAS.Lib.OPCClientControlsLib
     /// <summary>
     /// Initializes the control with the specified set of items.
     /// </summary>
-    public void Initialize( Server server, OpcDa::ItemValue template, OpcDa::Item[] items )
+    public void Initialize(Server server, OpcDa::ItemValue template, OpcDa::Item[] items)
     {
-      Initialize( server, template );
+      Initialize(server, template);
 
       // add items.
-      if ( items != null )
+      if (items != null)
       {
-        foreach ( OpcDa::Item item in items )
-          AddItemWithDefaults( new OpcDa::ItemValue( item ) );
+        foreach (OpcDa::Item item in items)
+          AddItemWithDefaults(new OpcDa::ItemValue(item));
       }
 
       // adjust columns.
@@ -251,7 +253,7 @@ namespace CAS.Lib.OPCClientControlsLib
     /// <summary>
     /// Initializes an item value object with the item properties.
     /// </summary>
-    private void GetDefaultValues( OpcDa::ItemValue[] items, bool valuesOnly )
+    private void GetDefaultValues(OpcDa::ItemValue[] items, bool valuesOnly)
     {
       try
       {
@@ -259,86 +261,83 @@ namespace CAS.Lib.OPCClientControlsLib
         OpcDa::ItemPropertyCollection[] propertyLists = m_server.GetProperties(
           items,
           new OpcDa::PropertyID[] { OpcDa::Property.DATATYPE, OpcDa::Property.QUALITY, OpcDa::Property.TIMESTAMP, OpcDa::Property.VALUE },
-          true );
+          true);
 
         // update item values.
-        for ( int ii = 0; ii < items.Length; ii++ )
+        for (int ii = 0; ii < items.Length; ii++)
         {
           // ignore errors for failures for individual items.
-          if ( propertyLists[ ii ].ResultID.Failed() )
+          if (propertyLists[ii].ResultID.Failed())
           {
             continue;
           }
 
           // set a default value based on the data type.
-          object defaultValue = propertyLists[ ii ][ 3 ].Value;
+          object defaultValue = propertyLists[ii][3].Value;
 
-          if ( defaultValue == null )
+          if (defaultValue == null)
           {
-            System.Type type = (System.Type)propertyLists[ ii ][ 0 ].Value;
-            System.Type baseType = ( type.IsArray ) ? type.GetElementType() : type;
+            System.Type type = (System.Type)propertyLists[ii][0].Value;
+            System.Type baseType = (type.IsArray) ? type.GetElementType() : type;
 
-            if ( baseType == typeof( string ) )
+            if (baseType == typeof(string))
               defaultValue = "";
-            if ( baseType == typeof( DateTime ) )
+            if (baseType == typeof(DateTime))
               defaultValue = System.DateTime.Now;
-            if ( baseType == typeof( object ) )
+            if (baseType == typeof(object))
               defaultValue = "";
 
-            defaultValue =Opc.Convert.ChangeType( defaultValue, baseType );
+            defaultValue = Opc.Convert.ChangeType(defaultValue, baseType);
 
             //Opc.Convert to a three element array.
-            if ( type.IsArray )
+            if (type.IsArray)
             {
               defaultValue = new object[] { defaultValue, defaultValue, defaultValue };
-              defaultValue =Opc.Convert.ChangeType( defaultValue, type );
+              defaultValue = Opc.Convert.ChangeType(defaultValue, type);
             }
           }
 
           // update the object.
-          items[ ii ].Value = defaultValue;
-          items[ ii ].Quality = (OpcDa::Quality)propertyLists[ ii ][ 1 ].Value;
-          items[ ii ].Timestamp = (DateTime)propertyLists[ ii ][ 2 ].Value;
+          items[ii].Value = defaultValue;
+          items[ii].Quality = (OpcDa::Quality)propertyLists[ii][1].Value;
+          items[ii].Timestamp = (DateTime)propertyLists[ii][2].Value;
 
           // set the quality/timestamp exists flags.
-          items[ ii ].QualitySpecified = !valuesOnly;
-          items[ ii ].TimestampSpecified = !valuesOnly;
+          items[ii].QualitySpecified = !valuesOnly;
+          items[ii].TimestampSpecified = !valuesOnly;
         }
       }
       catch (Exception ex)
       {
-        Tracer.MainTracer.TraceInformation(309,this.GetType().Name+".GetDefaultValues",
-          Properties.Resources.ItemValueListEditCtrl_property_error + ex.Message );
+        AssemblyTraceEvent.Tracer.TraceEvent(TraceEventType.Information, 309, this.GetType().Name + ".GetDefaultValues", Resources.ItemValueListEditCtrl_property_error + ex.Message);
       }
     }
 
     /// <summary>
     /// Updates the specified list item.
     /// </summary>
-    private void UpdateItem( ListViewItem listItem, OpcDa::ItemValue item )
+    private void UpdateItem(ListViewItem listItem, OpcDa::ItemValue item)
     {
-      listItem.SubItems[ VALUE ].Text =Opc.Convert.ToString( GetFieldValue( item, VALUE ) );
-      listItem.SubItems[ VALUE_TYPE ].Text =Opc.Convert.ToString( GetFieldValue( item, VALUE_TYPE ) );
-      listItem.SubItems[ QUALITY_BITS ].Text =Opc.Convert.ToString( GetFieldValue( item, QUALITY_BITS ) );
-      listItem.SubItems[ LIMIT_BITS ].Text =Opc.Convert.ToString( GetFieldValue( item, LIMIT_BITS ) );
-      listItem.SubItems[ VENDOR_BITS ].Text =Opc.Convert.ToString( GetFieldValue( item, VENDOR_BITS ) );
-      listItem.SubItems[ TIMESTAMP ].Text =Opc.Convert.ToString( GetFieldValue( item, TIMESTAMP ) );
+      listItem.SubItems[VALUE].Text = Opc.Convert.ToString(GetFieldValue(item, VALUE));
+      listItem.SubItems[VALUE_TYPE].Text = Opc.Convert.ToString(GetFieldValue(item, VALUE_TYPE));
+      listItem.SubItems[QUALITY_BITS].Text = Opc.Convert.ToString(GetFieldValue(item, QUALITY_BITS));
+      listItem.SubItems[LIMIT_BITS].Text = Opc.Convert.ToString(GetFieldValue(item, LIMIT_BITS));
+      listItem.SubItems[VENDOR_BITS].Text = Opc.Convert.ToString(GetFieldValue(item, VENDOR_BITS));
+      listItem.SubItems[TIMESTAMP].Text = Opc.Convert.ToString(GetFieldValue(item, TIMESTAMP));
     }
-
     /// <summary>
     /// Sets the columns shown in the list view.
     /// </summary>
-    private void SetColumns( string[] columns )
+    private void SetColumns(string[] columns)
     {
       ItemListLV.Clear();
 
-      foreach ( string column in columns )
+      foreach (string column in columns)
       {
         ColumnHeader header = new ColumnHeader();
         header.Text = column;
-        ItemListLV.Columns.Add( header );
+        ItemListLV.Columns.Add(header);
       }
-
       AdjustColumns();
     }
 
@@ -348,42 +347,40 @@ namespace CAS.Lib.OPCClientControlsLib
     private void AdjustColumns()
     {
       // adjust column widths.
-      for ( int ii = 0; ii < ItemListLV.Columns.Count; ii++ )
+      for (int ii = 0; ii < ItemListLV.Columns.Count; ii++)
       {
         // always show the item id column.
-        if ( ii == ITEM_ID || ii == VALUE )
+        if (ii == ITEM_ID || ii == VALUE)
         {
-          ItemListLV.Columns[ ii ].Width = -2;
+          ItemListLV.Columns[ii].Width = -2;
           continue;
         }
-
         // adjust to width of contents if column not empty.
         bool empty = true;
 
-        foreach ( ListViewItem current in ItemListLV.Items )
+        foreach (ListViewItem current in ItemListLV.Items)
         {
-          if ( current.SubItems[ ii ].Text != "" )
+          if (current.SubItems[ii].Text != "")
           {
             empty = false;
-            ItemListLV.Columns[ ii ].Width = -2;
+            ItemListLV.Columns[ii].Width = -2;
             break;
           }
         }
 
         // set column width to zero if no data it in.
-        if ( empty )
-          ItemListLV.Columns[ ii ].Width = 0;
+        if (empty)
+          ItemListLV.Columns[ii].Width = 0;
       }
     }
-
     /// <summary>
     /// Returns the value of the specified field.
     /// </summary>
-    private object GetFieldValue( OpcDa::ItemValue item, int fieldID )
+    private object GetFieldValue(OpcDa::ItemValue item, int fieldID)
     {
       object fieldValue = null;
 
-      switch ( fieldID )
+      switch (fieldID)
       {
         case ITEM_PATH:
           {
@@ -394,97 +391,96 @@ namespace CAS.Lib.OPCClientControlsLib
         case VALUE:
           {
             fieldValue = item.Value;
-            if ( fieldValue == null )
-              fieldValue = global::Opc.Convert.Clone( m_template.Value );
+            if (fieldValue == null)
+              fieldValue = global::Opc.Convert.Clone(m_template.Value);
             break;
           }
 
         case VALUE_TYPE:
           {
-            fieldValue = ( item.Value != null ) ? item.Value.GetType() : null;
-            if ( fieldValue == null )
-              fieldValue = ( m_template.Value != null ) ? m_template.Value.GetType() : null;
+            fieldValue = (item.Value != null) ? item.Value.GetType() : null;
+            if (fieldValue == null)
+              fieldValue = (m_template.Value != null) ? m_template.Value.GetType() : null;
             break;
           }
 
         case QUALITY_BITS:
           {
-            fieldValue = ( item.QualitySpecified ) ? item.Quality.QualityBits : fieldValue;
-            if ( fieldValue == null )
-              fieldValue = ( m_template.QualitySpecified ) ? m_template.Quality.QualityBits : fieldValue;
+            fieldValue = (item.QualitySpecified) ? item.Quality.QualityBits : fieldValue;
+            if (fieldValue == null)
+              fieldValue = (m_template.QualitySpecified) ? m_template.Quality.QualityBits : fieldValue;
             break;
           }
 
         case LIMIT_BITS:
           {
-            fieldValue = ( item.QualitySpecified ) ? item.Quality.LimitBits : fieldValue;
-            if ( fieldValue == null )
-              fieldValue = ( m_template.QualitySpecified ) ? m_template.Quality.LimitBits : fieldValue;
+            fieldValue = (item.QualitySpecified) ? item.Quality.LimitBits : fieldValue;
+            if (fieldValue == null)
+              fieldValue = (m_template.QualitySpecified) ? m_template.Quality.LimitBits : fieldValue;
             break;
           }
 
         case VENDOR_BITS:
           {
-            fieldValue = ( item.QualitySpecified ) ? item.Quality.VendorBits : fieldValue;
-            if ( fieldValue == null )
-              fieldValue = ( m_template.QualitySpecified ) ? m_template.Quality.VendorBits : fieldValue;
+            fieldValue = (item.QualitySpecified) ? item.Quality.VendorBits : fieldValue;
+            if (fieldValue == null)
+              fieldValue = (m_template.QualitySpecified) ? m_template.Quality.VendorBits : fieldValue;
             break;
           }
 
         case TIMESTAMP:
           {
-            fieldValue = ( item.TimestampSpecified ) ? item.Timestamp : fieldValue;
-            if ( fieldValue == null )
-              fieldValue = ( m_template.TimestampSpecified ) ? m_template.Timestamp : fieldValue;
+            fieldValue = (item.TimestampSpecified) ? item.Timestamp : fieldValue;
+            if (fieldValue == null)
+              fieldValue = (m_template.TimestampSpecified) ? m_template.Timestamp : fieldValue;
             break;
           }
 
         case QUALITY:
           {
-            fieldValue = ( item.QualitySpecified ) ? item.Quality : fieldValue;
-            if ( fieldValue == null )
-              fieldValue = ( m_template.QualitySpecified ) ? m_template.Quality : fieldValue;
+            fieldValue = (item.QualitySpecified) ? item.Quality : fieldValue;
+            if (fieldValue == null)
+              fieldValue = (m_template.QualitySpecified) ? m_template.Quality : fieldValue;
             break;
           }
       }
-
       return fieldValue;
     }
 
     /// <summary>
     /// Adds a items to the list view.
     /// </summary>
-    public void AddItemWithDefaults( OpcDa::ItemValue item )
+    public void AddItemWithDefaults(OpcDa::ItemValue item)
     {
-      GetDefaultValues( new OpcDa::ItemValue[] { item }, ValuesOnlyMI.Checked );
-      AddItem( item );
+      GetDefaultValues(new OpcDa::ItemValue[] { item }, ValuesOnlyMI.Checked);
+      AddItem(item);
     }
 
     /// <summary>
     /// Adds an item to the list view.
     /// </summary>
-    private void AddItem( OpcDa::ItemValue item )
+    private void AddItem(OpcDa::ItemValue item)
     {
       // create list view item.
-      ListViewItem listItem = new ListViewItem( item.ItemName, (int)ImageListLibrary.Icons.IMAGE_TAG );
+      ListViewItem listItem = new ListViewItem(item.ItemName, (int)ImageListLibrary.Icons.IMAGE_TAG);
 
       // add sub-items.
-      listItem.SubItems.Add(Opc.Convert.ToString( GetFieldValue( item, ITEM_PATH ) ) );
-      listItem.SubItems.Add(Opc.Convert.ToString( GetFieldValue( item, VALUE ) ) );
-      listItem.SubItems.Add(Opc.Convert.ToString( GetFieldValue( item, VALUE_TYPE ) ) );
-      listItem.SubItems.Add(Opc.Convert.ToString( GetFieldValue( item, QUALITY_BITS ) ) );
-      listItem.SubItems.Add(Opc.Convert.ToString( GetFieldValue( item, LIMIT_BITS ) ) );
-      listItem.SubItems.Add(Opc.Convert.ToString( GetFieldValue( item, VENDOR_BITS ) ) );
-      listItem.SubItems.Add(Opc.Convert.ToString( GetFieldValue( item, TIMESTAMP ) ) );
+      listItem.SubItems.Add(Opc.Convert.ToString(GetFieldValue(item, ITEM_PATH)));
+      listItem.SubItems.Add(Opc.Convert.ToString(GetFieldValue(item, VALUE)));
+      listItem.SubItems.Add(Opc.Convert.ToString(GetFieldValue(item, VALUE_TYPE)));
+      listItem.SubItems.Add(Opc.Convert.ToString(GetFieldValue(item, QUALITY_BITS)));
+      listItem.SubItems.Add(Opc.Convert.ToString(GetFieldValue(item, LIMIT_BITS)));
+      listItem.SubItems.Add(Opc.Convert.ToString(GetFieldValue(item, VENDOR_BITS)));
+      listItem.SubItems.Add(Opc.Convert.ToString(GetFieldValue(item, TIMESTAMP)));
 
       // save item object as list view item tag.
       listItem.Tag = item;
 
       // insert/add item to list view.
-      if ( item == m_template )
-        ItemListLV.Items.Insert( 0, listItem );
+      if (item == m_template)
+        ItemListLV.Items.Insert(0, listItem);
       else
-        ItemListLV.Items.Add( listItem );
+        ItemListLV.Items.Add(listItem);
 
       // adjust column widths.
       AdjustColumns();
@@ -497,10 +493,10 @@ namespace CAS.Lib.OPCClientControlsLib
     {
       ArrayList items = new ArrayList();
 
-      foreach ( ListViewItem listItem in ItemListLV.Items )
+      foreach (ListViewItem listItem in ItemListLV.Items)
       {
         // skip template.
-        if ( listItem.Tag == m_template )
+        if (listItem.Tag == m_template)
         {
           continue;
         }
@@ -508,44 +504,44 @@ namespace CAS.Lib.OPCClientControlsLib
         object field = null;
 
         // create copy of item.
-        OpcDa::ItemValue item = (OpcDa::ItemValue)( (OpcDa::ItemValue)listItem.Tag ).Clone();
+        OpcDa::ItemValue item = (OpcDa::ItemValue)((OpcDa::ItemValue)listItem.Tag).Clone();
 
         // Value
-        field = GetFieldValue( item, VALUE );
+        field = GetFieldValue(item, VALUE);
         item.Value = field;
 
         // Quality
-        field = GetFieldValue( item, QUALITY );
-        item.Quality = ( field != null ) ? (OpcDa::Quality)field : OpcDa::Quality.Bad;
+        field = GetFieldValue(item, QUALITY);
+        item.Quality = (field != null) ? (OpcDa::Quality)field : OpcDa::Quality.Bad;
         item.QualitySpecified = field != null;
 
         // Timestamp
-        field = GetFieldValue( item, TIMESTAMP );
-        item.Timestamp = ( field != null ) ? (DateTime)field : DateTime.MinValue;
+        field = GetFieldValue(item, TIMESTAMP);
+        item.Timestamp = (field != null) ? (DateTime)field : DateTime.MinValue;
         item.TimestampSpecified = field != null;
 
         // add item to list.
-        items.Add( item );
+        items.Add(item);
       }
 
       //Opc.Convert to array of item objects.
-      return (OpcDa::ItemValue[])items.ToArray( typeof( OpcDa::ItemValue ) );
+      return (OpcDa::ItemValue[])items.ToArray(typeof(OpcDa::ItemValue));
     }
 
     /// <summary>
     /// Removes the selected items from the list.
     /// </summary>
-    private void RemoveMI_Click( object sender, System.EventArgs e )
+    private void RemoveMI_Click(object sender, System.EventArgs e)
     {
       // copy the selected items collection.
-      ArrayList items = new ArrayList( ItemListLV.SelectedItems.Count );
+      ArrayList items = new ArrayList(ItemListLV.SelectedItems.Count);
 
-      items.AddRange( ItemListLV.SelectedItems );
+      items.AddRange(ItemListLV.SelectedItems);
 
       // remove the selected items.
-      foreach ( ListViewItem item in items )
+      foreach (ListViewItem item in items)
       {
-        if ( item.Tag != m_template )
+        if (item.Tag != m_template)
           item.Remove();
       }
     }
@@ -553,12 +549,12 @@ namespace CAS.Lib.OPCClientControlsLib
     /// <summary>
     /// Edits the item template.
     /// </summary>
-    private void EditTemplate( OpcDa::ItemValue template )
+    private void EditTemplate(OpcDa::ItemValue template)
     {
       // prompt user to edit the template.
-      OpcDa::ItemValue[] templates = new ItemValueListEditDlg().ShowDialog( new OpcDa::ItemValue[] { template }, false );
+      OpcDa::ItemValue[] templates = new ItemValueListEditDlg().ShowDialog(new OpcDa::ItemValue[] { template }, false);
 
-      if ( templates == null || templates.Length != 1 )
+      if (templates == null || templates.Length != 1)
       {
         return;
       }
@@ -566,71 +562,71 @@ namespace CAS.Lib.OPCClientControlsLib
       // get existing items without applying defaults.
       ArrayList items = new ArrayList();
 
-      foreach ( ListViewItem item in ItemListLV.Items )
+      foreach (ListViewItem item in ItemListLV.Items)
       {
-        if ( item.Tag != null && item.Tag.GetType() == typeof( OpcDa::ItemValue ) )
+        if (item.Tag != null && item.Tag.GetType() == typeof(OpcDa::ItemValue))
         {
-          if ( item.Tag != m_template )
-            items.Add( item.Tag );
+          if (item.Tag != m_template)
+            items.Add(item.Tag);
         }
       }
 
       // re-initialize the list with the new template.
-      Initialize( m_server, templates[ 0 ] );
+      Initialize(m_server, templates[0]);
 
       // add items back.
-      foreach ( OpcDa::ItemValue item in items )
-        AddItem( item );
+      foreach (OpcDa::ItemValue item in items)
+        AddItem(item);
     }
 
     /// <summary>
     /// Edits a group of items.
     /// </summary>
-    private void EditMI_Click( object sender, System.EventArgs e )
+    private void EditMI_Click(object sender, System.EventArgs e)
     {
       // check if the template if being editied.
-      if ( ItemListLV.SelectedItems.Count == 1 )
+      if (ItemListLV.SelectedItems.Count == 1)
       {
-        if ( ItemListLV.SelectedItems[ 0 ].Tag == m_template )
+        if (ItemListLV.SelectedItems[0].Tag == m_template)
         {
-          EditTemplate( m_template );
+          EditTemplate(m_template);
           return;
         }
       }
 
       // build list of items to edit (exclude template).
-      ArrayList itemList = new ArrayList( ItemListLV.SelectedItems.Count );
+      ArrayList itemList = new ArrayList(ItemListLV.SelectedItems.Count);
 
-      foreach ( ListViewItem item in ItemListLV.SelectedItems )
+      foreach (ListViewItem item in ItemListLV.SelectedItems)
       {
-        if ( item.Tag != null && item.Tag.GetType() == typeof( OpcDa::ItemValue ) )
+        if (item.Tag != null && item.Tag.GetType() == typeof(OpcDa::ItemValue))
         {
-          if ( item.Tag != m_template )
-            itemList.Add( item.Tag );
+          if (item.Tag != m_template)
+            itemList.Add(item.Tag);
         }
       }
 
       // prompt user to edit list of items.
-      OpcDa::ItemValue[] items = new ItemValueListEditDlg().ShowDialog( (OpcDa::ItemValue[])itemList.ToArray( typeof( OpcDa::ItemValue ) ), false );
+      OpcDa::ItemValue[] items = new ItemValueListEditDlg().ShowDialog((OpcDa::ItemValue[])itemList.ToArray(typeof(OpcDa::ItemValue)), false);
 
-      if ( items == null )
+      if (items == null)
       {
         return;
       }
 
       // remove changed items.
-      RemoveMI_Click( sender, e );
+      RemoveMI_Click(sender, e);
 
       // add changed items.
-      foreach ( OpcDa::ItemValue item in items )
+      foreach (OpcDa::ItemValue item in items)
       {
         // clear values only flag if quality or timestamp specified.
-        if ( item.QualitySpecified || item.TimestampSpecified )
+        if (item.QualitySpecified || item.TimestampSpecified)
         {
           ValuesOnlyMI.Checked = false;
         }
 
-        AddItem( item );
+        AddItem(item);
       }
 
       // adjust columns to fit data.
@@ -640,27 +636,27 @@ namespace CAS.Lib.OPCClientControlsLib
     /// <summary>
     /// Creates a new item.
     /// </summary>
-    private void NewMI_Click( object sender, System.EventArgs e )
+    private void NewMI_Click(object sender, System.EventArgs e)
     {
       OpcDa::ItemValue template = null;
 
       // copy the current selection.
-      if ( ItemListLV.SelectedItems.Count > 0 )
+      if (ItemListLV.SelectedItems.Count > 0)
       {
-        template = (OpcDa::ItemValue)( (OpcDa::ItemValue)ItemListLV.SelectedItems[ 0 ].Tag ).Clone();
+        template = (OpcDa::ItemValue)((OpcDa::ItemValue)ItemListLV.SelectedItems[0].Tag).Clone();
       }
 
       // prompt user to edit new item.
-      OpcDa::ItemValue[] items = new ItemValueListEditDlg().ShowDialog( new OpcDa::ItemValue[] { template }, true );
+      OpcDa::ItemValue[] items = new ItemValueListEditDlg().ShowDialog(new OpcDa::ItemValue[] { template }, true);
 
-      if ( items == null )
+      if (items == null)
       {
         return;
       }
 
       // add new items.
-      foreach ( OpcDa::ItemValue item in items )
-        AddItem( item );
+      foreach (OpcDa::ItemValue item in items)
+        AddItem(item);
 
       // adjust columns to fit data.
       AdjustColumns();
@@ -669,29 +665,29 @@ namespace CAS.Lib.OPCClientControlsLib
     /// <summary>
     /// Reads the item properties from the server and uses them to initialize the items.
     /// </summary>
-    private void InitMI_Click( object sender, System.EventArgs e )
+    private void InitMI_Click(object sender, System.EventArgs e)
     {
       // build list of items to query properties for (exclude template).
-      ArrayList items = new ArrayList( ItemListLV.SelectedItems.Count );
+      ArrayList items = new ArrayList(ItemListLV.SelectedItems.Count);
 
-      foreach ( ListViewItem listItem in ItemListLV.SelectedItems )
+      foreach (ListViewItem listItem in ItemListLV.SelectedItems)
       {
-        if ( listItem.Tag != null && listItem.Tag.GetType() == typeof( OpcDa::ItemValue ) )
+        if (listItem.Tag != null && listItem.Tag.GetType() == typeof(OpcDa::ItemValue))
         {
-          if ( listItem.Tag != m_template )
+          if (listItem.Tag != m_template)
           {
-            items.Add( listItem.Tag );
+            items.Add(listItem.Tag);
           }
         }
       }
 
       // fetch default values from item properties.
-      GetDefaultValues( (OpcDa::ItemValue[])items.ToArray( typeof( OpcDa::ItemValue ) ), ValuesOnlyMI.Checked );
+      GetDefaultValues((OpcDa::ItemValue[])items.ToArray(typeof(OpcDa::ItemValue)), ValuesOnlyMI.Checked);
 
       // update list view.
-      foreach ( ListViewItem listItem in ItemListLV.SelectedItems )
+      foreach (ListViewItem listItem in ItemListLV.SelectedItems)
       {
-        UpdateItem( listItem, (OpcDa::ItemValue)listItem.Tag );
+        UpdateItem(listItem, (OpcDa::ItemValue)listItem.Tag);
       }
 
       // adjust columns widths.
@@ -701,14 +697,14 @@ namespace CAS.Lib.OPCClientControlsLib
     /// <summary>
     /// Toggles the flag indicating whether to write only values.
     /// </summary>
-    private void ValuesOnlyMI_Click( object sender, System.EventArgs e )
+    private void ValuesOnlyMI_Click(object sender, System.EventArgs e)
     {
       ValuesOnlyMI.Checked = !ValuesOnlyMI.Checked;
 
       // clear quality and timestamp.
-      if ( ValuesOnlyMI.Checked )
+      if (ValuesOnlyMI.Checked)
       {
-        foreach ( ListViewItem listItem in ItemListLV.Items )
+        foreach (ListViewItem listItem in ItemListLV.Items)
         {
           // get item.
           OpcDa::ItemValue item = (OpcDa::ItemValue)listItem.Tag;
@@ -718,10 +714,10 @@ namespace CAS.Lib.OPCClientControlsLib
           item.TimestampSpecified = false;
 
           // clear columns in the list view.
-          listItem.SubItems[ QUALITY_BITS ].Text = "";
-          listItem.SubItems[ LIMIT_BITS ].Text = "";
-          listItem.SubItems[ VENDOR_BITS ].Text = "";
-          listItem.SubItems[ TIMESTAMP ].Text = "";
+          listItem.SubItems[QUALITY_BITS].Text = "";
+          listItem.SubItems[LIMIT_BITS].Text = "";
+          listItem.SubItems[VENDOR_BITS].Text = "";
+          listItem.SubItems[TIMESTAMP].Text = "";
         }
 
         AdjustColumns();

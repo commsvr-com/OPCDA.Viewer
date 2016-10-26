@@ -45,33 +45,36 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Browse
     where ObjectType: class
     where ParentType: class, IConnectDataNode
   {
+
     #region private
     private Opc.ConnectData m_CD = null;
     private Opc.Specification m_Spcification;
     #endregion
+
     #region constructors
     /// <summary>
-    /// Initializes a new instance of the <see cref="OPCServerTreeNodes"/> class with the specified label text.
+    /// Initializes a new instance of the <see cref="ConnectDataNode{ObjectType, ParentType}"/> class with the specified label text.
     /// </summary>
-    /// <param name="server">The server to add.</param>
-    /// <param name="view">The <see cref="TreeView"/> to add new object..</param>
+    /// <param name="text">The label <see cref="P:System.Windows.Forms.TreeNode.Text" /> of the new tree node.</param>
+    /// <param name="obj">The object coupled with the node.</param>
+    /// <param name="node">The node to add new object.</param>
     internal ConnectDataNode( string text, ObjectType obj, ParentType node )
       : base( text, obj, node )
     { }
     /// <summary>
-    /// Initializes a new instance of the <see cref="ConnectDataNode&lt;OPCType&gt;"/> class.
+    /// Initializes a new instance of the <see cref="ConnectDataNode{ObjectType, ParentType}"/> class.
     /// </summary>
     /// <param name="text">The text.</param>
     /// <param name="obj">The obj.</param>
     /// <param name="filters">The filters.</param>
     /// <param name="specification">The preferred specification.</param>
-    /// <param name="view">The view.</param>
     internal ConnectDataNode( string text, ObjectType obj, OpcDa::BrowseFilters filters, Opc.Specification specification )
       : base( text, obj, filters )
     {
       m_Spcification = specification;
     }
     #endregion
+    
     #region IConnectDataNode
     internal bool ConnectionDataIsSet { get { return m_CD != null; } }
     public Opc.ConnectData ConnectDataObject
@@ -86,6 +89,7 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Browse
       set { m_CD = value; }
     }
     #endregion
+    
     #region IConnectDataNode Members
     /// <summary>
     /// Gets or sets the default specification of the servers being displayed in the control.
@@ -102,6 +106,7 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Browse
       set { m_Spcification = value; }
     }
     #endregion
+
   }
   /// <summary>
   /// Discovery tree node
@@ -112,9 +117,11 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Browse
     where ObjectType: class
     where ParentType: class, IConnectDataNode
   {
+
     #region private
     protected abstract Opc.IDiscovery DiscoveryObject { get; } 
     #endregion
+
     #region constructors
     /// <summary>
     /// Initializes a new instance of the <see cref="OPCServerTreeNodes"/> class with the specified label text.
@@ -133,7 +140,8 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Browse
     /// <param name="specification">The specification.</param>
     internal DiscoveryNode( string text, ObjectType obj, OpcDa::BrowseFilters filters, Opc.Specification specification )
       : base( text, obj, filters, specification )
-    { } 
+    { }
     #endregion
+
   }
 }
