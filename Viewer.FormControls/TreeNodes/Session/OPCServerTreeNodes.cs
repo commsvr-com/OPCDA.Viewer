@@ -19,13 +19,14 @@ using CAS.DataPorter.Configurator;
 using CAS.Lib.ControlLibrary;
 using CAS.Lib.OPCClient.Da;
 using OpcDa = Opc.Da;
+using System.Diagnostics;
 
 namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Session
 {
   /// <summary>
   /// TreeNode representing an OPC server
   /// </summary>
-  public class OPCSessionServer: SessionTreeNode<Server, OPCEnvironment>, IOptions
+  public class OPCSessionServer : SessionTreeNode<Server, OPCEnvironment>, IOptions
   {
     #region private
     private ContextMenuServer m_Menu;
@@ -39,8 +40,8 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Session
     {
       set
       {
-        RaiseSelectServer( Tag );
-        switch ( value )
+        RaiseSelectServer(Tag);
+        switch (value)
         {
           case state.connected:
             this.ImageIndex = this.SelectedImageIndex = (int)ImageListLibrary.Icons.IMAGE_OPC_SERVER;
@@ -62,30 +63,30 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Session
     /// <summary>
     /// Called when the server sends a shutdown event.
     /// </summary>
-    private void server_ServerShutdown( string reason )
+    private void server_ServerShutdown(string reason)
     {
       Disconnect();
-      MessageBox.Show( reason, "Server Shutdown",  MessageBoxButtons.OK, MessageBoxIcon.Information  );
+      MessageBox.Show(reason, "Server Shutdown", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
-    private void ReportException( Exception ex )
+    private void ReportException(Exception ex)
     {
       this.LastEception = ex;
-      MessageBox.Show( ex.Message );
+      MessageBox.Show(ex.Message);
       State = state.failed;
     }
-    private static void RaiseSelectServer( Server server )
+    private static void RaiseSelectServer(Server server)
     {
       EventHandler<GenericEventArgs<Server>> handler = SelectServer;
-      if ( handler == null )
+      if (handler == null)
         return;
-      handler( server, new GenericEventArgs<Server>( server ) );
+      handler(server, new GenericEventArgs<Server>(server));
     }
     #region IDisposable
-    protected override void Dispose( bool disposing )
+    protected override void Dispose(bool disposing)
     {
-      System.Diagnostics.Debug.Assert( disposing );
-      base.Dispose( disposing );
-      if ( Tag.IsConnected )
+      System.Diagnostics.Debug.Assert(disposing);
+      base.Dispose(disposing);
+      if (Tag.IsConnected)
         Tag.Disconnect();
       Tag.Dispose();
     }
@@ -97,40 +98,40 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Session
     /// </summary>
     /// <param name="server">The server to add.</param>
     /// <param name="view">The <see cref="TreeView"/> to add new object..</param>
-    internal OPCSessionServer( Server server, OPCEnvironment node )
-      : base( server.Name, server, node )
+    internal OPCSessionServer(Server server, OPCEnvironment node)
+      : base(server.Name, server, node)
     {
-      m_Menu = new ContextMenuServer( this );
+      m_Menu = new ContextMenuServer(this);
       m_Spcification = server.PreferedSpecyfication;
       LastEception = null;
-      if ( server.IsConnected )
+      if (server.IsConnected)
       {
-        foreach ( Subscription sbscrptn in server.Subscriptions )
-          new SubscriptionTreeNodeSession( sbscrptn.State, sbscrptn.Items, this );
+        foreach (Subscription sbscrptn in server.Subscriptions)
+          new SubscriptionTreeNodeSession(sbscrptn.State, sbscrptn.Items, this);
         State = state.connected;
       }
       else
         State = state.disconnectd;
       Expand();
     }
-    internal OPCSessionServer( OPCCliConfiguration.ServersRow server, OpcDa::BrowseFilters filters, OPCEnvironment node ) :
-      base( server.Name, null, node )
+    internal OPCSessionServer(OPCCliConfiguration.ServersRow server, OpcDa::BrowseFilters filters, OPCEnvironment node) :
+      base(server.Name, null, node)
     {
       LastEception = null;
       try
       {
-        m_Menu = new ContextMenuServer( this );
-        Opc.URL url = new Opc.URL( server.URL );
-        if ( server.GetConnectDataRows().Length > 0 )
-          m_ConnectData = server.GetConnectDataRows()[ 0 ].GetConnectData();
+        m_Menu = new ContextMenuServer(this);
+        Opc.URL url = new Opc.URL(server.URL);
+        if (server.GetConnectDataRows().Length > 0)
+          m_ConnectData = server.GetConnectDataRows()[0].GetConnectData();
         m_Spcification = new Opc.Specification() { ID = server.PreferedSpecyficationID, Description = server.PreferedSpecyficationDsc };
-        Tag = (Server)Factory.GetServerForURL( url, m_Spcification );
-        server.GetOptions( this );
-        foreach ( OPCCliConfiguration.SubscriptionsRow rw in server.GetSubscriptionsRows() )
-          new SubscriptionTreeNodeSession( rw, this );
+        Tag = (Server)Factory.GetServerForURL(url, m_Spcification);
+        server.GetOptions(this);
+        foreach (OPCCliConfiguration.SubscriptionsRow rw in server.GetSubscriptionsRows())
+          new SubscriptionTreeNodeSession(rw, this);
         State = state.disconnectd;
       }
-      catch ( Exception ex ) { ReportException( ex ); }
+      catch (Exception ex) { ReportException(ex); }
     }
     #endregion
     #region public
@@ -143,7 +144,7 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Session
     /// </summary>
     public override void MakeSelected()
     {
-      RaiseSelectServer( Tag );
+      RaiseSelectServer(Tag);
       base.MakeSelected();
     }
     #endregion
@@ -155,27 +156,27 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Session
     internal void Connect()
     {
       // connect to server if not already connected.
-      if ( Tag.IsConnected )
+      if (Tag.IsConnected)
         return;
       try
       {
         Application.UseWaitCursor = true;
-        Tag.Connect( m_ConnectData );
-        Tag.ServerShutdown += new Opc.ServerShutdownEventHandler( server_ServerShutdown );
+        Tag.Connect(m_ConnectData);
+        Tag.ServerShutdown += new Opc.ServerShutdownEventHandler(server_ServerShutdown);
         m_SupportedLocales = Tag.GetSupportedLocales();
-        if ( !string.IsNullOrEmpty( m_Locale ) )
-          Tag.SetLocale( m_Locale );
-        Tag.SetResultFilters( (int)m_Filter );
-        foreach ( SubscriptionTreeNodeSession node in Nodes )
+        if (!string.IsNullOrEmpty(m_Locale))
+          Tag.SetLocale(m_Locale);
+        Tag.SetResultFilters((int)m_Filter);
+        foreach (SubscriptionTreeNodeSession node in Nodes)
           node.Subscribe();
         LastEception = null;
         State = state.connected;
         Application.UseWaitCursor = false;
       }
-      catch ( Exception ex ) 
+      catch (Exception ex)
       {
         Application.UseWaitCursor = false;
-        ReportException( ex ); 
+        ReportException(ex);
       }
     }
     /// <summary>
@@ -183,16 +184,20 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Session
     /// </summary>
     internal void Disconnect()
     {
-      if ( !Tag.IsConnected )
+      if (!Tag.IsConnected)
         return;
       try
       {
-        foreach ( SubscriptionTreeNodeSession node in Nodes )
+        foreach (SubscriptionTreeNodeSession node in Nodes)
           node.Unsubscribe();
-        Tag.ServerShutdown -= new Opc.ServerShutdownEventHandler( server_ServerShutdown );
+        Tag.ServerShutdown -= new Opc.ServerShutdownEventHandler(server_ServerShutdown);
         Tag.Disconnect();
       }
-      catch ( Exception ex ) { ReportException( ex ); }
+      catch (Exception ex)
+      {
+        AssemblyTraceEvent.Tracer.TraceEvent( TraceEventType.Warning, 198, $"Disconnect failed with the error: {ex.Message}");
+        ReportException(ex);
+      }
       finally
       {
         Server svr = Tag;
@@ -208,20 +213,20 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Session
     {
       OpcDa.SubscriptionState subscription;
       SubscriptionTreeNodeSession node;
-      using ( SubscriptionCreateDlg dial = new SubscriptionCreateDlg() )
+      using (SubscriptionCreateDlg dial = new SubscriptionCreateDlg())
       {
-        dial.ShowDialog( Tag, DefaultBrowseFilters, m_SupportedLocales, this );
-        if ( dial.DialogResult != DialogResult.OK )
+        dial.ShowDialog(Tag, DefaultBrowseFilters, m_SupportedLocales, this);
+        if (dial.DialogResult != DialogResult.OK)
           return;
         subscription = dial.State;
-        if ( subscription == null )
+        if (subscription == null)
           return;
-        node = new SubscriptionTreeNodeSession( subscription, dial.GetItems, this );
-        if ( !string.IsNullOrEmpty( dial.Locale ) )
+        node = new SubscriptionTreeNodeSession(subscription, dial.GetItems, this);
+        if (!string.IsNullOrEmpty(dial.Locale))
           node.Locale = dial.Locale;
         node.Filter = dial.Filter;
       }
-      if ( Tag.IsConnected )
+      if (Tag.IsConnected)
       {
         node.Subscribe();
       }
@@ -231,7 +236,7 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Session
     /// </summary>
     internal void SetEnabled()
     {
-      foreach ( SubscriptionTreeNodeSession node in this.Nodes )
+      foreach (SubscriptionTreeNodeSession node in this.Nodes)
         node.RestoreEnabled();
     }
     /// <summary>
@@ -242,13 +247,13 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Session
     {
       get
       {
-        if ( Tag.IsConnected )
+        if (Tag.IsConnected)
           try
           {
             m_SupportedLocales = Tag.GetSupportedLocales();
             return m_SupportedLocales;
           }
-          catch ( Exception ex ) { ReportException( ex ); return null; }
+          catch (Exception ex) { ReportException(ex); return null; }
         else
           return m_SupportedLocales;
       }
@@ -258,8 +263,8 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Session
     /// </summary>
     internal void EditOptions()
     {
-      using ( var dial = new Common.OptionsEditDlg() )
-        dial.ShowDialog( SuportedLocales, this );
+      using (var dial = new Common.OptionsEditDlg())
+        dial.ShowDialog(SuportedLocales, this);
     }
     /// <summary>
     /// Gets a value indicating whether this coupled server is connected.
@@ -289,14 +294,14 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Session
     {
       get
       {
-        if ( Tag.IsConnected )
+        if (Tag.IsConnected)
           try
           {
             return Tag.GetLocale();
           }
-          catch ( Exception ex )
+          catch (Exception ex)
           {
-            ReportException( ex );
+            ReportException(ex);
             return null;
           }
         else
@@ -305,9 +310,9 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Session
       set
       {
         m_Locale = value;
-        if ( Tag.IsConnected )
-          try { Tag.SetLocale( value ); }
-          catch ( Exception ex ) { ReportException( ex ); }
+        if (Tag.IsConnected)
+          try { Tag.SetLocale(value); }
+          catch (Exception ex) { ReportException(ex); }
       }
     }
     /// <summary>
@@ -319,7 +324,7 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Session
     {
       get
       {
-        if ( Tag.IsConnected )
+        if (Tag.IsConnected)
           return (OpcDa.ResultFilter)Tag.GetResultFilters();
         else
           return m_Filter;
@@ -327,8 +332,8 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Session
       set
       {
         m_Filter = value;
-        if ( Tag.IsConnected )
-          Tag.SetResultFilters( (int)value );
+        if (Tag.IsConnected)
+          Tag.SetResultFilters((int)value);
       }
     }
     #endregion
@@ -345,10 +350,10 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Session
     /// </summary>
     /// <param name="configuration">The current configuration.</param>
     /// <param name="parentKey">The parent key.</param>
-    public override void Save( OPCCliConfiguration configuration, long parentKey )
+    public override void Save(OPCCliConfiguration configuration, long parentKey)
     {
-      long pk = configuration.Servers.Save( Tag, this.m_ConnectData, m_Locale, m_Filter );
-      base.Save( configuration, pk );
+      long pk = configuration.Servers.Save(Tag, this.m_ConnectData, m_Locale, m_Filter);
+      base.Save(configuration, pk);
     }
     #endregion
     #region ITreeNodeInterface
