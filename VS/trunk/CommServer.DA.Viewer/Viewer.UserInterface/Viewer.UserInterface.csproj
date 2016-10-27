@@ -286,7 +286,7 @@
     </PublishFile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="log\OPCViewer.log">
+    <None Include="log\CAS.CommServer.DA.Viewer.log">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
