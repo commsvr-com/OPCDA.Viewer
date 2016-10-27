@@ -48,12 +48,12 @@
       <HintPath>..\..\packages\CAS.CodeProtect.6.0.1\lib\net451\CAS.CodeProtect.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.DA.Client.Operations, Version=2.0.15.15317, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CAS.CommServer.DA.Client.2.00.15\lib\net451\CAS.CommServer.DA.Client.Operations.dll</HintPath>
+    <Reference Include="CAS.CommServer.DA.Client.Operations, Version=2.0.17.27050, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.CommServer.DA.Client.2.00.17\lib\net451\CAS.CommServer.DA.Client.Operations.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.DA.Client.Services, Version=2.0.15.15317, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CAS.CommServer.DA.Client.2.00.15\lib\net451\CAS.CommServer.DA.Client.Services.dll</HintPath>
+    <Reference Include="CAS.CommServer.DA.Client.Services, Version=2.0.17.27050, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.CommServer.DA.Client.2.00.17\lib\net451\CAS.CommServer.DA.Client.Services.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.CommServer.DAClientConfiguration, Version=5.1.4.21706, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
@@ -64,16 +64,16 @@
       <HintPath>..\..\packages\CAS.CommServer.DeviceSimulator.5.01.05\lib\net451\CAS.CommServer.DeviceSimulator.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.OPCClassicSDK.COMWrapper, Version=2.1.1062.39748, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CAS.CommServer.OPCClassic.SDK.COMWrapper.2.01.1062\lib\net451\CAS.CommServer.OPCClassicSDK.COMWrapper.dll</HintPath>
+    <Reference Include="CAS.CommServer.OPCClassicSDK.COMWrapper, Version=2.1.1063.26814, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.CommServer.OPCClassic.SDK.COMWrapper.2.01.1063\lib\net451\CAS.CommServer.OPCClassicSDK.COMWrapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.CommServer.OPCClassicSDK.Core, Version=2.1.1062.39746, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
       <HintPath>..\..\packages\CAS.CommServer.OPCClassic.SDK.Core.2.01.1062\lib\net451\CAS.CommServer.OPCClassicSDK.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.OPCClassicSDK.OpcComRcw, Version=2.1.1062.39746, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CAS.CommServer.OPCClassic.SDK.COMWrapper.2.01.1062\lib\net451\CAS.CommServer.OPCClassicSDK.OpcComRcw.dll</HintPath>
+    <Reference Include="CAS.CommServer.OPCClassicSDK.OpcComRcw, Version=2.1.1063.26813, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.CommServer.OPCClassic.SDK.COMWrapper.2.01.1063\lib\net451\CAS.CommServer.OPCClassicSDK.OpcComRcw.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.RealTime, Version=5.0.5.41272, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">

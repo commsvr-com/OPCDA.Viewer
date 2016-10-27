@@ -51,10 +51,12 @@
     <SupportUrl>http://www.commsvr.com/Products/OPC/OPCViewer.aspx</SupportUrl>
     <ProductName>CAS OPC Viewer</ProductName>
     <PublisherName>CAS</PublisherName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
     <AutorunEnabled>true</AutorunEnabled>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>20</ApplicationRevision>
-    <ApplicationVersion>3.10.03.%2a</ApplicationVersion>
+    <ApplicationRevision>23</ApplicationRevision>
+    <ApplicationVersion>3.10.09.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
