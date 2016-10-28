@@ -17,6 +17,7 @@ using CAS.Lib.CodeProtect;
 using CAS.Lib.OPCClientControlsLib;
 using System;
 using System.Deployment.Application;
+using System.Diagnostics;
 using System.Security;
 using System.Security.Permissions;
 using System.Web;
@@ -35,20 +36,25 @@ namespace CAS.OPCViewer
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
+      AssemblyTraceEvent.Tracer.TraceEvent(TraceEventType.Verbose, 39, "Starting application.");
       string _commandLine = Environment.CommandLine;
 #if DEBUG
       if (_commandLine.ToLower().Contains("debugstop"))
         MessageBox.Show("Attach debug point");
 #endif
-      if (IsFirstRun() || _commandLine.ToLower().Contains(m_InstallLicenseDebugerArgument))
+      bool _isDebugRun = _commandLine.ToLower().Contains(m_InstallLicenseDebugerArgument);
+      if (IsFirstRun() || _isDebugRun)
       {
         try
         {
-          LibInstaller.InstallLicense(true);
+          AssemblyTraceEvent.Tracer.TraceEvent(TraceEventType.Verbose, 49, $"Installing license because IsFirstRun={IsFirstRun()} is debug={_isDebugRun}.");
+          LibInstaller.InstallLicense(false);
         }
         catch (Exception ex)
         {
-          MessageBox.Show("License installation has failed, reason: " + ex.Message);
+          string _message = $"Installing license has failed, reason: {ex.Message}.";
+          AssemblyTraceEvent.Tracer.TraceEvent(TraceEventType.Error, 55, _message);
+          MessageBox.Show(_message, "License Installation error", MessageBoxButtons.OK, MessageBoxIcon.Error );
         }
       }
       try
@@ -74,8 +80,9 @@ namespace CAS.OPCViewer
       }
       catch (Exception e)
       {
-        MessageBox.Show("An unexpected exception occurred. Application exiting.\r\n\r\n" + e.Message,
-          "OPCViewer - Data Access Client", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        string _message = $"An unexpected exception occurred. Application exiting with error:\r\n\r\n {e.Message}";
+        AssemblyTraceEvent.Tracer.TraceEvent(TraceEventType.Error, 84, _message);
+        MessageBox.Show(_message, "OPCViewer - Data Access Client", MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
     private readonly static string m_InstallLicenseDebugerArgument = "installic";
