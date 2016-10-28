@@ -25,7 +25,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Reflection;
-using System.Resources;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading;
@@ -62,7 +61,7 @@ namespace CAS.Lib.OPCClientControlsLib
       SetServerStateItems = true;
       // connect the updates control to the subscriptions control.
       Subscription.SubscriptionModified += new Subscription.SubscriptionModifiedCallback(m_UpdatesCTRL.OnSubscriptionModified);
-      CAS.Lib.OPCClientControlsLib.TreeNodes.Session.OPCSessionServer.SelectServer += this.m_StatusCTRL.OnSelectServer;
+      TreeNodes.Session.OPCSessionServer.SelectServer += this.m_StatusCTRL.OnSelectServer;
       TransactionRowWrapper.SelectedTransactionHasChanged +=
         new EventHandler<GenericEventArgs<TransactionRowWrapper>>(TransactionRowWrapper_SelectTransactionEventHandler);
       // register for trace/debug output from the updates control.
@@ -99,7 +98,7 @@ namespace CAS.Lib.OPCClientControlsLib
     public MainFormV2008(string SessionFileName)
       : this()
     {
-      AssemblyTraceEvent.Tracer.TraceEvent(TraceEventType.Information, 104, this.GetType().Name + ".ctor", "Openning: " + SessionFileName);
+      AssemblyTraceEvent.Tracer.TraceEvent(TraceEventType.Information, 104, $"Creating {this.GetType().Name}and openning the session file: {SessionFileName}");
       m_SubscriptionCTRL.OpenSession(SessionFileName);
     }
     /// <summary>
@@ -174,8 +173,7 @@ namespace CAS.Lib.OPCClientControlsLib
         return;
       ScrollableMessageBox.Instance.Show(LicenseProtection.TraceNoLicenseFileReason, CodeProtect.Properties.Resources.Tx_LicCap, MessageBoxButtons.OK, MessageBoxIcon.Stop);
     }
-
-    private List<ToolStripItem> m_ServerStateItems = new System.Collections.Generic.List<ToolStripItem>();
+    private List<ToolStripItem> m_ServerStateItems = new List<ToolStripItem>();
     private const string c_ServerConfigExtension = ".scnfg";
     private const string c_ServerFilterFormat = "Config Files (*{0})|*{0}|All Files (*.*)|*.*";
     private void SetSaveDialog(string extension, string defaultName, string title)
@@ -237,7 +235,6 @@ namespace CAS.Lib.OPCClientControlsLib
           return m_server.Duplicate() as Server;
       }
     }
-    #endregion
 
     #region Components event handlers
     private void TransactionRowWrapper_SelectTransactionEventHandler(object sender, GenericEventArgs<TransactionRowWrapper> e)
@@ -282,7 +279,7 @@ namespace CAS.Lib.OPCClientControlsLib
       }
       catch (Exception ex)
       {
-        AssemblyTraceEvent.Tracer.TraceEvent( TraceEventType.Warning, 267, this.GetType().Name + ".OnUpdateEvent", Resources.MainFormUpdateEventHandlerException + ex.Message);
+        AssemblyTraceEvent.Tracer.TraceEvent(TraceEventType.Warning, 267, this.GetType().Name + ".OnUpdateEvent", Resources.MainFormUpdateEventHandlerException + ex.Message);
       }
     }
     /// <summary>
@@ -339,7 +336,6 @@ namespace CAS.Lib.OPCClientControlsLib
     #endregion
 
     #region private methodods
-
     private bool GetSaveFileName(bool prompt, string defaultName, string extension, string title, ref string name)
     {
       if (string.IsNullOrEmpty(name))
@@ -974,10 +970,8 @@ namespace CAS.Lib.OPCClientControlsLib
       }
     }
     #endregion
-    private ResourceManager Getter()
-    {
-      return Resources.ResourceManager;
-    }
+
+    #endregion
 
   }
 }

@@ -26,8 +26,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("CommServer")]
 [assembly: AssemblyCulture("")]
 [assembly: Guid("e3bdcac3-296e-48f8-8999-616c7cc6afa4")]
-[assembly: AssemblyVersion("3.10.13.*")]
-[assembly: AssemblyFileVersion("3.10.13")]
+[assembly: AssemblyVersion("3.10.15.*")]
+[assembly: AssemblyFileVersion("3.10.15")]
 
 [assembly: InternalsVisibleToAttribute("<dll name without extension>, PublicKey=0024000004800000940000000602000000240000525341310004000001000100b3cff1bec656a6" +
                                                                        "e3784c75cacce8ee3bc695d0ce135d820c86465eb49b2353f0438d28ad9a458e5350c0c141393d" +
