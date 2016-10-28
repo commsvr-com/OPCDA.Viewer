@@ -25,14 +25,14 @@
     <copyright><#=AssemblyCopyright#></copyright>
     <tags>OPC, OPC DA, CommServer, ASMD, Address Space Model Designer.</tags>
       <dependencies>
-        <dependency id="CAS.CodeProtect" version="5.0.2" />
-        <dependency id="CAS.CommServer.DA.Client" version="2.00.14-Alpha" />
-        <dependency id="CAS.CommServer.DAClientConfiguration" version="3.12.1" />
-        <dependency id="CAS.CommServer.DeviceSimulator" version="5.01.00" />
-        <dependency id="CAS.CommServer.OPCClassic.SDK.COMWrapper" version="2.01.106" />
-        <dependency id="CAS.CommServer.OPCClassic.SDK.Core" version="2.01.106" />
-        <dependency id="CAS.RealTime" version="5.0.2" />
-        <dependency id="CAS.Windows.Forms" version="5.0.2" />
+        <dependency id="CAS.CodeProtect" version="6.0.1" />
+        <dependency id="CAS.CommServer.DA.Client" version="2.00.17" />
+        <dependency id="CAS.CommServer.DAClientConfiguration" version="5.01.05" />
+        <dependency id="CAS.CommServer.DeviceSimulator" version="5.01.05" />
+        <dependency id="CAS.CommServer.OPCClassic.SDK.COMWrapper" version="2.01.1063" />
+        <dependency id="CAS.CommServer.OPCClassic.SDK.Core" version="2.01.1062" />
+        <dependency id="CAS.RealTime" version="5.0.5" />
+        <dependency id="CAS.Windows.Forms" version="6.0.1" />
       </dependencies>
   </metadata>
   <files>
