@@ -47,12 +47,12 @@ namespace CAS.OPCViewer
       {
         try
         {
-          AssemblyTraceEvent.Tracer.TraceEvent(TraceEventType.Verbose, 49, $"Installing license because IsFirstRun={IsFirstRun()} is debug={_isDebugRun}.");
+          AssemblyTraceEvent.Tracer.TraceEvent(TraceEventType.Verbose, 49, $"Installing license because IsFirstRun={IsFirstRun()}, and debug={_isDebugRun}.");
           LibInstaller.InstallLicense(false);
         }
-        catch (Exception ex)
+        catch (Exception _ex)
         {
-          string _message = $"Installing license has failed, reason: {ex.Message}.";
+          string _message = $"Installing license has failed, reason: {_ex.Message}: {_ex.StackTrace}.";
           AssemblyTraceEvent.Tracer.TraceEvent(TraceEventType.Error, 55, _message);
           MessageBox.Show(_message, "License Installation error", MessageBoxButtons.OK, MessageBoxIcon.Error );
         }
