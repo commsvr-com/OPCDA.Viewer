@@ -26,5 +26,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("CommServer")]
 [assembly: AssemblyCulture("")]
 [assembly: Guid("ea5241f9-5955-4039-af25-31c2c8d57fc5")]
-[assembly: AssemblyVersion("3.10.15.*")]
-[assembly: AssemblyFileVersion("3.10.15")]
+[assembly: AssemblyVersion("3.11.16.*")]
+[assembly: AssemblyFileVersion("3.11.16")]
