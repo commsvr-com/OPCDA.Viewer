@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>CAS.CommServer.DA.Viewer</id>
-    <version>3.11.16</version>
+    <version>3.11.17</version>
     <title>OPC Viewer - CAS OPC Data Access Client</title>
     <authors>CAS</authors>
     <owners>commsvr.com</owners>
@@ -24,7 +24,7 @@
     <tags>OPC, OPC DA, CommServer, ASMD, Address Space Model Designer.</tags>
       <dependencies>
         <dependency id="CAS.CodeProtect" version="6.1.3" />
-        <dependency id="CAS.CommServer.DA.Client" version="2.00.17"  />
+        <dependency id="CAS.CommServer.DA.Client" version="2.00.18"  />
         <dependency id="CAS.CommServer.DAClientConfiguration" version="5.01.06"  />
         <dependency id="CAS.CommServer.DeviceSimulator" version="5.01.06"  />
         <dependency id="CAS.CommServer.OPCClassic.SDK.COMWrapper" version="2.01.1063"  />

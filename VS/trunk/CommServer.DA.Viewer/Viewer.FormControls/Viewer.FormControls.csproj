@@ -48,12 +48,12 @@
       <HintPath>..\..\packages\CAS.CodeProtect.6.1.3\lib\net451\CAS.CodeProtect.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.DA.Client.Operations, Version=2.0.17.27050, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CAS.CommServer.DA.Client.2.00.17\lib\net451\CAS.CommServer.DA.Client.Operations.dll</HintPath>
+    <Reference Include="CAS.CommServer.DA.Client.Operations, Version=2.0.18.39654, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.CommServer.DA.Client.2.00.18\lib\net451\CAS.CommServer.DA.Client.Operations.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.DA.Client.Services, Version=2.0.17.27050, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CAS.CommServer.DA.Client.2.00.17\lib\net451\CAS.CommServer.DA.Client.Services.dll</HintPath>
+    <Reference Include="CAS.CommServer.DA.Client.Services, Version=2.0.18.39653, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CAS.CommServer.DA.Client.2.00.18\lib\net451\CAS.CommServer.DA.Client.Services.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.CommServer.DAClientConfiguration, Version=5.1.6.25005, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
@@ -535,6 +535,7 @@
     <Content Include="Viewer.FormControls.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Viewer.FormControls.nuspec</LastGenOutput>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Properties\AssemblyInfo.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

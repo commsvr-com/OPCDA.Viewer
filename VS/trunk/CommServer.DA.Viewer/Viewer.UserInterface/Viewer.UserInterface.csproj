@@ -157,10 +157,6 @@
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
-    <ProjectReference Include="..\Viewer.AddressSpace\Viewer.AddressSpace.csproj">
-      <Project>{86337fcd-d411-4e63-b80f-e121318d5572}</Project>
-      <Name>Viewer.AddressSpace</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Viewer.FormControls\Viewer.FormControls.csproj">
       <Project>{C9DF875B-B3DC-4B92-BB14-DF90B062EC17}</Project>
       <Name>Viewer.FormControls</Name>
@@ -232,58 +228,7 @@
     <None Include="Przegl_Full.ico" />
     <None Include="Resources\Przegl_48.png" />
   </ItemGroup>
-  <ItemGroup>
-    <PublishFile Include="OpcRcw.Ae">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="OpcRcw.Comn">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="OpcRcw.Da">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="OpcRcw.Dx">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="OpcRcw.Hda">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="log\CAS.CommServer.DA.Viewer.log">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
