@@ -20,6 +20,7 @@ using CAS.Lib.ControlLibrary;
 using CAS.Lib.OPCClient.Da;
 using OpcDa = Opc.Da;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Session
 {
@@ -152,7 +153,6 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Session
     /// <summary>
     /// Connects to the server and browses for top level nodes.
     /// </summary>
-    /// <param name="addSubscriptions">if set to <c>true</c> add subscriptions.</param>
     internal void Connect()
     {
       // connect to server if not already connected.
@@ -161,7 +161,11 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Session
       try
       {
         Application.UseWaitCursor = true;
+        string _message = $"Connecting to {Tag.Name} at {Tag.Url} with prefered specyfication {Tag.PreferedSpecyfication}";
+        AssemblyTraceEvent.Tracer.TraceInformation(_message);
         Tag.Connect(m_ConnectData);
+        _message = $"Connecting to {Tag.Name} at succided";
+        AssemblyTraceEvent.Tracer.TraceInformation(_message);
         Tag.ServerShutdown += new Opc.ServerShutdownEventHandler(server_ServerShutdown);
         m_SupportedLocales = Tag.GetSupportedLocales();
         if (!string.IsNullOrEmpty(m_Locale))
@@ -171,12 +175,29 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Session
           node.Subscribe();
         LastEception = null;
         State = state.connected;
-        Application.UseWaitCursor = false;
+        _message = $"Connecting to {Tag.Name} at succided";
+        AssemblyTraceEvent.Tracer.TraceInformation(_message);
       }
-      catch (Exception ex)
+      catch (Opc.ConnectFailedException _ex)
+      {
+        ReportException(_ex);
+        string _exMessage = $"Connecting to {Tag.Name} failed with exception {_ex.Message} by application {_ex.Source} at {_ex.StackTrace}";
+        AssemblyTraceEvent.Tracer.TraceInformation(_exMessage);
+        ExternalException _inner = _ex.InnerException == null ? null : _ex.InnerException as ExternalException;
+        if (_inner == null)
+          return;
+        _exMessage = $"Connecting to {Tag.Name} failed with external exception {_inner.Message} by application {_inner.Source} at {_inner.StackTrace} with error code {_inner.ErrorCode}";
+        AssemblyTraceEvent.Tracer.TraceInformation(_exMessage);
+      }
+      catch (Exception _ex)
+      {
+        string _exMessage = $"Connecting to {Tag.Name} failed with exception {_ex.Message} by application {_ex.Source} at {_ex.StackTrace}";
+        AssemblyTraceEvent.Tracer.TraceEvent(TraceEventType.Error, 199, _exMessage);
+        ReportException(_ex);
+      }
+      finally
       {
         Application.UseWaitCursor = false;
-        ReportException(ex);
       }
     }
     /// <summary>
@@ -195,7 +216,7 @@ namespace CAS.Lib.OPCClientControlsLib.TreeNodes.Session
       }
       catch (Exception ex)
       {
-        AssemblyTraceEvent.Tracer.TraceEvent( TraceEventType.Warning, 198, $"Disconnect failed with the error: {ex.Message}");
+        AssemblyTraceEvent.Tracer.TraceEvent(TraceEventType.Warning, 198, $"Disconnect failed with the error: {ex.Message}");
         ReportException(ex);
       }
       finally
